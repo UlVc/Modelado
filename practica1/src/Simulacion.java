@@ -15,7 +15,7 @@ public class Simulacion {
     Usuarios erika = new Usuarios("Erika", 300);
 
     public static void main(String []args) {
-    	System.out.println(alicia.consultarSaldo());
-        netflix.contratar("1");
+    	alicia.enlazarObservador(netflix);
+        alicia.cobrar(300);
     }
 }

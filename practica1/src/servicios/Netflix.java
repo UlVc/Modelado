@@ -21,4 +21,9 @@ public class Netflix implements Servicios {
         else
             System.out.println("Ha contratado Netflix para 4 dispositivos.");
     }
+
+    @Override
+    public void actualizar(double saldo) {
+        System.out.println("El saldo es: " + saldo);
+    }
 }
