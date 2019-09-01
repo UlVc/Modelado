@@ -24,6 +24,9 @@ public class Netflix implements Servicios {
 
     @Override
     public void actualizar(double saldo) {
-        System.out.println("El saldo es: " + saldo);
+        if (saldo >= 0)
+            System.out.println("Gracias por renovar su suscripción.");
+        else
+            System.out.println("Saldo insuficiente.");
     }
 }
