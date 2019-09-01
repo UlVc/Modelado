@@ -1,32 +1,45 @@
 package src.servicios;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Netflix implements Servicios {
+    ArrayList<String> usuariosActivos;
+    Random numeroAleatorio;
+    ArrayList<String> mensajes;
 
-    @Override
-    public void cobrar() {
-        System.out.println("Se ha cobrado mil millones de euros, gracias.");
+    public Netflix(){
+        usuariosActivos = new ArrayList<String>();
+        numeroAleatorio = new Random();
+        mensajes = new ArrayList<String>();
+
+        mensajes.add(", te sugerimos que veas Star Wars episodio XIII.");
+        mensajes.add(", te sugerimos que veas Pulp Fiction.");
+        mensajes.add(", te sugerimos que veas One punch man.");
+        mensajes.add(", te sugerimos que veas el nuevo documental de History Channel, 'la vida de Dave Mustaine'.");
+        mensajes.add(", te sugerimos que veas la nueva temporada de Daredevil, sólo en Netflix.");
+        mensajes.add(", te sugerimos que veas la nueva temporada de 'La casa de papel', sólo en Netflix.");
     }
 
     @Override
-    public void mandarMensaje() {
-        System.out.println("Ve la nueva película Star Wars Episodio 90.");
+    public void mandarMensajes() {
+        for (String s: usuariosActivos) {
+            System.out.println(s + generadorAleatorioDeMensajes());
+        }
     }
 
     @Override
-    public void contratar(String contrato) {
-        if (contrato == "1")
-            System.out.println("Ha contratado Netflix para 1 dispositivo.");
-        else if (contrato == "2")
-            System.out.println("Ha contratado Netflix para 2 dispositivos.");
-        else
-            System.out.println("Ha contratado Netflix para 4 dispositivos.");
+    public void actualizar(double saldo, String nombre) {
+        if (saldo > 0) {
+            if (!usuariosActivos.contains(nombre)) {
+                usuariosActivos.add(nombre);
+            }
+        } else {
+            if (usuariosActivos.contains(nombre))
+                usuariosActivos.remove(nombre);
+        }
     }
 
-    @Override
-    public void actualizar(double saldo) {
-        if (saldo >= 0)
-            System.out.println("Gracias por renovar su suscripción.");
-        else
-            System.out.println("Saldo insuficiente.");
+    private String generadorAleatorioDeMensajes() {
+        return mensajes.get(numeroAleatorio.nextInt(5));
     }
 }

@@ -18,7 +18,7 @@ public class Usuarios implements Sujeto {
     @Override
     public void notificar(double saldo) {
         for (Servicios s: this.serviciosContratados)
-            s.actualizar(saldo);
+            s.actualizar(saldo, this.nombre);
     }
 
     public void cobrar(Servicios s) {
@@ -27,6 +27,7 @@ public class Usuarios implements Sujeto {
             if (saldoDespuesDelCobro < 0) {
                 System.out.println("Saldo insuficiente, se ha cancelado tu contrato de " + 
                                    s.getClass().getSimpleName() + " para " + getContrato(s) + ".");
+                notificar(this.saldo);
                 removerContrato(s);
             } else {
                 this.saldo = saldoDespuesDelCobro;
@@ -59,6 +60,7 @@ public class Usuarios implements Sujeto {
         System.out.println("Bienvenid@ " + this.nombre + " al servicio de " + 
                            s.getClass().getSimpleName() + " para " + 
                            contrato.getContrato() + ".");
+        notificar(this.saldo);
     }
 
     private String getContrato(Servicios s) {
