@@ -1,5 +1,5 @@
 package src.servicios;
 
 public interface Observador {
-    public void actualizar(double saldo, String nombre);
+    public void actualizar(boolean saldoSuficiente, String nombre);
 }

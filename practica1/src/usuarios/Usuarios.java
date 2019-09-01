@@ -7,27 +7,33 @@ public class Usuarios implements Sujeto {
     private double saldo;
     private ArrayList<Servicios> serviciosContratados;
     private Hashtable<String, Contratos> contratosDeLosServicios;
+    private boolean saldoSuficiente;
 
     public Usuarios(String nombre, double saldo) {
         this.nombre = nombre;
         this.saldo = saldo;
+        if (saldo > 0)
+            this.saldoSuficiente = true;
+        else
+            this.saldoSuficiente = false;
         serviciosContratados = new ArrayList<Servicios>();
         contratosDeLosServicios = new Hashtable<String, Contratos>();
     }
 
     @Override
-    public void notificar(double saldo) {
+    public void notificar(boolean saldoSuficiente) {
         for (Servicios s: this.serviciosContratados)
-            s.actualizar(saldo, this.nombre);
+            s.actualizar(saldoSuficiente, this.nombre);
     }
 
     public void cobrar(Servicios s) {
         try {
             double saldoDespuesDelCobro = this.saldo - getCobro(s);
             if (saldoDespuesDelCobro < 0) {
-                System.out.println("Saldo insuficiente, se ha cancelado tu contrato de " + 
+                System.out.println("Saldo insuficiente, " + this.nombre + " se ha cancelado tu contrato de " + 
                                    s.getClass().getSimpleName() + " para " + getContrato(s) + ".");
-                notificar(this.saldo);
+                this.saldoSuficiente = false;
+                notificar(this.saldoSuficiente);
                 removerContrato(s);
             } else {
                 this.saldo = saldoDespuesDelCobro;
@@ -35,7 +41,7 @@ public class Usuarios implements Sujeto {
                                    s.getClass().getSimpleName() + " para " + 
                                    getContrato(s) + ". Total: $" + getCobro(s) + 
                                    ". Buen día.");
-                notificar(this.saldo);
+                notificar(this.saldoSuficiente);
             }
         } catch(NullPointerException npe) {}
     }
@@ -60,7 +66,7 @@ public class Usuarios implements Sujeto {
         System.out.println("Bienvenid@ " + this.nombre + " al servicio de " + 
                            s.getClass().getSimpleName() + " para " + 
                            contrato.getContrato() + ".");
-        notificar(this.saldo);
+        notificar(this.saldoSuficiente);
     }
 
     private String getContrato(Servicios s) {

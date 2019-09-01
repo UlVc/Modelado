@@ -3,12 +3,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Youtube implements Servicios {
-    ArrayList<String> usuariosActivos;
+    String usuario = "";
     Random numeroAleatorio;
     ArrayList<String> mensajes;
 
-    public Youtube(){
-        usuariosActivos = new ArrayList<String>();
+    public Youtube() {
         numeroAleatorio = new Random();
         mensajes = new ArrayList<String>();
 
@@ -23,20 +22,17 @@ public class Youtube implements Servicios {
 
     @Override
     public void mandarMensajes() {
-        for (String s: usuariosActivos)
-            System.out.println(s + generadorAleatorioDeMensajes());
+        if (this.usuario != "")
+            System.out.println(this.usuario + generadorAleatorioDeMensajes());
+        this.usuario = "";
     }
 
     @Override
-    public void actualizar(double saldo, String nombre) {
-        if (saldo > 0) {
-            if (!usuariosActivos.contains(nombre)) {
-                usuariosActivos.add(nombre);
-            }
-        } else {
-            if (usuariosActivos.contains(nombre))
-                usuariosActivos.remove(nombre);
-        }
+    public void actualizar(boolean saldoSuficiente, String nombre) {
+        if (saldoSuficiente)
+            this.usuario = nombre;
+        else
+            this.usuario = "";
     }
 
     private String generadorAleatorioDeMensajes() {

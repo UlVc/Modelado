@@ -15,30 +15,98 @@ public class Simulacion {
     static Usuarios erika = new Usuarios("Erika", 300);
 
     public static void main(String []args) {
+        System.out.println("Día 1");
+
         alicia.contratarServicio(netflix, Contratos.CUATRODISPOSITIVOS);
         alicia.contratarServicio(spotify, Contratos.SPOTIFYPREMIUM);
         alicia.contratarServicio(youtube, Contratos.YOUTUBEPREMIUM);
         alicia.contratarServicio(amazon, Contratos.AMAZONPREMIUM);
 
-        netflix.mandarMensajes();
-        spotify.mandarMensajes();
-        youtube.mandarMensajes();
-        amazon.mandarMensajes();
+        mandarMensajes();
 
         bob.contratarServicio(netflix, Contratos.CUATRODISPOSITIVOS);
         bob.contratarServicio(spotify, Contratos.SPOTIFYPREMIUM);
         bob.contratarServicio(youtube, Contratos.YOUTUBEPREMIUM);
         bob.contratarServicio(amazon, Contratos.AMAZONPREMIUM);
 
+        mandarMensajes();
+
         cesar.contratarServicio(spotify, Contratos.SPOTIFYPREMIUM);
         cesar.contratarServicio(youtube, Contratos.GRATIS);
 
+        mandarMensajes();
+
         diego.contratarServicio(netflix, Contratos.DOSDISPOSITIVOS);
         diego.contratarServicio(amazon, Contratos.AMAZONPREMIUM);
+
+        mandarMensajes();
 
         erika.contratarServicio(netflix, Contratos.CUATRODISPOSITIVOS);
         erika.contratarServicio(spotify, Contratos.GRATIS);
         erika.contratarServicio(youtube, Contratos.GRATIS);
 
+        mandarMensajes();
+
+        System.out.println("Día 2");
+
+        cobrarUsuario(alicia);
+        mandarMensajes();
+        cobrarUsuario(bob);
+        mandarMensajes();
+        cobrarUsuario(diego);
+        mandarMensajes();
+        cobrarUsuario(erika);
+        mandarMensajes();
+
+        System.out.println("Día 3");
+
+        cobrarUsuario(alicia);
+        mandarMensajes();
+        cobrarUsuario(bob);
+        mandarMensajes();
+        cobrarUsuario(diego);
+        mandarMensajes();
+        cobrarUsuario(erika);
+        mandarMensajes();
+
+        System.out.println("Día 4");
+
+        cobrarUsuario(alicia);
+        mandarMensajes();
+        cobrarUsuario(bob);
+        mandarMensajes();
+        cobrarUsuario(diego);
+        mandarMensajes();
+        cobrarUsuario(erika);
+        mandarMensajes();
+
+        System.out.println("Día 5");
+
+        cobrarUsuario(alicia);
+        mandarMensajes();
+        cobrarUsuario(bob);
+        mandarMensajes();
+        cobrarUsuario(diego);
+        mandarMensajes();
+        cobrarUsuario(erika);
+        mandarMensajes();
+    }
+
+    public static void cobrarUsuario(Usuarios usuario) {
+        System.out.println();
+        usuario.cobrar(netflix);
+        usuario.cobrar(spotify);
+        usuario.cobrar(youtube);
+        usuario.cobrar(amazon);
+        System.out.println();
+    }
+
+    public static void mandarMensajes() {
+        System.out.println();
+        netflix.mandarMensajes();
+        spotify.mandarMensajes();
+        youtube.mandarMensajes();
+        amazon.mandarMensajes();
+        System.out.println();
     }
 }
