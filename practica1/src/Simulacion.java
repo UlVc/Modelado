@@ -55,6 +55,8 @@ public class Simulacion {
         mandarMensajes();
         cobrarUsuario(diego);
         mandarMensajes();
+        erika.cambiarContrato(spotify, Contratos.SPOTIFYPREMIUM);
+        erika.cambiarContrato(youtube, Contratos.YOUTUBEPREMIUM);
         cobrarUsuario(erika);
         mandarMensajes();
 
@@ -65,7 +67,10 @@ public class Simulacion {
         cobrarUsuario(bob);
         mandarMensajes();
         cobrarUsuario(diego);
+        diego.contratarServicio(spotify, Contratos.GRATIS);
         mandarMensajes();
+        erika.removerContrato(netflix);
+        erika.cambiarContrato(amazon, Contratos.AMAZONPREMIUM);
         cobrarUsuario(erika);
         mandarMensajes();
 
