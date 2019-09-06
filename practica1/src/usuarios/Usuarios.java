@@ -5,10 +5,16 @@ import src.servicios.*;
 public class Usuarios implements Sujeto {
     private String nombre;
     private double saldo;
+    private ArrayList<String> serviciosContratadosNombres;
     private ArrayList<Servicios> serviciosContratados;
     private Hashtable<String, Contratos> contratosDeLosServicios;
     private boolean saldoSuficiente;
 
+    /**
+     * Constructor de la clase Usuarios.
+     * @param  nombre nombre del usuario.
+     * @param  saldo  saldo del usuario.
+     */
     public Usuarios(String nombre, double saldo) {
         this.nombre = nombre;
         this.saldo = saldo;
@@ -16,66 +22,98 @@ public class Usuarios implements Sujeto {
             this.saldoSuficiente = true;
         else
             this.saldoSuficiente = false;
+        serviciosContratadosNombres = new ArrayList<String>();
         serviciosContratados = new ArrayList<Servicios>();
         contratosDeLosServicios = new Hashtable<String, Contratos>();
     }
 
+    /**
+     * Método que notifica a todos los servicios contratos 
+     * si el saldo es suficiente para seguir con la suscripción.
+     * @param saldoSuficiente Indica si el saldo es suficiente para 
+     *                        seguir con la suscripción o no.
+     */
     @Override
     public void notificar(boolean saldoSuficiente) {
         for (Servicios s: this.serviciosContratados)
             s.actualizar(saldoSuficiente, this.nombre);
     }
 
-    public void cobrar(Servicios s) {
-        try {
-            double saldoDespuesDelCobro = this.saldo - getCobro(s);
-            if (saldoDespuesDelCobro < 0) {
-                System.out.println("Saldo insuficiente, " + this.nombre + " se ha cancelado tu contrato de " + 
-                                   s.getClass().getSimpleName() + " para " + getContrato(s) + ".");
-                this.saldoSuficiente = false;
-                notificar(this.saldoSuficiente);
-                removerContrato(s);
-            } else {
-                this.saldo = saldoDespuesDelCobro;
-                System.out.println(this.nombre + ", se te ha cobrado la tarifa de " +
-                                   s.getClass().getSimpleName() + " para " + 
-                                   getContrato(s) + ". Total: $" + getCobro(s) + 
-                                   ". Buen día.");
-                notificar(this.saldoSuficiente);
-            }
-        } catch(NullPointerException npe) {}
+    public void notificarContrato(String nombre) {
+        for (Servicios s: this.serviciosContratados)
+            s.actualizarNuevoUsuario(nombre);
     }
 
+    /**
+     * Método que devuelve el nombre del usuario.
+     * @return Devuelve el nombre del usuario.
+     */
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    /**
+     * Método que consulta el saldo del usuario.
+     * @return Saldo del usuario.
+     */
     public double consultarSaldo() {
         return this.saldo;
     }
 
-    public void cambiarContrato(Servicios s, Contratos contrato) {
-        removerContrato(s);
-        contratarServicio(s, contrato);
+    /**
+     * Método que consulta el nombre del usuario.
+     * @return Nombre del usuario.
+     */
+    public String consultarNombre() {
+        return this.nombre;
     }
 
-    public void removerContrato(Servicios s) {
-        this.contratosDeLosServicios.remove(s.getClass().getSimpleName());
-        this.serviciosContratados.remove(s);
-    }
-
-    public void contratarServicio(Servicios s, Contratos contrato) {
-        this.serviciosContratados.add(s);
-        this.contratosDeLosServicios.put(s.getClass().getSimpleName(), contrato);
-        System.out.println("Bienvenid@ " + this.nombre + " al servicio de " + 
-                           s.getClass().getSimpleName() + " para " + 
-                           contrato.getContrato() + ".");
+    /**
+     * Pone un nuevo saldo al usuario.
+     * @param saldoNuevo nuevo saldo a poner.
+     */
+    public void setSaldo(double saldoNuevo) {
+        this.saldo = saldoNuevo;
+        if (this.saldo > 0)
+            this.saldoSuficiente = true;
+        else
+            this.saldoSuficiente = false;
         notificar(this.saldoSuficiente);
     }
 
-    private String getContrato(Servicios s) {
-        return this.contratosDeLosServicios.get(s.getClass()
-                .getSimpleName()).getContrato();
+    /**
+     * Método que cambia el tipo de contrato.
+     * @param s        Servicio a cambiar contrato.
+     * @param contrato Nuevo contrato.
+     */
+    public void cambiarContrato(Servicios servicio, Contratos contrato) {
+        removerContrato(servicio);
+        contratarServicio(servicio, contrato);
     }
 
-    private double getCobro(Servicios s) {
-        return this.contratosDeLosServicios.get(s.getClass()
-                .getSimpleName()).getCosto();
+    /**
+     * Quita el contrato de un servicio.
+     * @param nombreServicio Nombre del servicio.
+     */
+    public void removerContrato(Servicios servicio) {
+        String nombreServicio = servicio.getNombre();
+        this.contratosDeLosServicios.remove(nombreServicio);
+        this.serviciosContratadosNombres.remove(nombreServicio);
+        this.serviciosContratados.remove(servicio);
+    }
+
+    public void contratarServicio(Servicios servicio, Contratos contrato) {
+        String nombreServicio = servicio.getNombre();
+        this.serviciosContratadosNombres.add(nombreServicio);
+        this.serviciosContratados.add(servicio);
+        this.contratosDeLosServicios.put(nombreServicio, contrato);
+        System.out.println("Bienvenid@ " + this.nombre + " al servicio de " + 
+                           nombreServicio + " para " + 
+                           contrato.getContrato() + ".");
+        notificarContrato(this.nombre);
+    }
+
+    public Contratos getContrato(String nombreServicio) {
+        return this.contratosDeLosServicios.get(nombreServicio);
     }
 }
