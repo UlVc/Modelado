@@ -1,5 +1,5 @@
 package src.servicios;
-import src.usuarios.Usuarios;
+import src.usuarios.Usuario;
 
 public interface ICobrarEstrategia {
     /**
@@ -7,5 +7,5 @@ public interface ICobrarEstrategia {
      * @param usuario  Usuario al que se le va a realizar el cobro.
      * @param nombreDelServicio Nombre del servicio.
      */
-    public double cobrar(Usuarios usuario, String nombreDelServicio);
+    public double cobrar(Usuario usuario, String nombreDelServicio);
 }

@@ -1,12 +1,12 @@
 package src.servicios;
-import src.usuarios.Usuarios;
+import src.usuarios.Usuario;
 import java.util.ArrayList;
 import java.util.Random;
 
 /**
  * Clase de los servicios.
  */
-public class Servicios implements Observador {
+public class Servicio implements Observador {
     private String nombreServicio;
     private String usuario;
     private Random numeroAleatorio;
@@ -36,9 +36,9 @@ public class Servicios implements Observador {
      * Método que cobra al usuario dependiendo de su contrato.
      * @param usuario  Usuario al que se le va a realizar el cobro.
      */
-    public void cobrar(Usuarios usuario) {
+    public void cobrar(Usuario usuario) {
         double saldoFinal = cobrarEstrategia.cobrar(usuario, nombreServicio);
-        Contratos tipoDeContrato = usuario.getContrato(nombreServicio);
+        Contrato tipoDeContrato = usuario.getContrato(nombreServicio);
 
         if (saldoFinal > 0)
             System.out.println(usuario.getNombre() + ", se te ha cobrado la tarifa de " +

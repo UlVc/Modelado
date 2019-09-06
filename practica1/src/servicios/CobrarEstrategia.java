@@ -1,5 +1,5 @@
 package src.servicios;
-import src.usuarios.Usuarios;
+import src.usuarios.Usuario;
 
 /**
  * Clase que encapsula el algoritmo de cobrar.
@@ -12,8 +12,8 @@ public class CobrarEstrategia implements ICobrarEstrategia {
      * @param nombreDelServicio Nombre del servicio.
      */
     @Override
-    public double cobrar(Usuarios usuario, String nombreDelServicio) {
-        Contratos tipoDeContrato = usuario.getContrato(nombreDelServicio);
+    public double cobrar(Usuario usuario, String nombreDelServicio) {
+        Contrato tipoDeContrato = usuario.getContrato(nombreDelServicio);
         double saldoFinal = usuario.consultarSaldo() - tipoDeContrato.getCosto();
         return saldoFinal;
     }

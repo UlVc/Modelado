@@ -3,7 +3,7 @@ package src.servicios;
 /**
  * Enumeración de tipos de contratos.
  */
-public enum Contratos {
+public enum Contrato {
     UNDISPOSITIVO("un dispositivo", 7), DOSDISPOSITIVOS("dos dispositivos", 10), 
     CUATRODISPOSITIVOS("cuatro dispositivos", 15), GRATIS("usuario normal", 0), 
     AMAZONNORMAL("amazon normal", 7), AMAZONPREMIUM("amazon premium", 13),

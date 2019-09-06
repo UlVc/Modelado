@@ -50,6 +50,7 @@ public class Simulacion {
             youtube.mandarMensajes();
         if (servicios.contains(amazon))
             amazon.mandarMensajes();
+        System.out.println();
     }
 
     /**
@@ -108,6 +109,7 @@ public class Simulacion {
         construirServicios();
 
         System.out.println("Día 1");
+        System.out.println();
 
         alicia.contratarServicio(netflix, Contratos.CUATRODISPOSITIVOS);
         alicia.contratarServicio(spotify, Contratos.SPOTIFYPREMIUM);
@@ -139,7 +141,9 @@ public class Simulacion {
 
         mandarMensajes(erika);
 
+        System.out.println();
         System.out.println("Día 2");
+        System.out.println();
 
         cobrarUsuario(alicia);
         cobrarUsuario(bob);
@@ -148,7 +152,9 @@ public class Simulacion {
         erika.cambiarContrato(youtube, Contratos.YOUTUBEPREMIUM);
         cobrarUsuario(erika);
 
+        System.out.println();
         System.out.println("Día 3");
+        System.out.println();
 
         cobrarUsuario(alicia);
         cobrarUsuario(bob);
@@ -158,14 +164,18 @@ public class Simulacion {
         erika.cambiarContrato(amazon, Contratos.AMAZONPREMIUM);
         cobrarUsuario(erika);
 
+        System.out.println();
         System.out.println("Día 4");
+        System.out.println();
 
         cobrarUsuario(alicia);
         cobrarUsuario(bob);
         cobrarUsuario(diego);
         cobrarUsuario(erika);
 
+        System.out.println();
         System.out.println("Día 5");
+        System.out.println();
 
         cobrarUsuario(alicia);
         cobrarUsuario(bob);

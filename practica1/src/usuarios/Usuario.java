@@ -9,7 +9,7 @@ public class Usuarios implements Sujeto {
     private String nombre;
     private double saldo;
     private ArrayList<String> serviciosContratadosNombres;
-    private ArrayList<Servicios> serviciosContratados;
+    private ArrayList<Servicio> serviciosContratados;
     private Hashtable<String, Contratos> contratosDeLosServicios;
     private boolean saldoSuficiente;
 
@@ -26,20 +26,8 @@ public class Usuarios implements Sujeto {
         else
             this.saldoSuficiente = false;
         serviciosContratadosNombres = new ArrayList<String>();
-        serviciosContratados = new ArrayList<Servicios>();
+        serviciosContratados = new ArrayList<Servicio>();
         contratosDeLosServicios = new Hashtable<String, Contratos>();
-    }
-
-    /**
-     * Método que notifica a todos los servicios contratos 
-     * si el saldo es suficiente para seguir con la suscripción.
-     * @param saldoSuficiente Indica si el saldo es suficiente para 
-     *                        seguir con la suscripción o no.
-     */
-    @Override
-    public void notificar(boolean saldoSuficiente) {
-        for (Servicios s: this.serviciosContratados)
-            s.actualizar(saldoSuficiente, this.nombre);
     }
 
     /**
@@ -66,7 +54,11 @@ public class Usuarios implements Sujeto {
         return this.nombre;
     }
 
-    public ArrayList<Servicios> getServiciosContratados() {
+    /**
+     * Devuelve una lista de los servicios contratados.
+     * @return lista de los servicios contratados.
+     */
+    public ArrayList<Servicio> getServiciosContratados() {
         return serviciosContratados;
     }
 
@@ -88,7 +80,7 @@ public class Usuarios implements Sujeto {
      * @param servicio Servicio a cambiar contrato.
      * @param contrato Nuevo contrato.
      */
-    public void cambiarContrato(Servicios servicio, Contratos contrato) {
+    public void cambiarContrato(Servicio servicio, Contratos contrato) {
         removerContrato(servicio);
         contratarServicio(servicio, contrato);
     }
@@ -97,7 +89,7 @@ public class Usuarios implements Sujeto {
      * Quita el contrato de un servicio.
      * @param nombreServicio Nombre del servicio.
      */
-    public void removerContrato(Servicios servicio) {
+    public void removerContrato(Servicio servicio) {
         String nombreServicio = servicio.getNombre();
         this.contratosDeLosServicios.remove(nombreServicio);
         this.serviciosContratadosNombres.remove(nombreServicio);
@@ -109,7 +101,7 @@ public class Usuarios implements Sujeto {
      * @param servicio Servicio a contratar.
      * @param contrato Contrato deseado.
      */
-    public void contratarServicio(Servicios servicio, Contratos contrato) {
+    public void contratarServicio(Servicio servicio, Contratos contrato) {
         String nombreServicio = servicio.getNombre();
         this.serviciosContratadosNombres.add(nombreServicio);
         this.serviciosContratados.add(servicio);
@@ -127,5 +119,17 @@ public class Usuarios implements Sujeto {
      */
     public Contratos getContrato(String nombreServicio) {
         return this.contratosDeLosServicios.get(nombreServicio);
+    }
+
+    /**
+     * Método que notifica a todos los servicios contratos 
+     * si el saldo es suficiente para seguir con la suscripción.
+     * @param saldoSuficiente Indica si el saldo es suficiente para 
+     *                        seguir con la suscripción o no.
+     */
+    @Override
+    public void notificar(boolean saldoSuficiente) {
+        for (Servicio s: this.serviciosContratados)
+            s.actualizar(saldoSuficiente, this.nombre);
     }
 }
