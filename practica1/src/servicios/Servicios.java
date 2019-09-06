@@ -33,20 +33,23 @@ public class Servicios implements Observador {
      * @param usuario  Usuario al que se le va a realizar el cobro.
      */
     public void cobrar(Usuarios usuario) {
-        if (this.usuario != "") {
-            double saldoFinal = cobrarEstrategia.cobrar(usuario, nombreServicio);
-            Contratos tipoDeContrato = usuario.getContrato(nombreServicio);
-            if (saldoFinal > 0)
-                System.out.println(usuario.getNombre() + ", se te ha cobrado la tarifa de " +
-                                   nombreServicio + " para " + 
-                                   tipoDeContrato.getContrato() + ". Total: $" + tipoDeContrato.getCosto() + 
-                                   ". Buen día.");
-            else {
-                System.out.println("Saldo insuficiente, " + usuario.getNombre() + " se ha cancelado tu contrato de " + 
-                                       nombreServicio + " para " + tipoDeContrato.getContrato() + ".");
-            }
-            usuario.setSaldo(saldoFinal);
+        double saldoFinal = cobrarEstrategia.cobrar(usuario, nombreServicio);
+        Contratos tipoDeContrato = usuario.getContrato(nombreServicio);
+
+        if (saldoFinal > 0)
+            System.out.println(usuario.getNombre() + ", se te ha cobrado la tarifa de " +
+                               nombreServicio + " para " + 
+                               tipoDeContrato.getContrato() + ". Total: $" + 
+                               tipoDeContrato.getCosto() + ". Buen día.");
+        else {
+            saldoFinal = usuario.consultarSaldo();
+            System.out.println("Saldo insuficiente, " + usuario.getNombre() +
+                               " se ha cancelado tu contrato de " + nombreServicio + 
+                               " para " + tipoDeContrato.getContrato() + ".");
+            usuario.removerContrato(this);
         }
+
+        usuario.setSaldo(saldoFinal);
     }
 
     /**
@@ -61,8 +64,8 @@ public class Servicios implements Observador {
 
     /**
      * Método que verifica si un usuario aún puede usar los servicios dependiendo de su saldo.
-     * @param saldoSuficiente indica si el usuario tiene saldo positivo.
-     * @param nombre          nombre del usuario.
+     * @param saldoSuficiente Indica si el usuario tiene saldo positivo.
+     * @param nombre          Nombre del usuario.
      */
     @Override
     public void actualizar(boolean saldoSuficiente, String nombre) {
@@ -74,7 +77,7 @@ public class Servicios implements Observador {
 
     /**
      * Método que manda el nombre del nuevo usuario al servicio contratado.
-     * @param nombre          nombre del usuario.
+     * @param nombre nombre del usuario.
      */
     @Override
     public void actualizarNuevoUsuario(String nombre) {

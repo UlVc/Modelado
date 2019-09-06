@@ -24,7 +24,28 @@ public class Simulacion {
      * @param usuario usuario a cobrar.
      */
     public static void cobrarUsuario(Usuarios usuario) {
-        netflix.cobrar(usuario);
+        ArrayList<Servicios> servicios = usuario.getServiciosContratados();
+        if (servicios.contains(netflix))
+            netflix.cobrar(usuario);
+        if (servicios.contains(spotify))
+            spotify.cobrar(usuario);
+        if (servicios.contains(youtube))
+            youtube.cobrar(usuario);
+        if (servicios.contains(amazon))
+            amazon.cobrar(usuario);
+        mandarMensajes(usuario);
+    }
+
+    public static void mandarMensajes(Usuarios usuario) {
+        ArrayList<Servicios> servicios = usuario.getServiciosContratados();
+        if (servicios.contains(netflix))
+            netflix.mandarMensajes();
+        if (servicios.contains(spotify))
+            spotify.mandarMensajes();
+        if (servicios.contains(youtube))
+            youtube.mandarMensajes();
+        if (servicios.contains(amazon))
+            amazon.mandarMensajes();
     }
 
     public static void construirServicios() {
@@ -78,10 +99,70 @@ public class Simulacion {
      */
     public static void main(String []args) {
         construirServicios();
+
+        System.out.println("Día 1");
+
         alicia.contratarServicio(netflix, Contratos.CUATRODISPOSITIVOS);
         alicia.contratarServicio(spotify, Contratos.SPOTIFYPREMIUM);
         alicia.contratarServicio(youtube, Contratos.YOUTUBEPREMIUM);
         alicia.contratarServicio(amazon, Contratos.AMAZONPREMIUM);
 
+        mandarMensajes(alicia);
+
+        bob.contratarServicio(netflix, Contratos.CUATRODISPOSITIVOS);
+        bob.contratarServicio(spotify, Contratos.SPOTIFYPREMIUM);
+        bob.contratarServicio(youtube, Contratos.YOUTUBEPREMIUM);
+        bob.contratarServicio(amazon, Contratos.AMAZONPREMIUM);
+
+        mandarMensajes(bob);
+
+        cesar.contratarServicio(spotify, Contratos.SPOTIFYPREMIUM);
+        cesar.contratarServicio(youtube, Contratos.GRATIS);
+
+        mandarMensajes(cesar);
+
+        diego.contratarServicio(netflix, Contratos.DOSDISPOSITIVOS);
+        diego.contratarServicio(amazon, Contratos.AMAZONPREMIUM);
+
+        mandarMensajes(diego);
+
+        erika.contratarServicio(netflix, Contratos.CUATRODISPOSITIVOS);
+        erika.contratarServicio(spotify, Contratos.GRATIS);
+        erika.contratarServicio(youtube, Contratos.GRATIS);
+
+        mandarMensajes(erika);
+
+        System.out.println("Día 2");
+
+        cobrarUsuario(alicia);
+        cobrarUsuario(bob);
+        cobrarUsuario(diego);
+        erika.cambiarContrato(spotify, Contratos.SPOTIFYPREMIUM);
+        erika.cambiarContrato(youtube, Contratos.YOUTUBEPREMIUM);
+        cobrarUsuario(erika);
+
+        System.out.println("Día 3");
+
+        cobrarUsuario(alicia);
+        cobrarUsuario(bob);
+        cobrarUsuario(diego);
+        diego.contratarServicio(spotify, Contratos.GRATIS);
+        erika.removerContrato(netflix);
+        erika.cambiarContrato(amazon, Contratos.AMAZONPREMIUM);
+        cobrarUsuario(erika);
+
+        System.out.println("Día 4");
+
+        cobrarUsuario(alicia);
+        cobrarUsuario(bob);
+        cobrarUsuario(diego);
+        cobrarUsuario(erika);
+
+        System.out.println("Día 5");
+
+        cobrarUsuario(alicia);
+        cobrarUsuario(bob);
+        cobrarUsuario(diego);
+        cobrarUsuario(erika);
     }
 }

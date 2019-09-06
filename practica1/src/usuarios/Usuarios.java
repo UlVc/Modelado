@@ -2,6 +2,9 @@ package src.usuarios;
 import java.util.*;
 import src.servicios.*;
 
+/**
+ * Clase de Usuarios.
+ */
 public class Usuarios implements Sujeto {
     private String nombre;
     private double saldo;
@@ -44,6 +47,10 @@ public class Usuarios implements Sujeto {
             s.actualizarNuevoUsuario(nombre);
     }
 
+    public void test() {
+        System.out.println(serviciosContratados);
+    }
+
     /**
      * Método que devuelve el nombre del usuario.
      * @return Devuelve el nombre del usuario.
@@ -68,13 +75,17 @@ public class Usuarios implements Sujeto {
         return this.nombre;
     }
 
+    public ArrayList<Servicios> getServiciosContratados() {
+        return serviciosContratados;
+    }
+
     /**
      * Pone un nuevo saldo al usuario.
      * @param saldoNuevo nuevo saldo a poner.
      */
     public void setSaldo(double saldoNuevo) {
         this.saldo = saldoNuevo;
-        if (this.saldo > 0)
+        if (saldoNuevo > 0)
             this.saldoSuficiente = true;
         else
             this.saldoSuficiente = false;
@@ -83,7 +94,7 @@ public class Usuarios implements Sujeto {
 
     /**
      * Método que cambia el tipo de contrato.
-     * @param s        Servicio a cambiar contrato.
+     * @param servicio Servicio a cambiar contrato.
      * @param contrato Nuevo contrato.
      */
     public void cambiarContrato(Servicios servicio, Contratos contrato) {
@@ -102,6 +113,11 @@ public class Usuarios implements Sujeto {
         this.serviciosContratados.remove(servicio);
     }
 
+    /**
+     * Método para contratar servicios.
+     * @param servicio Servicio a contratar.
+     * @param contrato Contrato deseado.
+     */
     public void contratarServicio(Servicios servicio, Contratos contrato) {
         String nombreServicio = servicio.getNombre();
         this.serviciosContratadosNombres.add(nombreServicio);
@@ -113,6 +129,11 @@ public class Usuarios implements Sujeto {
         notificarContrato(this.nombre);
     }
 
+    /**
+     * Método que obtiene el contrato dado el nombre de un servicio.
+     * @param  nombreServicio Nombre del servicio del cúal se busca el contrato.
+     * @return                Contrato del servicio.
+     */
     public Contratos getContrato(String nombreServicio) {
         return this.contratosDeLosServicios.get(nombreServicio);
     }
