@@ -11,10 +11,4 @@ public interface Observador {
      * @param nombre          nombre del usuario.
      */
     public void actualizar(boolean saldoSuficiente, String nombre);
-
-    /**
-     * Método que manda el nombre del nuevo usuario al servicio contratado.
-     * @param nombre          nombre del usuario.
-     */
-    public void actualizarNuevoUsuario(String nombre);
 }

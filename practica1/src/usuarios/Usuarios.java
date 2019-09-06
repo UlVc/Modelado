@@ -15,8 +15,8 @@ public class Usuarios implements Sujeto {
 
     /**
      * Constructor de la clase Usuarios.
-     * @param  nombre nombre del usuario.
-     * @param  saldo  saldo del usuario.
+     * @param nombre nombre del usuario.
+     * @param saldo  saldo del usuario.
      */
     public Usuarios(String nombre, double saldo) {
         this.nombre = nombre;
@@ -40,15 +40,6 @@ public class Usuarios implements Sujeto {
     public void notificar(boolean saldoSuficiente) {
         for (Servicios s: this.serviciosContratados)
             s.actualizar(saldoSuficiente, this.nombre);
-    }
-
-    public void notificarContrato(String nombre) {
-        for (Servicios s: this.serviciosContratados)
-            s.actualizarNuevoUsuario(nombre);
-    }
-
-    public void test() {
-        System.out.println(serviciosContratados);
     }
 
     /**
@@ -126,7 +117,7 @@ public class Usuarios implements Sujeto {
         System.out.println("Bienvenid@ " + this.nombre + " al servicio de " + 
                            nombreServicio + " para " + 
                            contrato.getContrato() + ".");
-        notificarContrato(this.nombre);
+        notificar(true);
     }
 
     /**

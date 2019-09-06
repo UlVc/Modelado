@@ -36,6 +36,10 @@ public class Simulacion {
         mandarMensajes(usuario);
     }
 
+    /**
+     * Método que manda mensajes personalizados.
+     * @param usuario Usuario al cual se le van a mandar los mensajes.
+     */
     public static void mandarMensajes(Usuarios usuario) {
         ArrayList<Servicios> servicios = usuario.getServiciosContratados();
         if (servicios.contains(netflix))
@@ -48,6 +52,9 @@ public class Simulacion {
             amazon.mandarMensajes();
     }
 
+    /**
+     * Método que inicializa todos los servicios.
+     */
     public static void construirServicios() {
         ArrayList<String> mensajesNetflix = new ArrayList<String>();
         mensajesNetflix.add(", te sugerimos que veas Star Wars episodio XIII.");

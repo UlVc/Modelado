@@ -24,6 +24,10 @@ public class Servicios implements Observador {
         this.numeroAleatorio = new Random();
     }
 
+    /**
+     * Devuelve el nombre del servicio.
+     * @return nombre del servicio.
+     */
     public String getNombre() {
         return this.nombreServicio;
     }
@@ -73,15 +77,6 @@ public class Servicios implements Observador {
             this.usuario = nombre;
         else
             this.usuario = "";
-    }
-
-    /**
-     * Método que manda el nombre del nuevo usuario al servicio contratado.
-     * @param nombre nombre del usuario.
-     */
-    @Override
-    public void actualizarNuevoUsuario(String nombre) {
-        this.usuario = nombre;
     }
 
     /**
