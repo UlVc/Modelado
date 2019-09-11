@@ -5,12 +5,12 @@ import src.servicios.*;
 /**
  * Clase de Usuarios.
  */
-public class Usuarios implements Sujeto {
+public class Usuario implements Sujeto {
     private String nombre;
     private double saldo;
     private ArrayList<String> serviciosContratadosNombres;
     private ArrayList<Servicio> serviciosContratados;
-    private Hashtable<String, Contratos> contratosDeLosServicios;
+    private Hashtable<String, Contrato> contratosDeLosServicios;
     private boolean saldoSuficiente;
 
     /**
@@ -18,7 +18,7 @@ public class Usuarios implements Sujeto {
      * @param nombre nombre del usuario.
      * @param saldo  saldo del usuario.
      */
-    public Usuarios(String nombre, double saldo) {
+    public Usuario(String nombre, double saldo) {
         this.nombre = nombre;
         this.saldo = saldo;
         if (saldo > 0)
@@ -27,7 +27,7 @@ public class Usuarios implements Sujeto {
             this.saldoSuficiente = false;
         serviciosContratadosNombres = new ArrayList<String>();
         serviciosContratados = new ArrayList<Servicio>();
-        contratosDeLosServicios = new Hashtable<String, Contratos>();
+        contratosDeLosServicios = new Hashtable<String, Contrato>();
     }
 
     /**
@@ -80,7 +80,7 @@ public class Usuarios implements Sujeto {
      * @param servicio Servicio a cambiar contrato.
      * @param contrato Nuevo contrato.
      */
-    public void cambiarContrato(Servicio servicio, Contratos contrato) {
+    public void cambiarContrato(Servicio servicio, Contrato contrato) {
         removerContrato(servicio);
         contratarServicio(servicio, contrato);
     }
@@ -101,7 +101,7 @@ public class Usuarios implements Sujeto {
      * @param servicio Servicio a contratar.
      * @param contrato Contrato deseado.
      */
-    public void contratarServicio(Servicio servicio, Contratos contrato) {
+    public void contratarServicio(Servicio servicio, Contrato contrato) {
         String nombreServicio = servicio.getNombre();
         this.serviciosContratadosNombres.add(nombreServicio);
         this.serviciosContratados.add(servicio);
@@ -117,12 +117,12 @@ public class Usuarios implements Sujeto {
      * @param  nombreServicio Nombre del servicio del cúal se busca el contrato.
      * @return                Contrato del servicio.
      */
-    public Contratos getContrato(String nombreServicio) {
+    public Contrato getContrato(String nombreServicio) {
         return this.contratosDeLosServicios.get(nombreServicio);
     }
 
     /**
-     * Método que notifica a todos los servicios contratos 
+     * Método que notifica a todos los servicios contratados.
      * si el saldo es suficiente para seguir con la suscripción.
      * @param saldoSuficiente Indica si el saldo es suficiente para 
      *                        seguir con la suscripción o no.

@@ -17,7 +17,7 @@ public class Servicio implements Observador {
      * Constructor de la clase Servicios.
      * @param  nombreServicio nombre del servicio.
      */
-    public Servicios(String nombreServicio, ArrayList<String> mensajes) {
+    public Servicio(String nombreServicio, ArrayList<String> mensajes) {
         this.nombreServicio = nombreServicio;
         this.mensajes = mensajes;
         this.cobrarEstrategia = new CobrarEstrategia();

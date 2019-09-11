@@ -17,7 +17,7 @@ public enum Contrato {
      * @param  contrato nombre del contrato por contratar.
      * @param  costo    costo del contrato.
      */
-    private Contratos(String contrato, int costo) {
+    private Contrato(String contrato, int costo) {
         this.contrato = contrato;
         this.costo = costo;
     }
