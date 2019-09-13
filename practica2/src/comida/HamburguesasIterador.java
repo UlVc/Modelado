@@ -2,6 +2,9 @@ package src.comida;
 
 import java.util.Iterator;
 
+/**
+ * Clase para iterar el menú de las hamburguesas.
+ */
 public class HamburguesasIterador implements Iterator {
     ItemMenu[] comidas;
     int posicion = 0;
@@ -26,6 +29,10 @@ public class HamburguesasIterador implements Iterator {
         return null;
     }
 
+    /**
+     * Método que dice si hay siguiente elemento o no.
+     * @return hay siguiente elemento o no.
+     */
     @Override
     public boolean hasNext() {
         if (posicion >= comidas.length || comidas[posicion] == null)

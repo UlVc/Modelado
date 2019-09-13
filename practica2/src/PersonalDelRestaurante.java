@@ -22,6 +22,12 @@ public class PersonalDelRestaurante {
 
     private ArrayList<Menu> menus;
 
+    /**
+     * Constructir de la clase PersonalDelRestaurante
+     * @param  hamburguesas             menú de las hamburguesas.
+     * @param  hamburguesasGustoGerente menú de las hamburguesas que dependen del gusto del gerente.
+     * @param  hamburguesasDeLujo       menú de las hamburguesas de lujo.
+     */
     public PersonalDelRestaurante(Menu hamburguesas, Menu hamburguesasGustoGerente, Menu hamburguesasDeLujo) {
         this.atender = new Atender(this);
         this.cocinar = new Cocinar(this);
@@ -65,9 +71,9 @@ public class PersonalDelRestaurante {
         System.out.println("Poniendo vegetales");
         System.out.println("Poniendo catsup");
         System.out.println("Poniendo pan");
-        System.out.println("\nAquí está su hamburguesa, disfrutela.");
+        System.out.println("\nAquí está su " + comidaSeleccionada.getNombre() + ", " + "disfrutela.");
+
         this.estadoActual = this.suspender;
-        
     }
 
     /**
@@ -95,8 +101,8 @@ public class PersonalDelRestaurante {
     /**
      * Devuelve el estado actual del personal.
      */
-    public void getEstado() {
-        System.out.println(estadoActual.getClass().getSimpleName());
+    public String getEstado() {
+        return estadoActual.getClass().getSimpleName();
     }
 
     /**
@@ -176,6 +182,11 @@ public class PersonalDelRestaurante {
         }
     }
 
+    /**
+     * Método que busca una comida dado su id.
+     * @param  id id de la comida a buscar.
+     * @return    comida encontrada.
+     */
     public ItemMenu buscarComida(int id) {
         Iterator hamburguesasIterator = hamburguesas.crearIterador();
         Iterator hamburguesasGustoGerenteIterator = hamburguesasGustoGerente.crearIterador();
@@ -195,6 +206,12 @@ public class PersonalDelRestaurante {
         return null;
     }
 
+    /**
+     * Método que busca una comida dado su id.
+     * @param  id       id de la comida a buscar.
+     * @param  iterator iterador para recorrer los distintos menús.
+     * @return          comida encontrada.
+     */
     public ItemMenu buscarComida(int id, Iterator iterator) {
         while (iterator.hasNext()) {
             ItemMenu itemMenu = (ItemMenu)iterator.next();

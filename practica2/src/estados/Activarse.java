@@ -1,6 +1,7 @@
 package src.estados;
 
 import src.PersonalDelRestaurante;
+import java.util.Scanner;
 
 /**
  * Clase del estado de activarse.
@@ -29,6 +30,7 @@ public class Activarse implements Estados {
      */
     @Override
     public void suspenderse() {
+        System.out.println("Suspendiendo...");
         pdr.asignarEstado(pdr.getEstadoSuspender());
     }
 
@@ -49,8 +51,10 @@ public class Activarse implements Estados {
         pdr.asignarEstado(pdr.getEstadoAtender());
         System.out.println("Hola, nuestro menú de hoy es:");
         pdr.imprimirMenu();
+        Scanner myObj = new Scanner(System.in);
         System.out.println("\n¿Qué hamburguesa desea? Sólo digame el Id de la comida.");
-        pdr.cocinar(0);
+        int id = myObj.nextInt(); 
+        pdr.cocinar(id);
     }
 
     /**

@@ -49,6 +49,10 @@ public class HamburguesasAlGustoDelGerente implements Menu {
         return comidas.iterator();
     }
 
+    /**
+     * Método que modifica el menú de acuerdo con el gusto del
+     * gerente.
+     */
     private void modificarMenu() {
         Random random = new Random();
         int randomInt = random.nextInt(comidas.size());

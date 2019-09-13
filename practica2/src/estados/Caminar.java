@@ -29,7 +29,7 @@ public class Caminar implements Estados {
      */
     @Override
     public void suspenderse() {
-        System.out.println("Me he suspendido.");
+        System.out.println("Suspendiendo...");
         pdr.asignarEstado(pdr.getEstadoSuspender());
     }
 
@@ -38,7 +38,7 @@ public class Caminar implements Estados {
      */
     @Override
     public void cocinar() {
-        System.out.println("NO puedo cocinar mientras estoy caminando, es peligroso!");
+        System.out.println("No puedo cocinar mientras estoy caminando, es peligroso!");
     }
 
     /**

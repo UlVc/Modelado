@@ -29,7 +29,7 @@ public class Cocinar implements Estados {
      */
     @Override
     public void suspenderse() {
-        System.out.println("NO puedo suspenderme, estoy cocinando para un cliente!");
+        System.out.println("No puedo suspenderme, estoy cocinando para un cliente!");
     }
 
     /**
@@ -53,6 +53,6 @@ public class Cocinar implements Estados {
      */
     @Override
     public void caminar() {
-        System.out.println("NO puedo caminar, estoy cocinando!");
+        System.out.println("No puedo caminar, estoy cocinando!");
     }
 }
