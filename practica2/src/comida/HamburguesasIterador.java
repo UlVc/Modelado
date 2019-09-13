@@ -10,6 +10,11 @@ public class HamburguesasIterador implements Iterator {
         this.comidas = comidas;
     }
 
+    /**
+     * Devuelve el objeto actual dependiendo de la posición y
+     * aumenta la posición en uno.
+     * @return objeto actual dependiendo de la posición.
+     */
     @Override
     public Object next() {
         if (this.hasNext()) {

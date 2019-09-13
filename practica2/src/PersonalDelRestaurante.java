@@ -17,8 +17,9 @@ public class PersonalDelRestaurante {
 
     Menu hamburguesas;
     Menu hamburguesasGustoGerente;
+    Menu hamburguesasDeLujo;
 
-    public PersonalDelRestaurante(Menu hamburguesas, Menu hamburguesasGustoGerente) {
+    public PersonalDelRestaurante(Menu hamburguesas, Menu hamburguesasGustoGerente, Menu hamburguesasDeLujo) {
         this.atender = new Atender(this);
         this.cocinar = new Cocinar(this);
         this.caminar = new Caminar(this);
@@ -28,6 +29,7 @@ public class PersonalDelRestaurante {
 
         this.hamburguesas = hamburguesas;
         this.hamburguesasGustoGerente = hamburguesasGustoGerente;
+        this.hamburguesasDeLujo = hamburguesasDeLujo;
     }
 
     /**
@@ -84,11 +86,14 @@ public class PersonalDelRestaurante {
     public void imprimirMenu() {
         Iterator hamburguesasIterator = hamburguesas.crearIterador();
         Iterator hamburguesasGustoGerenteIterator = hamburguesasGustoGerente.crearIterador();
+        Iterator hamburguesasDeLujoIterator = hamburguesasDeLujo.crearIterador();
 
         System.out.println("---Hamburguesas---" + "\n");
         printItems(hamburguesasIterator);
         System.out.println("\n" + "*** Hamburguesas de hoy ***" + "\n");
         printItems(hamburguesasGustoGerenteIterator);
+        System.out.println("\n" + "$$$ Hamburguesas de lujo $$$" + "\n");
+        printItems(hamburguesasDeLujoIterator);
     }
 
     /**

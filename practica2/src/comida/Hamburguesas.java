@@ -2,13 +2,20 @@ package src.comida;
 
 import java.util.Iterator;
 
+/**
+ * Clase para el menú de las hamburguesas.
+ */
 public class Hamburguesas implements Menu {
-    static final int MAX_ITEMS = 4;
-    ItemMenu[] menuItems;
+    static final int MAXIMO_DE_COMIDAS = 4;
+    ItemMenu[] comidas;
     private int numeroDeItems;
 
+    /**
+     * Constructor para las hamburguesas.
+     * Se añaden hamburguesas al menú.
+     */
     public Hamburguesas() {
-        menuItems = new ItemMenu[MAX_ITEMS];
+        this.comidas = new ItemMenu[this.MAXIMO_DE_COMIDAS];
         agregarComida("Hamburguesa aburrida", "Hamburguesa que contiene dos rebanadas de pan y un pedazo de carne.", 0, false, false);
         agregarComida("Hamburguesa aburrida para vegetarianos", "Hamburguesa que contiene dos rebanadas de pan, dos rebanadas de jitomate y un pedazo de lechuga.", 1, false, true);
         agregarComida("El paraiso", "Hamburguesa que contiene 4 rebanadas de pan, 3 pedazos de carne, salsa BBQ, mucha lechuga, aros de cebolla y papas fritas", 3, true, false);
@@ -26,11 +33,11 @@ public class Hamburguesas implements Menu {
     @Override
     public void agregarComida(String nombre, String descripcion, int id, 
                               boolean tieneQueso, boolean esVegetariano) {
-        if (numeroDeItems < MAX_ITEMS) {
+        if (this.numeroDeItems < this.MAXIMO_DE_COMIDAS) {
             ItemMenu nuevaComida = new ItemMenu(nombre, descripcion, id, 
                                                 tieneQueso, esVegetariano);
-            menuItems[numeroDeItems] = nuevaComida;
-            numeroDeItems += 1; 
+            this.comidas[this.numeroDeItems] = nuevaComida;
+            this.numeroDeItems += 1; 
         } else {
             System.out.println("Ya no se pueden agregar más comidas.");
         }
@@ -42,6 +49,6 @@ public class Hamburguesas implements Menu {
      */
     @Override
     public Iterator crearIterador() {
-        return new HamburguesasIterador(menuItems);
+        return new HamburguesasIterador(this.comidas);
     }
 }

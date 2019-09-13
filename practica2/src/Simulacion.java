@@ -7,8 +7,9 @@ public class Simulacion {
     public static void main(String []args) {
         Hamburguesas hamburguesas = new Hamburguesas();
         HamburguesasAlGustoDelGerente hamburguesasGerencia = new HamburguesasAlGustoDelGerente();
+        HamburguesasEspeciales hamburguesasDeLujo = new HamburguesasEspeciales();
 
-        PersonalDelRestaurante robot = new PersonalDelRestaurante(hamburguesas, hamburguesasGerencia);
+        PersonalDelRestaurante robot = new PersonalDelRestaurante(hamburguesas, hamburguesasGerencia, hamburguesasDeLujo);
         robot.imprimirMenu();
     }
 }
