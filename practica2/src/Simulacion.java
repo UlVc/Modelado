@@ -10,6 +10,9 @@ public class Simulacion {
         HamburguesasEspeciales hamburguesasDeLujo = new HamburguesasEspeciales();
 
         PersonalDelRestaurante robot = new PersonalDelRestaurante(hamburguesas, hamburguesasGerencia, hamburguesasDeLujo);
-        robot.imprimirMenu();
+        robot.atender();
+        robot.activar();
+        robot.atender();
+        robot.getEstado();
     }
 }

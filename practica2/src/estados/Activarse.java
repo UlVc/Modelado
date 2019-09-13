@@ -18,11 +18,16 @@ public class Activarse implements Estados {
     }
 
     public void cocinar() {
+        System.out.println("Se ha asignado esta tarea");
         pdr.asignarEstado(pdr.getEstadoCocinar());
     }
 
     public void atender() {
         pdr.asignarEstado(pdr.getEstadoAtender());
+        System.out.println("Hola, nuestro menú de hoy es:");
+        pdr.imprimirMenu();
+        System.out.println("\n¿Qué hamburguesa desea? Sólo digame el Id de la comida.");
+        pdr.cocinar(0);
     }
 
     public void caminar() {

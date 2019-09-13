@@ -1,6 +1,7 @@
 package src.comida;
 
 import java.util.Iterator;
+import java.util.ArrayList;
 
 /**
  * Clase para el menú de las hamburguesas.
@@ -16,9 +17,10 @@ public class Hamburguesas implements Menu {
      */
     public Hamburguesas() {
         this.comidas = new ItemMenu[this.MAXIMO_DE_COMIDAS];
+
         agregarComida("Hamburguesa aburrida", "Hamburguesa que contiene dos rebanadas de pan y un pedazo de carne.", 0, false, false);
         agregarComida("Hamburguesa aburrida para vegetarianos", "Hamburguesa que contiene dos rebanadas de pan, dos rebanadas de jitomate y un pedazo de lechuga.", 1, false, true);
-        agregarComida("El paraiso", "Hamburguesa que contiene 4 rebanadas de pan, 3 pedazos de carne, salsa BBQ, mucha lechuga, aros de cebolla y papas fritas", 3, true, false);
+        agregarComida("El paraiso", "Hamburguesa que contiene 4 rebanadas de pan, 3 pedazos de carne, salsa BBQ, mucha lechuga, aros de cebolla y papas fritas", 2, true, false);
         agregarComida("Hamburguesa simple", "Hamburguesa que contiene 2 rebanadas de pan, 1 pedazo de carne, salsa BBQ, lechuga, jitomate, aros de cebolla y papas fritas", 3, true, false);
     }
 

@@ -44,10 +44,26 @@ public class ItemMenu {
     }
 
     /**
+     * Regresa el id de la comida.
+     * @return id de la comida.
+     */
+    public int getId() {
+        return this.id;
+    }
+
+    /**
      * Regresa si la comida es vegetariana o no.
      * @return la comida es vegetariana o no.
      */
-    public boolean esVegatariano() {
+    public boolean esVegatariana() {
         return this.esVegetariano;
+    }
+
+    /**
+     * Regresa si la comida tiene queso o no.
+     * @return la comida tiene queso o no.
+     */
+    public boolean tieneQueso() {
+        return this.tieneQueso;
     }
 }

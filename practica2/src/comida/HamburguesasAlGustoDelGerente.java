@@ -16,10 +16,11 @@ public class HamburguesasAlGustoDelGerente implements Menu {
      */
     public HamburguesasAlGustoDelGerente() {
         this.comidas = new ArrayList<ItemMenu>();
-        agregarComida("Hamburguesa con jamón", "Hamburguesa que contiene dos rebanadas de pan y una rebanada de jamón.", 0, true, false);
-        agregarComida("Hamburguesa de pollo", "Hamburguesa que contiene dos rebanadas de pan, dos rebanadas de jitomate y pollo.", 1, true, true);
-        agregarComida("Hamburguesa Light", "Hamburguesa que contiene 2 rebanadas de pan integral, 1 pedazo de pollo asado, lechuga, cebolla y arroz", 3, true, false);
-        agregarComida("Hamburguesa alta en proteina", "Hamburguesa que contiene 2 rebanadas de pan, 5 pedazos de carne, 1 pedazo de pollo, salsa BBQ, lechuga, jitomate, aros de cebolla y papas fritas", 4, true, false);
+
+        agregarComida("Hamburguesa con jamón", "Hamburguesa que contiene dos rebanadas de pan y una rebanada de jamón.", 4, true, false);
+        agregarComida("Hamburguesa de pollo", "Hamburguesa que contiene dos rebanadas de pan, dos rebanadas de jitomate y pollo.", 5, true, true);
+        agregarComida("Hamburguesa Light", "Hamburguesa que contiene 2 rebanadas de pan integral, 1 pedazo de pollo asado, lechuga, cebolla y arroz", 6, true, false);
+        agregarComida("Hamburguesa alta en proteina", "Hamburguesa que contiene 2 rebanadas de pan, 5 pedazos de carne, 1 pedazo de pollo, salsa BBQ, lechuga, jitomate, aros de cebolla y papas fritas", 7, true, false);
         modificarMenu();
     }
 

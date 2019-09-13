@@ -21,7 +21,6 @@ public class Atender implements Estados {
 
     @Override
     public void cocinar() {
-        // Si tengo la orden del cliente -> cocinar()
         System.out.println("Cocinando, ya tengo la orden del cliente.");
         pdr.asignarEstado(pdr.getEstadoCocinar());
     }
