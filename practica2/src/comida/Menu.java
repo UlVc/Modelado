@@ -2,9 +2,12 @@ package src.comida;
 
 import java.util.Iterator;
 
+/**
+ * Interfaz del menú.
+ */
 public interface Menu {
 
-	/**
+    /**
      * Método para agregar comida al menú.
      * @param nombre        nombre de la comida.
      * @param descripcion   descripción de la comida.
