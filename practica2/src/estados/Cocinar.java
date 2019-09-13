@@ -1,7 +1,13 @@
 package src.estados;
 
+import src.PersonalDelRestaurante;
+
 public class Cocinar implements Estados {
-    PersonalDelRestaurante pdr = PersonalDelRestaurante();
+    PersonalDelRestaurante pdr;
+
+    public Cocinar(PersonalDelRestaurante pdr) {
+        this.pdr = pdr;
+    }
 
     public void activarse() {
         System.out.println("¡Ya estoy activo!");
@@ -11,8 +17,8 @@ public class Cocinar implements Estados {
         System.out.println("NO puedo suspenderme, estoy cocinando para un cliente!");
     }
 
-    public void cocinar(PersonalDelRestaurante pdr) {
-        this.pdr = pdr;
+    public void cocinar() {
+        System.out.println("Ya estoy cocinando, sea paciente.");
     }
 
     public void atender() {

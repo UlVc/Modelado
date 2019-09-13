@@ -1,5 +1,7 @@
 package src.comida;
 
+import java.util.Iterator;
+
 public class HamburguesasIterador implements Iterator {
     ItemMenu[] comidas;
     int posicion = 0;
@@ -15,10 +17,12 @@ public class HamburguesasIterador implements Iterator {
             posicion += 1;
             return item;
         }
+
+        return null;
     }
 
-     @Override
-     public boolean hasNext() {
+    @Override
+    public boolean hasNext() {
         if (posicion >= comidas.length || comidas[posicion] == null)
             return false;
         

@@ -1,10 +1,16 @@
 package src.estados;
 
-public class Activarse implements Estados {
-    PersonalDelRestaurante pdr = PersonalDelRestaurante();
+import src.PersonalDelRestaurante;
 
-    public void activarse(PersonalDelRestaurante pdr) {
+public class Activarse implements Estados {
+    PersonalDelRestaurante pdr;
+
+    public Activarse(PersonalDelRestaurante pdr) {
         this.pdr = pdr;
+    }
+
+    public void activarse() {
+        System.out.println("Ya estoy activo, asigname una actividad.");
     }
 
     public void suspenderse() {

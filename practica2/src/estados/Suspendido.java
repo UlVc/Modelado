@@ -1,15 +1,21 @@
 package src.estados;
 
+import src.PersonalDelRestaurante;
+
 public class Suspendido implements Estados {
-    PersonalDelRestaurante pdr = PersonalDelRestaurante();
+    PersonalDelRestaurante pdr;
+
+    public Suspendido(PersonalDelRestaurante pdr) {
+        this.pdr = pdr;
+    }
 
     public void activarse() {
         System.out.println("Activando...");
         pdr.asignarEstado(pdr.getEstadoActivarse());
     }
 
-    public void suspenderse(PersonalDelRestaurante pdr) {
-        this.pdr = pdr;
+    public void suspenderse() {
+        System.out.println("Ya estoy suspendido, activame!");
     }
 
     public void cocinar() {

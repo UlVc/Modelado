@@ -24,7 +24,7 @@ public class ItemMenu {
         return this.descripcion;
     }
 
-    public void esVegatariano() {
-        return esVegatariano;
+    public boolean esVegatariano() {
+        return this.esVegetariano;
     }
 }

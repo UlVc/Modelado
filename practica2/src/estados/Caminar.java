@@ -1,7 +1,13 @@
 package src.estados;
 
+import src.PersonalDelRestaurante;
+
 public class Caminar implements Estados {
-    PersonalDelRestaurante pdr = PersonalDelRestaurante();
+    PersonalDelRestaurante pdr;
+
+    public Caminar(PersonalDelRestaurante pdr) {
+        this.pdr = pdr;
+    }
 
     public void activarse() {
         System.out.println("¡Ya estoy activo!");
@@ -21,6 +27,6 @@ public class Caminar implements Estados {
     }
 
     public void caminar() {
-        this.pdr = pdr;
+        System.out.println("Ya estoy caminando.");
     }
 }
