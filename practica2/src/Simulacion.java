@@ -18,10 +18,10 @@ public class Simulacion {
         boolean seguir = true;
 
         while(seguir) {
-            Scanner myObj = new Scanner(System.in);
+            Scanner entrada = new Scanner(System.in);
 
             System.out.println("\n-+-+ Bienvenido al restaurante McBurguesas +-+-");
-            System.out.println("º El estado actual del robot es: " + robot.getEstado());
+            System.out.println("º El estado actual del robot es: " + robot.getEstado() + ". º");
             System.out.println("\n¿Qué desea hacer?\n");
             System.out.println("Opción 1: Activar al robot.");
             System.out.println("Opción 2: Suspender al robot.");
@@ -30,7 +30,7 @@ public class Simulacion {
             System.out.println("Opción 5: Salir");
 
             try {
-                int opcion = myObj.nextInt();
+                int opcion = entrada.nextInt();
                 
                 if (opcion == 1)
                     robot.activar();

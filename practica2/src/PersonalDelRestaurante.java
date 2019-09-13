@@ -33,7 +33,7 @@ public class PersonalDelRestaurante {
         this.cocinar = new Cocinar(this);
         this.caminar = new Caminar(this);
         this.suspender = new Suspendido(this);
-        this.activarse = new Activarse(this);
+        this.activarse = new Activo(this);
         this.estadoActual = this.suspender;
 
         this.hamburguesas = hamburguesas;
@@ -59,21 +59,26 @@ public class PersonalDelRestaurante {
      */
     public void cocinar(int id) {
         ItemMenu comidaSeleccionada = this.buscarComida(id);
-        System.out.println("Ha seleccionado la siguiente comida: " + comidaSeleccionada.getNombre());
-        estadoActual.cocinar();
-        System.out.println("Poniendo pan");
-        System.out.println("Poniendo mayonesa");
-        System.out.println("Poniendo mostaza");
-        if (!comidaSeleccionada.esVegatariana())
-            System.out.println("Poniendo carne");
-        if (!comidaSeleccionada.tieneQueso())
-            System.out.println("Poniendo queso");
-        System.out.println("Poniendo vegetales");
-        System.out.println("Poniendo catsup");
-        System.out.println("Poniendo pan");
-        System.out.println("\nAquí está su " + comidaSeleccionada.getNombre() + ", " + "disfrutela.");
+        if (comidaSeleccionada == null){
+            System.out.println("Introduzca un id válido.");
+            this.estadoActual = activarse;
+        } else {
+            System.out.println("Ha seleccionado la siguiente comida: " + comidaSeleccionada.getNombre());
+            estadoActual.cocinar();
+            System.out.println("Poniendo pan");
+            System.out.println("Poniendo mayonesa");
+            System.out.println("Poniendo mostaza");
+            if (!comidaSeleccionada.esVegatariana())
+                System.out.println("Poniendo carne");
+            if (!comidaSeleccionada.tieneQueso())
+                System.out.println("Poniendo queso");
+            System.out.println("Poniendo vegetales");
+            System.out.println("Poniendo catsup");
+            System.out.println("Poniendo pan");
+            System.out.println("\nAquí está su " + comidaSeleccionada.getNombre() + ", " + "disfrutela.");
 
-        this.estadoActual = this.suspender;
+            this.estadoActual = this.suspender;
+        }
     }
 
     /**
@@ -161,11 +166,11 @@ public class PersonalDelRestaurante {
         Iterator hamburguesasGustoGerenteIterator = hamburguesasGustoGerente.crearIterador();
         Iterator hamburguesasDeLujoIterator = hamburguesasDeLujo.crearIterador();
 
-        System.out.println("---Hamburguesas---" + "\n");
+        System.out.println("\n---Hamburguesas---" + "\n");
         printItems(hamburguesasIterator);
-        System.out.println("\n" + "*** Hamburguesas de hoy ***" + "\n");
+        System.out.println("\n*** Hamburguesas de hoy ***\n");
         printItems(hamburguesasGustoGerenteIterator);
-        System.out.println("\n" + "$$$ Hamburguesas de lujo $$$" + "\n");
+        System.out.println("\n$$$ Hamburguesas de lujo $$$\n");
         printItems(hamburguesasDeLujoIterator);
     }
 
