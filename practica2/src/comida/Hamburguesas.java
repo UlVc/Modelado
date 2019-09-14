@@ -7,8 +7,8 @@ import java.util.ArrayList;
  * Clase para el menú de las hamburguesas.
  */
 public class Hamburguesas implements Menu {
-    static final int MAXIMO_DE_COMIDAS = 4;
-    ItemMenu[] comidas;
+    private static final int MAXIMO_DE_COMIDAS = 4;
+    private ItemMenu[] comidas;
     private int numeroDeItems;
 
     /**

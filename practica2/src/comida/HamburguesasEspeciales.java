@@ -7,7 +7,7 @@ import java.util.Hashtable;
  * Clase para el menú de las hamburguesas especiales.
  */
 public class HamburguesasEspeciales implements Menu {
-    Hashtable<String, ItemMenu> comidas;
+    private Hashtable<String, ItemMenu> comidas;
 
     /**
      * Constructor del menú.

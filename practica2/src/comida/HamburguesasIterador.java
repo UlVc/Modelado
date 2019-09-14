@@ -6,8 +6,8 @@ import java.util.Iterator;
  * Clase para iterar el menú de las hamburguesas.
  */
 public class HamburguesasIterador implements Iterator {
-    ItemMenu[] comidas;
-    int posicion = 0;
+    private ItemMenu[] comidas;
+    private int posicion = 0;
 
     public HamburguesasIterador(ItemMenu[] comidas) {
         this.comidas = comidas;

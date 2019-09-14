@@ -1,12 +1,14 @@
 package src.estados;
 
 import src.PersonalDelRestaurante;
+import java.util.Scanner;
+import java.util.NoSuchElementException;
 
 /**
  * Clase del estado de Caminar.
  */
 public class Caminar implements Estados {
-    PersonalDelRestaurante pdr;
+    private PersonalDelRestaurante pdr;
 
     /**
      * Constructor de la clase Caminar.
@@ -30,7 +32,7 @@ public class Caminar implements Estados {
     @Override
     public void suspenderse() {
         System.out.println("Suspendiendo...");
-        pdr.asignarEstado(pdr.getEstadoSuspender());
+        this.pdr.asignarEstado(pdr.getEstadoSuspender());
     }
 
     /**
@@ -38,7 +40,7 @@ public class Caminar implements Estados {
      */
     @Override
     public void cocinar() {
-        System.out.println("No puedo cocinar mientras estoy caminando, es peligroso!");
+        System.out.println("No puedo cocinar mientras estoy caminando, ¡es peligroso!");
     }
 
     /**
@@ -46,7 +48,19 @@ public class Caminar implements Estados {
      */
     @Override
     public void atender() {
-        System.out.println("Hola, ¿en qué lo puedo ayudar?");
+        this.pdr.asignarEstado(pdr.getEstadoAtender());
+        this.pdr.imprimeEstado();
+        System.out.println("\nHola, nuestro menú de hoy es:\n");
+        this.pdr.imprimirMenu();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\n¿Qué hamburguesa desea? Sólo digame el Id de la comida.");
+        try {
+            int id = scanner.nextInt();
+            this.pdr.cocinar(id);
+        } catch(NoSuchElementException nsee) {
+            System.out.println("\n¡Introduzca un número!\n");
+            this.atender();
+        }
     }
 
     /**

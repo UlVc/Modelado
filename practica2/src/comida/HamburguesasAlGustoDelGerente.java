@@ -8,7 +8,7 @@ import java.util.Random;
  * Clase del menú que cambia cada día.
  */
 public class HamburguesasAlGustoDelGerente implements Menu {
-    ArrayList<ItemMenu> comidas;
+    private ArrayList<ItemMenu> comidas;
 
     /**
      * Constructor del menú.

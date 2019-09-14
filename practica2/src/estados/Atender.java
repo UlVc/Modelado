@@ -6,7 +6,7 @@ import src.PersonalDelRestaurante;
  * Clase del estado de Atender.
  */
 public class Atender implements Estados {
-    PersonalDelRestaurante pdr;
+    private PersonalDelRestaurante pdr;
 
     /**
      * Constructor de la clase Atender.
@@ -29,7 +29,7 @@ public class Atender implements Estados {
      */
     @Override
     public void suspenderse() {
-        System.out.println("No puedo suspenderme, estoy atendiendo a un cliente!");
+        System.out.println("No puedo suspenderme, ¡estoy atendiendo a un cliente!");
     }
 
     /**
@@ -54,6 +54,6 @@ public class Atender implements Estados {
      */
     @Override
     public void caminar() {
-        System.out.println("No puedo caminar, estoy atendiendo a un cliente!");
+        System.out.println("No puedo caminar, ¡estoy atendiendo a un cliente!");
     }
 }

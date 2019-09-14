@@ -6,7 +6,7 @@ import src.PersonalDelRestaurante;
  * Clase del estado de Suspendido.
  */
 public class Suspendido implements Estados {
-    PersonalDelRestaurante pdr;
+    private PersonalDelRestaurante pdr;
 
     /**
      * Constructor de la clase Suspendido.
@@ -22,7 +22,13 @@ public class Suspendido implements Estados {
     @Override
     public void activarse() {
         System.out.println("Activando...");
-        pdr.asignarEstado(pdr.getEstadoActivarse());
+        this.pdr.asignarEstado(pdr.getEstadoActivarse());
+        this.pdr.imprimeEstado();
+        System.out.println("Caminando hacia el cliente...");
+        this.pdr.caminar();
+        this.pdr.imprimeEstado();
+        System.out.println("Ya estoy al frente del usuario.");
+        this.pdr.atender();
     }
 
     /**
@@ -30,7 +36,7 @@ public class Suspendido implements Estados {
      */
     @Override
     public void suspenderse() {
-        System.out.println("Ya estoy suspendido, activame!");
+        System.out.println("Ya estoy suspendido, ¡actívame!");
     }
 
     /**
@@ -38,7 +44,7 @@ public class Suspendido implements Estados {
      */
     @Override
     public void cocinar() {
-        System.out.println("Primero activame.");
+        System.out.println("Primero actívame.");
     }
 
     /**
@@ -46,7 +52,7 @@ public class Suspendido implements Estados {
      */
     @Override
     public void atender() {
-        System.out.println("Primero activame.");
+        System.out.println("Primero actívame.");
     }
 
     /**
@@ -54,6 +60,6 @@ public class Suspendido implements Estados {
      */
     @Override
     public void caminar() {
-        System.out.println("Primero activame.");
+        System.out.println("Primero actívame.");
     }
 }

@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
  * Clase del estado de activarse.
  */
 public class Activo implements Estados {
-    PersonalDelRestaurante pdr;
+    private PersonalDelRestaurante pdr;
 
     /**
      * Constructor de la clase Activo.
@@ -32,7 +32,7 @@ public class Activo implements Estados {
     @Override
     public void suspenderse() {
         System.out.println("Suspendiendo...");
-        pdr.asignarEstado(pdr.getEstadoSuspender());
+        this.pdr.asignarEstado(pdr.getEstadoSuspender());
     }
 
     /**
@@ -48,18 +48,8 @@ public class Activo implements Estados {
      */
     @Override
     public void atender() {
-        pdr.asignarEstado(pdr.getEstadoAtender());
-        System.out.println("\nHola, nuestro menú de hoy es:\n");
-        pdr.imprimirMenu();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("\n¿Qué hamburguesa desea? Sólo digame el Id de la comida.");
-        try {
-            int id = scanner.nextInt();
-            pdr.cocinar(id);
-        } catch(NoSuchElementException nsee) {
-            System.out.println("\n¡Introduzca un número!\n");
-            this.atender();
-        }
+        this.caminar();
+        this.pdr.atender();
     }
 
     /**
@@ -68,6 +58,6 @@ public class Activo implements Estados {
     @Override
     public void caminar() {
         System.out.println("Caminando...");
-        pdr.asignarEstado(pdr.getEstadoCaminar());
+        this.pdr.asignarEstado(pdr.getEstadoCaminar());
     }
 }

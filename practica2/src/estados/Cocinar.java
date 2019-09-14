@@ -6,7 +6,7 @@ import src.PersonalDelRestaurante;
  * Clase del estado de Cocinar.
  */
 public class Cocinar implements Estados {
-    PersonalDelRestaurante pdr;
+    private PersonalDelRestaurante pdr;
 
     /**
      * Constructor de la clase Cocinar.

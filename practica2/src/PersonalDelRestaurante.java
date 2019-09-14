@@ -99,7 +99,6 @@ public class PersonalDelRestaurante {
      * Método para hacer caminar a el personal.
      */
     public void caminar() {
-        System.out.println("Voy enseguida a atenderle.");
         estadoActual.caminar();
     }
 
@@ -108,6 +107,14 @@ public class PersonalDelRestaurante {
      */
     public String getEstado() {
         return estadoActual.getClass().getSimpleName();
+    }
+
+    /**
+     * Imprime el estado actual del personal.
+     */
+    public void imprimeEstado() {
+        System.out.println("Estado del robot: " + 
+                           estadoActual.getClass().getSimpleName());
     }
 
     /**
@@ -166,19 +173,19 @@ public class PersonalDelRestaurante {
         Iterator hamburguesasGustoGerenteIterator = hamburguesasGustoGerente.crearIterador();
         Iterator hamburguesasDeLujoIterator = hamburguesasDeLujo.crearIterador();
 
-        System.out.println("\n---Hamburguesas---" + "\n");
-        printItems(hamburguesasIterator);
+        System.out.println("\n--- Hamburguesas ---" + "\n");
+        imprimirItems(hamburguesasIterator);
         System.out.println("\n*** Hamburguesas de hoy ***\n");
-        printItems(hamburguesasGustoGerenteIterator);
+        imprimirItems(hamburguesasGustoGerenteIterator);
         System.out.println("\n$$$ Hamburguesas de lujo $$$\n");
-        printItems(hamburguesasDeLujoIterator);
+        imprimirItems(hamburguesasDeLujoIterator);
     }
 
     /**
      * Imprime los submenús dado un iterador.
      * @param iterator iterador para recorrer los submenús.
      */
-    public void printItems(Iterator iterator) {
+    public void imprimirItems(Iterator iterator) {
         while (iterator.hasNext()) {
             ItemMenu itemMenu = (ItemMenu)iterator.next();
             System.out.println("Id: " + itemMenu.getId() + ": " + 
