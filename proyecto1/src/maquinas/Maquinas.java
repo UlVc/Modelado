@@ -1,15 +1,34 @@
 package src.maquinas;
 
-public abstract class Maquinas implements Observador {
+import src.*;
+
+/**
+ * Clase para generalizar las máquinas.
+ * Basado en el principio del patrón de diseno Template.
+ */
+public abstract class Maquinas implements Sujeto {
 
     public ListaIngredientes ingredientes = new ListaIngredientes();
+    private JefeTecnico jefe = new JefeTecnico();
 
+    /**
+     * Método para preparar la receta.
+     */
     public abstract void prepararReceta();
 
+    /**
+     * Método para elegir un molde.
+     */
     public abstract void elegirMolde();
 
+    /**
+     * Método para poner la mezcla.
+     */
     public abstract void ponerMezcla();
 
+    /**
+     * Método para agregar ingredientes extra.
+     */
     public abstract void agregarIngredientesExtra();
 
     /**
@@ -17,7 +36,7 @@ public abstract class Maquinas implements Observador {
      * @param ingrediente ingrediente del cual se agotó en la máquina.
      */
     @Override
-    public void actualizar(String ingrediente) {
-        ingredientes.llenar(ingrediente, 500.0);
+    public void notificar(String ingrediente, ListaIngredientes ingredientes) {
+        jefe.actualizar(ingrediente, ingredientes);
     }
 }

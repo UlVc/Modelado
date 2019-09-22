@@ -15,5 +15,6 @@ public class Simulacion {
         galletaSalada.prepararReceta();
         osoDulce.prepararReceta();
         osoDulce.prepararReceta();
+        System.out.println(osoDulce.ingredientes.ingredientes);
     }
 }

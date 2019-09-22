@@ -2,10 +2,17 @@ package src.maquinas;
 
 import java.util.HashMap;
 
+/**
+ * Clase en la cual guarda los ingredientes para cada comida.
+ */
 public class ListaIngredientes {
 
     public HashMap<String, Double> ingredientes = new HashMap<String, Double>();
 
+    /**
+     * Constructor de la clase ListaIngredientes.
+     * Pone los ingredientes y su cantidad en un diccionario.
+     */
     public ListaIngredientes() {
 
         ingredientes.put("almendras", 500.0);
@@ -32,12 +39,22 @@ public class ListaIngredientes {
         System.out.println(ingredientes);
     }
 
+    /**
+     * Método para usar un ingrediente en especifico y quita cierta cantidad.
+     * @param ingrediente ingrediente el cual se va a usar.
+     * @param cantidad    cantidad a usar del ingrediente.
+     */
     public void usar(String ingrediente, double cantidad) {
         double nuevaCantidad = ingredientes.get(ingrediente) - cantidad;
         ingredientes.remove(ingrediente);
         ingredientes.put(ingrediente, nuevaCantidad);
     }
     
+    /**
+     * Método para reabastecer un cierto ingrediente.
+     * @param ingrediente ingrediente a reabastecer.
+     * @param cantidad    cantidad que se va a reabastecer.
+     */
     public void llenar(String ingrediente, double cantidad) {
         ingredientes.remove(ingrediente);
         ingredientes.put(ingrediente, cantidad);
