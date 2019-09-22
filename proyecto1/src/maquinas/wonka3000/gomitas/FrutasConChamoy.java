@@ -1,4 +1,4 @@
-package src.maquinas;
+package src.maquinas.wonka3000.gomitas;
 
 public class FrutasConChamoy extends Wonka3000 {
 

@@ -1,4 +1,4 @@
-package src.maquinas;
+package src.maquinas.galleneitor5000;
 
 public abstract class Galleneitor5000 extends Maquinas {
 
