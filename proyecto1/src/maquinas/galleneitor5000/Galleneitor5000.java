@@ -1,5 +1,7 @@
 package src.maquinas.galleneitor5000;
 
+import src.maquinas.Maquinas;
+
 public abstract class Galleneitor5000 extends Maquinas {
 
     public final void prepararReceta() {
@@ -9,9 +11,9 @@ public abstract class Galleneitor5000 extends Maquinas {
         agregarIngredientesExtra();
     }
 
-    abstract void cocinarMasa();
+    public abstract void cocinarMasa();
 
-    void elegirMolde() {
+    public void elegirMolde() {
         System.out.println("Poniendo molde de galletas redondas...");
     }
 }

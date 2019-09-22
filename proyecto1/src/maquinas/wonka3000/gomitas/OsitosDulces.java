@@ -1,6 +1,5 @@
 package src.maquinas.wonka3000.gomitas;
 
-import src.maquinas.*;
 import src.maquinas.wonka3000.*;
 
 public class OsitosDulces extends Wonka3000 {

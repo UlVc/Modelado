@@ -2,7 +2,7 @@ package src.maquinas.galleneitor5000.galletas;
 
 import src.maquinas.galleneitor5000.*;
 
-public class GalletasSaladas extends Galleneitor5000 {
+public class GalletasChispas extends Galleneitor5000 {
 
     public void cocinarMasa() {
         System.out.println("Cocinando masa...");
@@ -17,8 +17,8 @@ public class GalletasSaladas extends Galleneitor5000 {
     }
 
     public void agregarIngredientesExtra() {
-        System.out.println("Poniendo sal...");
-        ingredientes.usar("sal", 3.5);
+        System.out.println("Poniendo chispas de chocolate...");
+        ingredientes.usar("chispas_de_chocolate", 7);
     }
 
 }
