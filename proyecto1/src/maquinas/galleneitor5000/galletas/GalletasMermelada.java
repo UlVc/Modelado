@@ -22,7 +22,7 @@ public class GalletasMermelada extends Galleneitor5000 {
      * Método para poner la mezcla.
      */
     public void ponerMezcla() {
-        System.out.println("Poniendo mezcla...");
+        System.out.println("Poniendo mermelada a la masa...");
         ingredientes.usar("mermelada", 3.2);
     }
 

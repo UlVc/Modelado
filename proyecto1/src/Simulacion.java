@@ -12,9 +12,9 @@ public class Simulacion {
     static Maquinas osoDulce = new OsitosDulces();
 
     public static void main(String []args) {
-        galletaSalada.prepararReceta();
-        osoDulce.prepararReceta();
-        osoDulce.prepararReceta();
-        System.out.println(osoDulce.ingredientes.ingredientes);
+        Maquinas osodulce = FabricaMaquinas.getMaquina("wonka3000", "OsitosDulces");
+        Maquinas galletasMermelada = FabricaMaquinas.getMaquina("Galleneitor5000", "galletasMermelada");
+        osodulce.prepararReceta();
+        galletasMermelada.prepararReceta();
     }
 }
