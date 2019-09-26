@@ -5,11 +5,12 @@ import src.maquinas.Maquinas;
 /**
  * Clase de la máquina Wonka3000.
  */
-public abstract class Wonka3000 extends Maquinas {
+public class Wonka3000 extends Maquinas {
 
     /**
      * Método para preparar la receta.
      */
+    @Override
     public final void prepararReceta() {
         elegirMolde();
         ponerMezcla();

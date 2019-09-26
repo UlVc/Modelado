@@ -29,6 +29,6 @@ public class GusanosAcidos extends Wonka3000 {
      */
     public void agregarIngredientesExtra() {
         System.out.println("Agregando azúcar...");
-        ingredientes.usar("saborizante_acido", 9.3);
+        ingredientes.usar("miel_de_saborizante_acido", 9.3);
     }
 }

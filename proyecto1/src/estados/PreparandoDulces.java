@@ -3,17 +3,17 @@ package src.estados;
 import src.maquinas.Maquinas;
 
 /**
- * Clase para el estado Apagada.
+ * Clase para el estado de preparar dulces.
  */
-public class Apagada implements Estados {
+public class PreparandoDulces implements Estados {
 
     private Maquinas maquina;
 
     /**
-     * Constructor de la clase Apagada.
+     * Constructor de la clase PreparandoDulces.
      * @param  maquina nombre de la máquina.
      */
-    public Apagada(Maquinas maquina) {
+    public PreparandoDulces(Maquinas maquina) {
         this.maquina = maquina;
     }
 
@@ -22,7 +22,7 @@ public class Apagada implements Estados {
      */
     @Override
     public void suspenderse() {
-        System.out.println("Máquina apagada, primero actívame.");
+        System.out.println("No me puedo suspender, estoy preparando el lote.");
     }
 
     /**
@@ -30,7 +30,7 @@ public class Apagada implements Estados {
      */
     @Override
     public void apagar() {
-        System.out.println("Ya estoy apagada.");
+        System.out.println("No me puedo apagar, estoy preparando un lote.");
     }
 
     /**
@@ -38,8 +38,7 @@ public class Apagada implements Estados {
      */
     @Override
     public void activar() {
-        System.out.println("Activando máquina...");
-        this.maquina.asignarEstado(this.maquina.getEstadoEncendida());
+        System.out.println("Ya estoy activa.");
     }
 
     /**
@@ -47,7 +46,8 @@ public class Apagada implements Estados {
      */
     @Override
     public void empacar() {
-        System.out.println("Máquina apagada, primero actívame.");
+        System.out.println("Empacando lote...");
+        this.maquina.asignarEstado(this.maquina.getEstadoEncendida());
     }
 
     /**
@@ -55,7 +55,7 @@ public class Apagada implements Estados {
      */
     @Override
     public void prepararDulce() {
-        System.out.println("Máquina apagada, primero actívame.");
+        System.out.println("Ya estoy preparando un lote. sé paciente.");
     }
 
     /**
@@ -63,7 +63,7 @@ public class Apagada implements Estados {
      */
     @Override
     public void reabastecerIngredientes() {
-        System.out.println("Máquina apagada, primero actívame.");
+        System.out.println("No me puedes reabastecer, estoy preparando un lote.");
     }
 
 }

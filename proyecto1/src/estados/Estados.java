@@ -30,4 +30,9 @@ public interface Estados {
      */
     public void prepararDulce();
 
+    /**
+     * Reabastece los ingredientes de la máquina.
+     */
+    public void reabastecerIngredientes();
+
 }
