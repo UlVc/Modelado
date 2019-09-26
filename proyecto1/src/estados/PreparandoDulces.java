@@ -1,19 +1,19 @@
 package src.estados;
 
-import src.maquinas.Maquinas;
+import src.maquinas.Maquina;
 
 /**
  * Clase para el estado de preparar dulces.
  */
 public class PreparandoDulces implements Estados {
 
-    private Maquinas maquina;
+    private Maquina maquina;
 
     /**
      * Constructor de la clase PreparandoDulces.
      * @param  maquina nombre de la máquina.
      */
-    public PreparandoDulces(Maquinas maquina) {
+    public PreparandoDulces(Maquina maquina) {
         this.maquina = maquina;
     }
 
@@ -47,15 +47,16 @@ public class PreparandoDulces implements Estados {
     @Override
     public void empacar() {
         System.out.println("Empacando lote...");
-        this.maquina.asignarEstado(this.maquina.getEstadoEncendida());
+        this.maquina.asignarEstado(this.maquina.getEstadoEmpacando());
     }
 
     /**
      * Pone a prepara dulces a la maquina.
      */
     @Override
-    public void prepararDulce() {
+    public boolean prepararDulce() {
         System.out.println("Ya estoy preparando un lote. sé paciente.");
+        return false;
     }
 
     /**

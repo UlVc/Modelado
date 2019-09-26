@@ -1,19 +1,19 @@
 package src.estados;
 
-import src.maquinas.Maquinas;
+import src.maquinas.Maquina;
 
 /**
  * Clase para el estado Apagada.
  */
 public class Apagada implements Estados {
 
-    private Maquinas maquina;
+    private Maquina maquina;
 
     /**
      * Constructor de la clase Apagada.
      * @param  maquina nombre de la máquina.
      */
-    public Apagada(Maquinas maquina) {
+    public Apagada(Maquina maquina) {
         this.maquina = maquina;
     }
 
@@ -54,8 +54,9 @@ public class Apagada implements Estados {
      * Pone a prepara dulces a la maquina.
      */
     @Override
-    public void prepararDulce() {
+    public boolean prepararDulce() {
         System.out.println("Máquina apagada, primero actívame.");
+        return false;
     }
 
     /**

@@ -28,7 +28,7 @@ public interface Estados {
     /**
      * Pone a prepara dulces a la maquina.
      */
-    public void prepararDulce();
+    public boolean prepararDulce();
 
     /**
      * Reabastece los ingredientes de la máquina.

@@ -1,19 +1,19 @@
 package src.estados;
 
-import src.maquinas.Maquinas;
+import src.maquinas.Maquina;
 
 /**
  * Clase para el estado Suspendida.
  */
 public class Suspendida implements Estados {
 
-    private Maquinas maquina;
+    private Maquina maquina;
 
     /**
      * Constructor de la clase Suspendida.
      * @param  maquina nombre de la máquina.
      */
-    public Suspendida(Maquinas maquina) {
+    public Suspendida(Maquina maquina) {
         this.maquina = maquina;
     }
 
@@ -54,8 +54,10 @@ public class Suspendida implements Estados {
      * Pone a prepara dulces a la maquina.
      */
     @Override
-    public void prepararDulce() {
-        System.out.println("SE PUEDE.");
+    public boolean prepararDulce() {
+        System.out.println("Preparando lote de dulces...");
+        this.maquina.asignarEstado(this.maquina.getEstadoPrepararDulces());
+        return true;
     }
 
     /**

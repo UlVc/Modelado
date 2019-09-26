@@ -5,7 +5,7 @@ import src.maquinas.Maquinas;
 /**
  * Clase de la máquina Wonka3000.
  */
-public class Wonka3000 extends Maquinas {
+public abstract class Wonka3000 extends Maquinas {
 
     /**
      * Método para preparar la receta.

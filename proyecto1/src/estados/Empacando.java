@@ -1,19 +1,19 @@
 package src.estados;
 
-import src.maquinas.Maquinas;
+import src.maquinas.Maquina;
 
 /**
  * Clase para el estado Empacando.
  */
 public class Empacando implements Estados {
 
-    private Maquinas maquina;
+    private Maquina maquina;
 
     /**
      * Constructor de la clase Empacando.
      * @param  maquina nombre de la máquina.
      */
-    public Empacando(Maquinas maquina) {
+    public Empacando(Maquina maquina) {
         this.maquina = maquina;
     }
 
@@ -53,8 +53,9 @@ public class Empacando implements Estados {
      * Pone a prepara dulces a la maquina.
      */
     @Override
-    public void prepararDulce() {
+    public boolean prepararDulce() {
         System.out.println("Ya recibí los dulces a empacar.");
+        return false;
     }
 
     /**
