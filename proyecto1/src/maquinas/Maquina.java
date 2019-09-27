@@ -106,6 +106,7 @@ public class Maquina {
      */
     public ArrayList<String> empacar() {
         estadoActual.empacar();
+
         ArrayList<String> dulces = new ArrayList<String>();
 
         dulces.add(ososDulces.getClass().getSimpleName());
@@ -169,4 +170,8 @@ public class Maquina {
         estadoActual.reabastecerIngredientes();
     }
 
+
+    public void imprimirEstado() {
+        System.out.println(estadoActual);
+    }
 }

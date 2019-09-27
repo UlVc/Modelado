@@ -14,6 +14,7 @@ public class JefeTecnico implements Observador {
      */
     @Override
     public void actualizar(String ingrediente, ListaIngredientes ingredientes) {
+        System.out.println("Reabasteciendo " + ingrediente);
         ingredientes.llenar(ingrediente, 500.0);
     }
 
