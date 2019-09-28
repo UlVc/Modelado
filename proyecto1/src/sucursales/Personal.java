@@ -5,7 +5,8 @@ package src.sucursales;
  */
 public class Personal {
 
-    private String id, rfc, nombre, sucursal, camion;
+    private String id, rfc, nombre, camion;
+    private Sucursal sucursal;
     private int numeroDeLotes;
 
     /**
@@ -41,8 +42,8 @@ public class Personal {
      * Regresa el nombre del personal.
      * @return Regresa el nombre del personal.
      */
-    public String getNombre() {
-        return this.nombre;
+    public Sucursal getSucursal() {
+        return this.sucursal;
     }
 
     /**
@@ -50,9 +51,9 @@ public class Personal {
      * @param sucursal sucursal de destino.
      * @param camion   camión a usar.
      */
-    public void asignarEntrega(String sucursal, String camion) {
+    public void asignarEntrega(Sucursal sucursal, String camion) {
         System.out.println("Se ha asignado a " + this.nombre + 
-                           " la " + sucursal + " en el " + camion);
+                           " la sucursal " + sucursal.getId() + " en el " + camion);
         this.sucursal = sucursal;
         this.camion = camion;
     }

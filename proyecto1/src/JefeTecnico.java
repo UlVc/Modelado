@@ -15,7 +15,7 @@ public class JefeTecnico implements Observador {
 
     private static DulcesRosa dulcesRosa = new DulcesRosa();
     private static ArrayList<String> camiones = new ArrayList<String>();
-    private static ArrayList<String> sucursales = new ArrayList<String>();
+    private static ArrayList<Sucursal> sucursales = new ArrayList<Sucursal>();
 
     public JefeTecnico() {
         camiones.add("Camión 1");
@@ -26,9 +26,7 @@ public class JefeTecnico implements Observador {
         camiones.add("Camión 6");
         camiones.add("Camión 7");
 
-        sucursales.add("Sucursal 1");
-        sucursales.add("Sucursal 2");
-        sucursales.add("Sucursal 3");
+        this.sucursales = dulcesRosa.getSucursales();
     }
 
     /**
@@ -42,10 +40,10 @@ public class JefeTecnico implements Observador {
 
         for (Personal p: repartidores) {
             int numeroSucursal = new Random().nextInt(3);
-            p.asignarEntrega(sucursales.get(numerosAleatoriosSucursales[numeroSucursal]),
+            p.asignarEntrega(sucursales.get(numerosAleatoriosSucursales[numeroSucursal]-1),
                              camiones.get(numerosAleatoriosCamiones[contador]));
             contador += 1;
-        } 
+        }
     }
 
     public Integer[] generarNumerosAleatorios(int max, int numerosNecesitados) {
