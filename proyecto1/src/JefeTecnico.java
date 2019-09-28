@@ -17,6 +17,9 @@ public class JefeTecnico implements Observador {
     private static ArrayList<String> camiones = new ArrayList<String>();
     private static ArrayList<Sucursal> sucursales = new ArrayList<Sucursal>();
 
+    /**
+     * Constructor del JefeTecnico.
+     */
     public JefeTecnico() {
         camiones.add("Camión 1");
         camiones.add("Camión 2");
@@ -31,8 +34,9 @@ public class JefeTecnico implements Observador {
 
     /**
      * Método para repartir los lotes a los repartidores.
+     * @param dulcesEmpaquetados dulces empaquetados.
      */
-    public void repartirLotes() {
+    public void repartirLotes(ArrayList<String> dulcesEmpaquetados) {
         ArrayList<Personal> repartidores = dulcesRosa.getRepartidores();
         Integer[] numerosAleatoriosCamiones = generarNumerosAleatorios(7, 7);
         Integer[] numerosAleatoriosSucursales = generarNumerosAleatorios(3, 3);
@@ -41,12 +45,18 @@ public class JefeTecnico implements Observador {
         for (Personal p: repartidores) {
             int numeroSucursal = new Random().nextInt(3);
             p.asignarEntrega(sucursales.get(numerosAleatoriosSucursales[numeroSucursal]-1),
-                             camiones.get(numerosAleatoriosCamiones[contador]));
+                             camiones.get(numerosAleatoriosCamiones[contador]), 4, dulcesEmpaquetados);
             contador += 1;
         }
     }
 
-    public Integer[] generarNumerosAleatorios(int max, int numerosNecesitados) {
+    /**
+     * Método para generar un arreglo de números aleatorios sin repetición.
+     * @param  max                número máximo que puede tener un número aleatorio.
+     * @param  numerosNecesitados longitud del arreglo.
+     * @return                    arreglo con números aleatorios.
+     */
+    private Integer[] generarNumerosAleatorios(int max, int numerosNecesitados) {
         Random rng = new Random();
         Set<Integer> generated = new LinkedHashSet<Integer>();
 

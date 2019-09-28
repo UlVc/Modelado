@@ -1,5 +1,7 @@
 package src.sucursales;
 
+import java.util.ArrayList;
+
 /**
  * Clase para guardar los datos del personal.
  */
@@ -7,7 +9,7 @@ public class Personal {
 
     private String id, rfc, nombre, camion;
     private Sucursal sucursal;
-    private int numeroDeLotes;
+    private ArrayList<String> dulcesEmpaquetados;
 
     /**
      * Constructor de la clase Personal.
@@ -48,13 +50,44 @@ public class Personal {
 
     /**
      * Método para asignar la entrega al repartidor.
-     * @param sucursal sucursal de destino.
-     * @param camion   camión a usar.
+     * @param sucursal           sucursal de destino.
+     * @param camion             camión a usar.
+     * @param numeroDeLotes      número de lotes.
+     * @param dulcesEmpaquetados dulces empaquetados.
      */
-    public void asignarEntrega(Sucursal sucursal, String camion) {
+    public void asignarEntrega(Sucursal sucursal, String camion, int numeroDeLotes, 
+                               ArrayList<String> dulcesEmpaquetados) {
         System.out.println("Se ha asignado a " + this.nombre + 
                            " la sucursal " + sucursal.getId() + " en el " + camion);
         this.sucursal = sucursal;
         this.camion = camion;
+        this.dulcesEmpaquetados = distribuirLotes(numeroDeLotes, dulcesEmpaquetados);
+        entregarLote(sucursal);
     }
+
+    /**
+     * Método para distribuir los lotes dado el número de lotes.
+     * @param  numeroDeLotes      Número de lotes.
+     * @param  dulcesEmpaquetados ArrayList con el lote de dulces.
+     * @return                    Un ArrayList con el total de dulces empaquetados.
+     */
+    private ArrayList<String> distribuirLotes(int numeroDeLotes, 
+                                             ArrayList<String> dulcesEmpaquetados) {
+        ArrayList<String> nuevosDulces = new ArrayList<String>();
+
+        for (int i = 0; i < numeroDeLotes; i++)
+            for (String s: dulcesEmpaquetados)
+                nuevosDulces.add(s);
+        
+        return nuevosDulces;
+    }
+
+    /**
+     * Método para entregar los lotes a cada sucursal.
+     * @param sucursal Sucursal de destino.
+     */
+    private void entregarLote(Sucursal sucursal) {
+        sucursal.agregarInventario(this.dulcesEmpaquetados);
+    }
+
 }

@@ -9,7 +9,8 @@ public class Sucursal {
 
 	private String id;
     private String direccion;
-    private ArrayList<String> inventario;
+    private ArrayList<String> inventario = new ArrayList<String>();
+    private Repostero repostero = new Repostero();
 
     /**
      * Constructor de la clase SucursalesBBDD.
@@ -39,15 +40,32 @@ public class Sucursal {
     }
 
     /**
-     * Regresa el inventario de la sucursal.
-     * @return Regresa el inventario de la sucursal.
+     * Método para agregar dulces al inventario de la sucursal.
+     * @param inventario ArrayList con los nuevos dulces empaquetados.
      */
-    public ArrayList<String> getInventario() {
-        return this.inventario;
+    public void agregarInventario(ArrayList<String> inventario) {
+        for (String s: inventario)
+            this.inventario.add(s);
+
+        revisarInventario();
     }
 
-    public void setInventario(ArrayList<String> inventario) {
-        this.inventario = inventario;
+    /**
+     * Método para revisar el inventario, si falta algún dulce
+     * se comunica con el repostero y lo repone usando la máquina Wonka3000.
+     */
+    private void revisarInventario() {
+        if (!this.inventario.contains("OsitosDulces"))
+            inventario.add(repostero.pedido("OsitosDulces").getClass().getSimpleName());
+        if (!this.inventario.contains("GusanosAcidos"))
+            inventario.add(repostero.pedido("GusanosAcidos").getClass().getSimpleName());
+        if (!this.inventario.contains("FrutasConChamoy"))
+            inventario.add(repostero.pedido("FrutasConChamoy").getClass().getSimpleName());
+        if (!this.inventario.contains("ChocolateConAlmendras"))
+            inventario.add(repostero.pedido("ChocolateConAlmendras").getClass().getSimpleName());
+        if (!this.inventario.contains("ChocolateConLeche"))
+            inventario.add(repostero.pedido("ChocolateConLeche").getClass().getSimpleName());
+        if (!this.inventario.contains("ChocolateOscuro"))
+            inventario.add(repostero.pedido("ChocolateOscuro").getClass().getSimpleName());
     }
-
 }

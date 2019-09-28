@@ -18,9 +18,8 @@ public class Simulacion {
 
     public static void main(String []args) {
         dulcesEmpaquetados = maquinas.prepararDulces();
-        System.out.println(dulcesEmpaquetados);
         maquinas.apagar();
-        jefeTecnico.repartirLotes();
+        jefeTecnico.repartirLotes(dulcesEmpaquetados);
     }
 
 }
