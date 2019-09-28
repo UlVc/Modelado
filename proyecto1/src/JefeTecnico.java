@@ -1,11 +1,64 @@
 package src;
 
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.Random;
+import java.util.LinkedHashSet;
+
 import src.maquinas.*;
+import src.sucursales.*;
 
 /**
  * Clase para el jefe técnico.
  */
 public class JefeTecnico implements Observador {
+
+    private static DulcesRosa dulcesRosa = new DulcesRosa();
+    private static ArrayList<String> camiones = new ArrayList<String>();
+    private static ArrayList<String> sucursales = new ArrayList<String>();
+
+    public JefeTecnico() {
+        camiones.add("Camión 1");
+        camiones.add("Camión 2");
+        camiones.add("Camión 3");
+        camiones.add("Camión 4");
+        camiones.add("Camión 5");
+        camiones.add("Camión 6");
+        camiones.add("Camión 7");
+
+        sucursales.add("Sucursal 1");
+        sucursales.add("Sucursal 2");
+        sucursales.add("Sucursal 3");
+    }
+
+    /**
+     * Método para repartir los lotes a los repartidores.
+     */
+    public void repartirLotes() {
+        ArrayList<Personal> repartidores = dulcesRosa.getRepartidores();
+        Integer[] numerosAleatoriosCamiones = generarNumerosAleatorios(7, 7);
+        Integer[] numerosAleatoriosSucursales = generarNumerosAleatorios(3, 3);
+        int contador = 0;
+
+        for (Personal p: repartidores) {
+            int numeroSucursal = new Random().nextInt(3);
+            p.asignarEntrega(sucursales.get(numerosAleatoriosSucursales[numeroSucursal]),
+                             camiones.get(numerosAleatoriosCamiones[contador]));
+            contador += 1;
+        } 
+    }
+
+    public Integer[] generarNumerosAleatorios(int max, int numerosNecesitados) {
+        Random rng = new Random();
+        Set<Integer> generated = new LinkedHashSet<Integer>();
+
+        while (generated.size() < numerosNecesitados) {
+            Integer next = rng.nextInt(max) + 1;
+            generated.add(next);
+        }
+
+        return generated.toArray(new Integer[0]);
+    }
 
     /**
      * Método para reabastecer un cierto ingrediente.

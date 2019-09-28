@@ -14,12 +14,13 @@ public class Simulacion {
 
     private static Maquina maquinas = new Maquina();
     private static ArrayList<String> dulcesEmpaquetados = new ArrayList<String>();
+    private static JefeTecnico jefeTecnico = new JefeTecnico();
 
     public static void main(String []args) {
         dulcesEmpaquetados = maquinas.prepararDulces();
         System.out.println(dulcesEmpaquetados);
         maquinas.apagar();
-        maquinas.imprimirEstado();
+        jefeTecnico.repartirLotes();
     }
 
 }
