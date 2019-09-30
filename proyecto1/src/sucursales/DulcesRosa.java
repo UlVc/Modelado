@@ -1,6 +1,7 @@
 package src.sucursales;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Clase para la empresa dulces Rosa.
@@ -9,6 +10,10 @@ public class DulcesRosa {
 
     private ArrayList<Personal> repartidores = new ArrayList<Personal>();
     private ArrayList<Sucursal> sucursales = new ArrayList<Sucursal>();
+
+    private Sucursal s1;
+    private Sucursal s2;
+    private Sucursal s3;
     
     /**
      * Constructor de la clase dulces Rosa.
@@ -22,9 +27,13 @@ public class DulcesRosa {
         repartidores.add(new Personal("6", "0000f", "repartidor6"));
         repartidores.add(new Personal("7", "0000g", "repartidor7"));
 
-        sucursales.add(new Sucursal("1", "dirección 1"));
-        sucursales.add(new Sucursal("2", "dirección 2"));
-        sucursales.add(new Sucursal("3", "dirección 3"));
+        s1 = new Sucursal1("1", "dirección 1");
+        s2 = new Sucursal2("2", "dirección 2");
+        s3 = new Sucursal3("3", "dirección 3");
+
+        sucursales.add(s1);
+        sucursales.add(s2);
+        sucursales.add(s3);
     }
 
     /**
@@ -41,6 +50,31 @@ public class DulcesRosa {
      */
     public ArrayList<Sucursal> getSucursales() {
         return this.sucursales;
+    }
+
+    /**
+     * Método para hacer el reporte global de las sucursales.
+     */
+    public void reporteGlobal() {
+        Iterator sucursal1 = s1.getIterador();
+        Iterator sucursal2 = s2.getIterador();
+        Iterator sucursal3 = s3.getIterador();
+
+        System.out.println("+-+-+- Inventario de la sucursal 1 -+-+-+");
+        reporteGlobal(sucursal1);
+        System.out.println("+-+-+- Inventario de la sucursal 2 -+-+-+");
+        reporteGlobal(sucursal2);
+        System.out.println("+-+-+- Inventario de la sucursal 3 -+-+-+");
+        reporteGlobal(sucursal3);
+    }
+
+    /**
+     * Método privado para iterar el inventario de cada sucursal.
+     * @param iterador iterador del inventario del sucursal.
+     */
+    private void reporteGlobal(Iterator iterador) {
+        while (iterador.hasNext())
+            System.out.println(iterador.next());
     }
 
 }

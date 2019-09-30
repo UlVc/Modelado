@@ -48,6 +48,8 @@ public class JefeTecnico implements Observador {
                              camiones.get(numerosAleatoriosCamiones[contador]), 4, dulcesEmpaquetados);
             contador += 1;
         }
+
+        dulcesRosa.reporteGlobal();
     }
 
     /**
