@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * Clase para guardar los datos de las sucursales..
+ * Clase abstracta para guardar los datos de las sucursales..
  */
 public abstract class Sucursal {
 
