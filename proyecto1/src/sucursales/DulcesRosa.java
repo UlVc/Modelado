@@ -74,7 +74,7 @@ public class DulcesRosa {
      */
     private void reporteGlobal(Iterator iterador) {
         while (iterador.hasNext())
-            System.out.println(iterador.next());
+            System.out.println(iterador.next().getClass().getSimpleName());
     }
 
 }

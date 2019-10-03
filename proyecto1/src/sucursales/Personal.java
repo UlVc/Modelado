@@ -1,6 +1,7 @@
 package src.sucursales;
 
 import java.util.ArrayList;
+import src.maquinas.Maquina;
 
 /**
  * Clase para guardar los datos del personal.
@@ -9,7 +10,7 @@ public class Personal {
 
     private String id, rfc, nombre, camion;
     private Sucursal sucursal;
-    private ArrayList<String> dulcesEmpaquetados;
+    private ArrayList<Maquina> dulcesEmpaquetados;
 
     /**
      * Constructor de la clase Personal.
@@ -56,7 +57,7 @@ public class Personal {
      * @param dulcesEmpaquetados dulces empaquetados.
      */
     public void asignarEntrega(Sucursal sucursal, String camion, int numeroDeLotes, 
-                               ArrayList<String> dulcesEmpaquetados) {
+                               ArrayList<Maquina> dulcesEmpaquetados) {
         System.out.println("Se ha asignado a " + this.nombre + 
                            " la sucursal " + sucursal.getId() + " en el " + camion);
         this.sucursal = sucursal;
@@ -71,13 +72,12 @@ public class Personal {
      * @param  dulcesEmpaquetados ArrayList con el lote de dulces.
      * @return                    Un ArrayList con el total de dulces empaquetados.
      */
-    private ArrayList<String> distribuirLotes(int numeroDeLotes, 
-                                             ArrayList<String> dulcesEmpaquetados) {
-        ArrayList<String> nuevosDulces = new ArrayList<String>();
+    private ArrayList<Maquina> distribuirLotes(int numeroDeLotes, 
+                                             ArrayList<Maquina> dulcesEmpaquetados) {
+        ArrayList<Maquina> nuevosDulces = new ArrayList<Maquina>();
 
         for (int i = 0; i < numeroDeLotes; i++)
-            for (String s: dulcesEmpaquetados)
-                nuevosDulces.add(s);
+            nuevosDulces.addAll(dulcesEmpaquetados);
         
         return nuevosDulces;
     }

@@ -103,23 +103,24 @@ public class Maquina {
 
     /**
      * Poner a empacar la máquina.
+     * @return ArrayList de los dulces.
      */
-    public ArrayList<String> empacar() {
+    public ArrayList<Maquina> empacar() {
         estadoActual.empacar();
 
-        ArrayList<String> dulces = new ArrayList<String>();
+        ArrayList<Maquina> dulces = new ArrayList<Maquina>();
 
-        dulces.add(ososDulces.getClass().getSimpleName());
-        dulces.add(gusanosAcidos.getClass().getSimpleName());
-        dulces.add(frutasChamoy.getClass().getSimpleName());
+        dulces.add(ososDulces);
+        dulces.add(gusanosAcidos);
+        dulces.add(frutasChamoy);
 
-        dulces.add(chocolateAlmendras.getClass().getSimpleName());
-        dulces.add(chocolateLeche.getClass().getSimpleName());
-        dulces.add(chocolateOscuro.getClass().getSimpleName());
+        dulces.add(chocolateAlmendras);
+        dulces.add(chocolateLeche);
+        dulces.add(chocolateOscuro);
 
-        dulces.add(galletasChispas.getClass().getSimpleName());
-        dulces.add(galletasMermelada.getClass().getSimpleName());
-        dulces.add(galletasSaladas.getClass().getSimpleName());
+        dulces.add(galletasChispas);
+        dulces.add(galletasMermelada);
+        dulces.add(galletasSaladas);
 
         this.estadoActual = this.suspendida;
 
@@ -134,9 +135,10 @@ public class Maquina {
     }
 
     /**
-     * Preparar dulces.
+     * Método para preparar dulces.
+     * @return ArrayList de los dulces.
      */
-    public ArrayList<String> prepararDulces() {
+    public ArrayList<Maquina> prepararDulces() {
         if (estadoActual.prepararDulce()) {
             ososDulces.prepararReceta();
             gusanosAcidos.prepararReceta();

@@ -2,13 +2,14 @@ package src.sucursales;
 
 import java.util.Iterator;
 import java.util.ArrayList;
+import src.maquinas.Maquina;
 
 /**
  * Clase de la sucursal 2.
  */
 public class Sucursal1 extends Sucursal {
 
-    private ArrayList<String> inventario = new ArrayList<String>();
+    private ArrayList<Maquina> inventario = new ArrayList<Maquina>();
 
     /**
      * Constructor de la clase Sucursal1.
@@ -34,7 +35,7 @@ public class Sucursal1 extends Sucursal {
      * @param inventario inventario a agregar.
      */
     @Override
-    public void agregarInventario(ArrayList<String> inventario) {
+    public void agregarInventario(ArrayList<Maquina> inventario) {
         this.inventario.addAll(inventario);
     }
 }

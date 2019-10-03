@@ -2,13 +2,14 @@ package src.sucursales;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import src.maquinas.Maquina;
 
 /**
  * Clase abstracta para guardar los datos de las sucursales..
  */
 public abstract class Sucursal {
 
-	protected String id;
+    protected String id;
     protected String direccion;
     private Repostero repostero = new Repostero();
 
@@ -34,7 +35,7 @@ public abstract class Sucursal {
      * Método para agregar dulces al inventario de la sucursal.
      * @param inventario ArrayList con los nuevos dulces empaquetados.
      */
-    public abstract void agregarInventario(ArrayList<String> inventario);
+    public abstract void agregarInventario(ArrayList<Maquina> inventario);
 
     /**
      * Método para revisar el inventario, si falta algún dulce

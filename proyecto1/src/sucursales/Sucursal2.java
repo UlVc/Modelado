@@ -3,13 +3,14 @@ package src.sucursales;
 import java.util.Iterator;
 import java.util.Hashtable;
 import java.util.ArrayList;
+import src.maquinas.Maquina;
 
 /**
  * Clase de la sucursal 2.
  */
 public class Sucursal2 extends Sucursal {
 
-    private Hashtable<Integer, String> inventario = new Hashtable<Integer, String>();
+    private Hashtable<Integer, Maquina> inventario = new Hashtable<Integer, Maquina>();
 
     /**
      * Constructor de la clase Sucursal2.
@@ -35,7 +36,7 @@ public class Sucursal2 extends Sucursal {
      * @param inventario inventario a agregar.
      */
     @Override
-    public void agregarInventario(ArrayList<String> inventario) {
+    public void agregarInventario(ArrayList<Maquina> inventario) {
         for (int i = 0; i < inventario.size(); i++)
             this.inventario.put(i + this.inventario.size(), inventario.get(i));
     }
