@@ -3,14 +3,14 @@ package src.sucursales;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ArrayList;
-import src.maquinas.Maquina;
+import src.maquinas.Dulces;
 
 /**
  * Clase de la sucursal 3.
  */
 public class Sucursal3 extends Sucursal {
 
-    private LinkedList<Maquina> inventario;
+    private LinkedList<Dulces> inventario;
 
     /**
      * Constructor de la clase Sucursal3.
@@ -18,7 +18,7 @@ public class Sucursal3 extends Sucursal {
      * @param  direccion dirección de la sucursal.
      */
     public Sucursal3(String id, String direccion) {
-        inventario = new LinkedList<Maquina>();
+        inventario = new LinkedList<Dulces>();
         this.id = id;
         this.direccion = direccion;
     }
@@ -37,9 +37,17 @@ public class Sucursal3 extends Sucursal {
      * @param inventario inventario a agregar.
      */
     @Override
-    public void agregarInventario(ArrayList<Maquina> inventario) {
-        for (Maquina s: inventario)
-            this.inventario.add(s);
+    public void agregarInventario(ArrayList<Dulces> inventario) {
+        for (Dulces d: inventario)
+            this.inventario.add(d);
+    }
+
+    /**
+     * Método para revisar el inventario, si falta algún dulce
+     * se comunica con el repostero y lo repone usando la máquina Wonka3000.
+     */
+    public void revisarInventario() {
+        System.out.println("d");
     }
 
 }

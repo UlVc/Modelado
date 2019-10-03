@@ -36,7 +36,7 @@ public class JefeTecnico implements Observador {
      * Método para repartir los lotes a los repartidores.
      * @param dulcesEmpaquetados dulces empaquetados.
      */
-    public void repartirLotes(ArrayList<Maquina> dulcesEmpaquetados) {
+    public void repartirLotes(ArrayList<Dulces> dulcesEmpaquetados) {
         ArrayList<Personal> repartidores = dulcesRosa.getRepartidores();
         Integer[] numerosAleatoriosCamiones = generarNumerosAleatorios(7, 7);
         Integer[] numerosAleatoriosSucursales = generarNumerosAleatorios(3, 3);

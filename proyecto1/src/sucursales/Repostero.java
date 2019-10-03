@@ -1,7 +1,7 @@
 package src.sucursales;
 
-import src.maquinas.FabricaMaquinas;
-import src.maquinas.Maquinas;
+import src.maquinas.FabricaDulces;
+import src.maquinas.Dulces;
 
 /**
  * Clase para el repostero de cada sucursal.
@@ -13,8 +13,8 @@ public class Repostero {
      * @param  nombreComida nombre del dulce deseado.
      * @return              dulce deseado.
      */
-    public Maquinas pedido(String nombreComida) {
-        return FabricaMaquinas.getMaquina("wonka3000", nombreComida);
+    public Dulces pedido(String nombreComida) {
+        return FabricaDulces.getMaquina("wonka3000", nombreComida);
     }
 
 }

@@ -8,7 +8,7 @@ import src.maquinas.galleneitor5000.galletas.*;
  * Clase para que la empaquetación sea uniforme.
  * Basada en el patrón de diseño Factory.
  */
-public class FabricaMaquinas {
+public class FabricaDulces {
 
     /**
      * Metodo para crear las máquinas.
@@ -16,7 +16,7 @@ public class FabricaMaquinas {
      * @param  nombreComida comida de la máquina.
      * @return              Máquina descrita que produce la comida deseada.
      */
-    public static Maquinas getMaquina(String maquina, String nombreComida) {
+    public static Dulces getMaquina(String maquina, String nombreComida) {
         
         if ("Wonka3000".equalsIgnoreCase(maquina)) {
             if ("OsitosDulces".equalsIgnoreCase(nombreComida))

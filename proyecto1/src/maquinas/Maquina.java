@@ -18,17 +18,17 @@ public class Maquina {
     private Estados suspendida;
     private Estados estadoActual;
 
-    private static Maquinas ososDulces = FabricaMaquinas.getMaquina("wonka3000", "OsitosDulces");
-    private static Maquinas gusanosAcidos = FabricaMaquinas.getMaquina("wonka3000", "GusanosAcidos");
-    private static Maquinas frutasChamoy = FabricaMaquinas.getMaquina("wonka3000", "FrutasConChamoy");
+    private static Dulces ososDulces = FabricaDulces.getMaquina("wonka3000", "OsitosDulces");
+    private static Dulces gusanosAcidos = FabricaDulces.getMaquina("wonka3000", "GusanosAcidos");
+    private static Dulces frutasChamoy = FabricaDulces.getMaquina("wonka3000", "FrutasConChamoy");
         
-    private static Maquinas chocolateAlmendras = FabricaMaquinas.getMaquina("wonka3000", "ChocolateConAlmendras");
-    private static Maquinas chocolateLeche = FabricaMaquinas.getMaquina("wonka3000", "ChocolateConLeche");
-    private static Maquinas chocolateOscuro = FabricaMaquinas.getMaquina("wonka3000", "ChocolateOscuro");
+    private static Dulces chocolateAlmendras = FabricaDulces.getMaquina("wonka3000", "ChocolateConAlmendras");
+    private static Dulces chocolateLeche = FabricaDulces.getMaquina("wonka3000", "ChocolateConLeche");
+    private static Dulces chocolateOscuro = FabricaDulces.getMaquina("wonka3000", "ChocolateOscuro");
 
-    private static Maquinas galletasChispas = FabricaMaquinas.getMaquina("Galleneitor5000", "GalletasChispas");
-    private static Maquinas galletasMermelada = FabricaMaquinas.getMaquina("Galleneitor5000", "GalletasMermelada");
-    private static Maquinas galletasSaladas = FabricaMaquinas.getMaquina("Galleneitor5000", "GalletasSaladas");
+    private static Dulces galletasChispas = FabricaDulces.getMaquina("Galleneitor5000", "GalletasChispas");
+    private static Dulces galletasMermelada = FabricaDulces.getMaquina("Galleneitor5000", "GalletasMermelada");
+    private static Dulces galletasSaladas = FabricaDulces.getMaquina("Galleneitor5000", "GalletasSaladas");
 
     public Maquina() {
         this.apagada = new Apagada(this);
@@ -105,10 +105,10 @@ public class Maquina {
      * Poner a empacar la máquina.
      * @return ArrayList de los dulces.
      */
-    public ArrayList<Maquina> empacar() {
+    public ArrayList<Dulces> empacar() {
         estadoActual.empacar();
 
-        ArrayList<Maquina> dulces = new ArrayList<Maquina>();
+        ArrayList<Dulces> dulces = new ArrayList<Dulces>();
 
         dulces.add(ososDulces);
         dulces.add(gusanosAcidos);
@@ -138,7 +138,7 @@ public class Maquina {
      * Método para preparar dulces.
      * @return ArrayList de los dulces.
      */
-    public ArrayList<Maquina> prepararDulces() {
+    public ArrayList<Dulces> prepararDulces() {
         if (estadoActual.prepararDulce()) {
             ososDulces.prepararReceta();
             gusanosAcidos.prepararReceta();

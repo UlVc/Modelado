@@ -7,7 +7,7 @@ import src.estados.*;
  * Clase para generalizar las máquinas.
  * Basado en el principio del patrón de diseno Template.
  */
-public abstract class Maquinas extends Maquina implements Sujeto {
+public abstract class Dulces extends Maquina implements Sujeto {
 
     public ListaIngredientes ingredientes = new ListaIngredientes();
     private JefeTecnico jefe = new JefeTecnico();

@@ -11,9 +11,7 @@ public class DulcesRosa {
     private ArrayList<Personal> repartidores = new ArrayList<Personal>();
     private ArrayList<Sucursal> sucursales = new ArrayList<Sucursal>();
 
-    private Sucursal s1;
-    private Sucursal s2;
-    private Sucursal s3;
+    private Sucursal s1, s2, s3;
     
     /**
      * Constructor de la clase dulces Rosa.
@@ -60,11 +58,12 @@ public class DulcesRosa {
         Iterator sucursal2 = s2.getIterador();
         Iterator sucursal3 = s3.getIterador();
 
-        System.out.println("+-+-+- Inventario de la sucursal 1 -+-+-+");
+        System.out.println("\n<---------- Reporte global ---------->");
+        System.out.println("\n+-+-+- Inventario de la sucursal 1 -+-+-+\n");
         reporteGlobal(sucursal1);
-        System.out.println("+-+-+- Inventario de la sucursal 2 -+-+-+");
+        System.out.println("\n+-+-+- Inventario de la sucursal 2 -+-+-+\n");
         reporteGlobal(sucursal2);
-        System.out.println("+-+-+- Inventario de la sucursal 3 -+-+-+");
+        System.out.println("\n+-+-+- Inventario de la sucursal 3 -+-+-+\n");
         reporteGlobal(sucursal3);
     }
 

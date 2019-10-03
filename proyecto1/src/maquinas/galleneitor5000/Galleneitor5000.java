@@ -1,11 +1,11 @@
 package src.maquinas.galleneitor5000;
 
-import src.maquinas.Maquinas;
+import src.maquinas.Dulces;
 
 /**
  * Clase de la máquina Galleneitor5000.
  */
-public abstract class Galleneitor5000 extends Maquinas {
+public abstract class Galleneitor5000 extends Dulces {
 
     /**
      * Método para preparar la receta.
