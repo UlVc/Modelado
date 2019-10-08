@@ -9,7 +9,7 @@ import src.maquinas.Dulces;
  */
 public class Sucursal1 extends Sucursal {
 
-    private ArrayList<Dulces> inventario = new ArrayList<Dulces>();
+    private ArrayList<Dulces> inventario;
 
     /**
      * Constructor de la clase Sucursal1.
@@ -19,6 +19,7 @@ public class Sucursal1 extends Sucursal {
     public Sucursal1(String id, String direccion) {
         this.id = id;
         this.direccion = direccion;
+        this.inventario = new ArrayList<Dulces>();
     }
 
     /**
@@ -37,6 +38,7 @@ public class Sucursal1 extends Sucursal {
     @Override
     public void agregarInventario(ArrayList<Dulces> inventario) {
         this.inventario.addAll(inventario);
+        
         revisarInventario();
     }
 

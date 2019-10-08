@@ -60,9 +60,11 @@ public class Personal {
                                ArrayList<Dulces> dulcesEmpaquetados) {
         System.out.println("Se ha asignado a " + this.nombre + 
                            " la sucursal " + sucursal.getId() + " en el " + camion);
+        
         this.sucursal = sucursal;
         this.camion = camion;
         this.dulcesEmpaquetados = distribuirLotes(numeroDeLotes, dulcesEmpaquetados);
+
         entregarLote(sucursal);
     }
 
@@ -73,7 +75,7 @@ public class Personal {
      * @return                    Un ArrayList con el total de dulces empaquetados.
      */
     private ArrayList<Dulces> distribuirLotes(int numeroDeLotes, 
-                                             ArrayList<Dulces> dulcesEmpaquetados) {
+                                              ArrayList<Dulces> dulcesEmpaquetados) {
         ArrayList<Dulces> nuevosDulces = new ArrayList<Dulces>();
 
         for (int i = 0; i < numeroDeLotes; i++)

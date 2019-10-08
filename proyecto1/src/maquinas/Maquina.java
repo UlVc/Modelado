@@ -172,8 +172,4 @@ public class Maquina {
         estadoActual.reabastecerIngredientes();
     }
 
-
-    public void imprimirEstado() {
-        System.out.println(estadoActual);
-    }
 }

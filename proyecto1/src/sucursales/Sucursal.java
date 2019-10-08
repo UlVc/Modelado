@@ -29,6 +29,10 @@ public abstract class Sucursal {
         return this.direccion;
     }
 
+    /**
+     * Devuelve el iterador de la sucursal.
+     * @return iterador de la sucursal.
+     */
     public abstract Iterator getIterador();
 
     /**

@@ -18,7 +18,7 @@ public class Sucursal3 extends Sucursal {
      * @param  direccion dirección de la sucursal.
      */
     public Sucursal3(String id, String direccion) {
-        inventario = new LinkedList<Dulces>();
+        this.inventario = new LinkedList<Dulces>();
         this.id = id;
         this.direccion = direccion;
     }
@@ -40,6 +40,8 @@ public class Sucursal3 extends Sucursal {
     public void agregarInventario(ArrayList<Dulces> inventario) {
         for (Dulces d: inventario)
             this.inventario.add(d);
+
+        revisarInventario();
     }
 
     /**
@@ -47,7 +49,23 @@ public class Sucursal3 extends Sucursal {
      * se comunica con el repostero y lo repone usando la máquina Wonka3000.
      */
     public void revisarInventario() {
-        System.out.println("d");
+        ArrayList<String> inventarioCadena = new ArrayList<String>();
+
+        for (Dulces d: this.inventario)
+            inventarioCadena.add(d.getClass().getSimpleName());
+
+        if (!inventarioCadena.contains("OsitosDulces"))
+            this.inventario.add(repostero.pedido("OsitosDulces"));
+        if (!inventarioCadena.contains("GusanosAcidos"))
+            this.inventario.add(repostero.pedido("GusanosAcidos"));
+        if (!inventarioCadena.contains("FrutasConChamoy"))
+            this.inventario.add(repostero.pedido("FrutasConChamoy"));
+        if (!inventarioCadena.contains("ChocolateConAlmendras"))
+            this.inventario.add(repostero.pedido("ChocolateConAlmendras"));
+        if (!inventarioCadena.contains("ChocolateConLeche"))
+            this.inventario.add(repostero.pedido("ChocolateConLeche"));
+        if (!inventarioCadena.contains("ChocolateOscuro"))
+            this.inventario.add(repostero.pedido("ChocolateOscuro"));
     }
 
 }

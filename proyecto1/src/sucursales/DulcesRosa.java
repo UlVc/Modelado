@@ -8,8 +8,8 @@ import java.util.Iterator;
  */
 public class DulcesRosa {
 
-    private ArrayList<Personal> repartidores = new ArrayList<Personal>();
-    private ArrayList<Sucursal> sucursales = new ArrayList<Sucursal>();
+    private ArrayList<Personal> repartidores;
+    private ArrayList<Sucursal> sucursales;
 
     private Sucursal s1, s2, s3;
     
@@ -17,21 +17,24 @@ public class DulcesRosa {
      * Constructor de la clase dulces Rosa.
      */
     public DulcesRosa() {
-        repartidores.add(new Personal("1", "0000a", "repartidor1"));
-        repartidores.add(new Personal("2", "0000b", "repartidor2"));
-        repartidores.add(new Personal("3", "0000c", "repartidor3"));
-        repartidores.add(new Personal("4", "0000d", "repartidor4"));
-        repartidores.add(new Personal("5", "0000e", "repartidor5"));
-        repartidores.add(new Personal("6", "0000f", "repartidor6"));
-        repartidores.add(new Personal("7", "0000g", "repartidor7"));
+        this.repartidores = new ArrayList<Personal>();
+        this.sucursales = new ArrayList<Sucursal>();
 
-        s1 = new Sucursal1("1", "dirección 1");
-        s2 = new Sucursal2("2", "dirección 2");
-        s3 = new Sucursal3("3", "dirección 3");
+        this.repartidores.add(new Personal("1", "0000a", "repartidor1"));
+        this.repartidores.add(new Personal("2", "0000b", "repartidor2"));
+        this.repartidores.add(new Personal("3", "0000c", "repartidor3"));
+        this.repartidores.add(new Personal("4", "0000d", "repartidor4"));
+        this.repartidores.add(new Personal("5", "0000e", "repartidor5"));
+        this.repartidores.add(new Personal("6", "0000f", "repartidor6"));
+        this.repartidores.add(new Personal("7", "0000g", "repartidor7"));
 
-        sucursales.add(s1);
-        sucursales.add(s2);
-        sucursales.add(s3);
+        this.s1 = new Sucursal1("1", "dirección 1");
+        this.s2 = new Sucursal2("2", "dirección 2");
+        this.s3 = new Sucursal3("3", "dirección 3");
+
+        this.sucursales.add(s1);
+        this.sucursales.add(s2);
+        this.sucursales.add(s3);
     }
 
     /**
