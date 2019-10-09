@@ -70,6 +70,17 @@ public class JefeTecnico implements Observador {
 
         dulcesRosa.reporteGlobal();
     }
+    
+    /**
+     * Método para reabastecer un cierto ingrediente.
+     * @param ingrediente  ingrediente a reabastecer.
+     * @param ingredientes lista de ingredientes.
+     */
+    @Override
+    public void actualizar(String ingrediente, ListaIngredientes ingredientes) {
+        System.out.println("Reabasteciendo " + ingrediente);
+        ingredientes.llenar(ingrediente, 500.0);
+    }
 
     /**
      * Método para generar un arreglo de números aleatorios sin repetición.
@@ -89,15 +100,5 @@ public class JefeTecnico implements Observador {
         return generated.toArray(new Integer[0]);
     }
 
-    /**
-     * Método para reabastecer un cierto ingrediente.
-     * @param ingrediente  ingrediente a reabastecer.
-     * @param ingredientes lista de ingredientes.
-     */
-    @Override
-    public void actualizar(String ingrediente, ListaIngredientes ingredientes) {
-        System.out.println("Reabasteciendo " + ingrediente);
-        ingredientes.llenar(ingrediente, 500.0);
-    }
 
 }

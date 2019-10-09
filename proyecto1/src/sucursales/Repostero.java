@@ -12,15 +12,6 @@ import java.util.ArrayList;
 public class Repostero {
 
     /**
-     * Método para hacer pedidos a la máquina Wonka 3000.
-     * @param  nombreComida Nombre del dulce deseado.
-     * @return              Dulce deseado.
-     */
-    private Dulces pedido(String nombreComida, ArrayList<String> inventario) {
-        return JefeTecnico.revisarPeticion(nombreComida, inventario);
-    }
-
-    /**
      * Método para hacer pedidos a la máquina Wonka3000.
      * @param  inventarioCadena Inventario de la sucursal.
      * @return                  Un ArrayList con los nuevos dulces.
@@ -56,4 +47,13 @@ public class Repostero {
         return inventario;
     }
 
+    /**
+     * Método para hacer pedidos a la máquina Wonka 3000.
+     * @param  nombreComida Nombre del dulce deseado.
+     * @return              Dulce deseado.
+     */
+    private Dulces pedido(String nombreComida, ArrayList<String> inventario) {
+        return JefeTecnico.revisarPeticion(nombreComida, inventario);
+    }
+    
 }
