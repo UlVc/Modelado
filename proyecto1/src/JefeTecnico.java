@@ -16,6 +16,7 @@ public class JefeTecnico implements Observador {
     private static DulcesRosa dulcesRosa = new DulcesRosa();
     private static ArrayList<String> camiones = new ArrayList<String>();
     private static ArrayList<Sucursal> sucursales = new ArrayList<Sucursal>();
+    private static Maquina maquinas = new Maquina();
 
     /**
      * Constructor del JefeTecnico.
@@ -30,6 +31,21 @@ public class JefeTecnico implements Observador {
         camiones.add("Camión 7");
 
         this.sucursales = dulcesRosa.getSucursales();
+    }
+
+
+    /**
+     * Método para aprobar la petición del repostero si no se tiene el dulce solicitado.
+     * @param  nombreComida nombre del dulce a preparar.
+     * @param  inventario   inventario de la sucursal.
+     * @return              El dulce solicitado.
+     */
+    public static Dulces revisarPeticion(String nombreComida, ArrayList<String> inventario) {
+        if (inventario.contains(nombreComida))
+            return null;
+
+        maquinas.activar();
+        return FabricaDulces.getMaquina("wonka3000", nombreComida);
     }
 
     /**
@@ -48,6 +64,9 @@ public class JefeTecnico implements Observador {
                              camiones.get(numerosAleatoriosCamiones[contador]), 4, dulcesEmpaquetados);
             contador += 1;
         }
+
+        for (Sucursal s: this.sucursales)
+            s.revisarInventario();
 
         dulcesRosa.reporteGlobal();
     }

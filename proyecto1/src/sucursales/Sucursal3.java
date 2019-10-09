@@ -37,11 +37,9 @@ public class Sucursal3 extends Sucursal {
      * @param inventario inventario a agregar.
      */
     @Override
-    public void agregarInventario(ArrayList<Dulces> inventario) {
-        for (Dulces d: inventario)
+    public void agregarInventario(ArrayList<Dulces> nuevoLote) {
+        for (Dulces d: nuevoLote)
             this.inventario.add(d);
-
-        revisarInventario();
     }
 
     /**
@@ -54,18 +52,7 @@ public class Sucursal3 extends Sucursal {
         for (Dulces d: this.inventario)
             inventarioCadena.add(d.getClass().getSimpleName());
 
-        if (!inventarioCadena.contains("OsitosDulces"))
-            this.inventario.add(repostero.pedido("OsitosDulces"));
-        if (!inventarioCadena.contains("GusanosAcidos"))
-            this.inventario.add(repostero.pedido("GusanosAcidos"));
-        if (!inventarioCadena.contains("FrutasConChamoy"))
-            this.inventario.add(repostero.pedido("FrutasConChamoy"));
-        if (!inventarioCadena.contains("ChocolateConAlmendras"))
-            this.inventario.add(repostero.pedido("ChocolateConAlmendras"));
-        if (!inventarioCadena.contains("ChocolateConLeche"))
-            this.inventario.add(repostero.pedido("ChocolateConLeche"));
-        if (!inventarioCadena.contains("ChocolateOscuro"))
-            this.inventario.add(repostero.pedido("ChocolateOscuro"));
+        agregarInventario(repostero.pedido(inventarioCadena));
     }
 
 }

@@ -39,7 +39,7 @@ public abstract class Sucursal {
      * Método para agregar dulces al inventario de la sucursal.
      * @param inventario ArrayList con los nuevos dulces empaquetados.
      */
-    public abstract void agregarInventario(ArrayList<Dulces> inventario);
+    public abstract void agregarInventario(ArrayList<Dulces> nuevoLote);
 
     /**
      * Método para revisar el inventario, si falta algún dulce

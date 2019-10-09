@@ -41,8 +41,6 @@ public class Sucursal2 extends Sucursal {
     public void agregarInventario(ArrayList<Dulces> nuevoLote) {
         for (int i = 0; i < nuevoLote.size(); i++)
             this.inventario.put(i + this.inventario.size(), nuevoLote.get(i));
-
-        revisarInventario();
     }
 
     /**
@@ -59,22 +57,9 @@ public class Sucursal2 extends Sucursal {
             inventarioCadena.add(dulce.getClass().getSimpleName());
         }
 
-        int tamaño = this.inventario.size();
+        int tamaño = this.inventario.size() == 0 ? -1 : 0;
 
-        if (tamaño == 0)
-            tamaño = -1;
-
-        if (!inventarioCadena.contains("OsitosDulces"))
-            this.inventario.put(tamaño + 1, repostero.pedido("OsitosDulces"));
-        if (!inventarioCadena.contains("GusanosAcidos"))
-            this.inventario.put(tamaño + 2, repostero.pedido("GusanosAcidos"));
-        if (!inventarioCadena.contains("FrutasConChamoy"))
-            this.inventario.put(tamaño + 3, repostero.pedido("FrutasConChamoy"));
-        if (!inventarioCadena.contains("ChocolateConAlmendras"))
-            this.inventario.put(tamaño + 4, repostero.pedido("ChocolateConAlmendras"));
-        if (!inventarioCadena.contains("ChocolateConLeche"))
-            this.inventario.put(tamaño + 5, repostero.pedido("ChocolateConLeche"));
-        if (!inventarioCadena.contains("ChocolateOscuro"))
-            this.inventario.put(tamaño + 6, repostero.pedido("ChocolateOscuro"));
+        for (Dulces d: repostero.pedido(inventarioCadena))
+            this.inventario.put(++tamaño, d);
     }
 }
