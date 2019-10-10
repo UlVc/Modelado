@@ -12,13 +12,12 @@ import src.maquinas.galleneitor5000.galletas.*;
  */
 public class Simulacion {
 
-    private static Maquina maquinas = new Maquina();
+    private static Maquina maquina = new Maquina();
     private static ArrayList<Dulces> dulcesEmpaquetados = new ArrayList<Dulces>();
     private static JefeTecnico jefeTecnico = new JefeTecnico();
 
     public static void main(String []args) {
-        dulcesEmpaquetados = maquinas.prepararDulces();
-        maquinas.apagar();
+        dulcesEmpaquetados = maquina.prepararDulces();
         jefeTecnico.repartirLotes(dulcesEmpaquetados);
     }
 

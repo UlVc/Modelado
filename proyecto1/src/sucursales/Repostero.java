@@ -49,11 +49,11 @@ public class Repostero {
 
     /**
      * Método para hacer pedidos a la máquina Wonka 3000.
-     * @param  nombreComida Nombre del dulce deseado.
+     * @param  nombreDulce Nombre del dulce deseado.
      * @return              Dulce deseado.
      */
-    private Dulces pedido(String nombreComida, ArrayList<String> inventario) {
-        return JefeTecnico.revisarPeticion(nombreComida, inventario);
+    private Dulces pedido(String nombreDulce, ArrayList<String> inventario) {
+        return JefeTecnico.revisarPeticion(nombreDulce, inventario);
     }
     
 }

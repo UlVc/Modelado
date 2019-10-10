@@ -128,6 +128,17 @@ public class Maquina {
     }
 
     /**
+     * Método para empacar un dulce en específico.
+     * @param nombreDulce Dulce a empacar.
+     */
+    public void empacar(String nombreDulce) {
+        System.out.println("Empacando " + nombreDulce);
+        this.estadoActual = this.empacando;
+        System.out.println("entregando dulce...");
+        this.estadoActual = this.suspendida;
+    }
+
+    /**
      * Activar la máquina.
      */
     public void activar() {
@@ -156,6 +167,17 @@ public class Maquina {
         }
 
         return null;
+    }
+
+    /**
+     * Método para preparar un dulce en específico.
+     * @param nombreDulce Dulce a preparar.
+     */
+    public void prepararDulce(String nombreDulce) {
+        if (estadoActual.prepararDulce()) {
+            System.out.println("Preparando " + nombreDulce);
+            empacar(nombreDulce);
+        }
     }
 
     /**

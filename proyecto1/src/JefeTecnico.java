@@ -16,7 +16,7 @@ public class JefeTecnico implements Observador {
     private static DulcesRosa dulcesRosa = new DulcesRosa();
     private static ArrayList<String> camiones = new ArrayList<String>();
     private static ArrayList<Sucursal> sucursales = new ArrayList<Sucursal>();
-    private static Maquina maquinas = new Maquina();
+    private static Maquina maquina = new Maquina();
 
     /**
      * Constructor del JefeTecnico.
@@ -36,21 +36,21 @@ public class JefeTecnico implements Observador {
 
     /**
      * Método para aprobar la petición del repostero si no se tiene el dulce solicitado.
-     * @param  nombreComida nombre del dulce a preparar.
-     * @param  inventario   inventario de la sucursal.
+     * @param  nombreDulce  Nombre del dulce a preparar.
+     * @param  inventario   Inventario de la sucursal.
      * @return              El dulce solicitado.
      */
-    public static Dulces revisarPeticion(String nombreComida, ArrayList<String> inventario) {
-        if (inventario.contains(nombreComida))
+    public static Dulces revisarPeticion(String nombreDulce,  ArrayList<String> inventario) {
+        if (inventario.contains(nombreDulce) )
             return null;
 
-        maquinas.activar();
-        return FabricaDulces.getMaquina("wonka3000", nombreComida);
+        maquina.prepararDulce(nombreDulce) ;
+        return FabricaDulces.getMaquina("wonka3000", nombreDulce) ;
     }
 
     /**
      * Método para repartir los lotes a los repartidores.
-     * @param dulcesEmpaquetados dulces empaquetados.
+     * @param dulcesEmpaquetados Dulces empaquetados.
      */
     public void repartirLotes(ArrayList<Dulces> dulcesEmpaquetados) {
         ArrayList<Personal> repartidores = dulcesRosa.getRepartidores();
@@ -73,8 +73,8 @@ public class JefeTecnico implements Observador {
     
     /**
      * Método para reabastecer un cierto ingrediente.
-     * @param ingrediente  ingrediente a reabastecer.
-     * @param ingredientes lista de ingredientes.
+     * @param ingrediente  Ingrediente a reabastecer.
+     * @param ingredientes Lista de ingredientes.
      */
     @Override
     public void actualizar(String ingrediente, ListaIngredientes ingredientes) {
@@ -84,9 +84,9 @@ public class JefeTecnico implements Observador {
 
     /**
      * Método para generar un arreglo de números aleatorios sin repetición.
-     * @param  max                número máximo que puede tener un número aleatorio.
-     * @param  numerosNecesitados longitud del arreglo.
-     * @return                    arreglo con números aleatorios.
+     * @param  max                Número máximo que puede tener un número aleatorio.
+     * @param  numerosNecesitados Longitud del arreglo.
+     * @return                    Arreglo con números aleatorios.
      */
     private Integer[] generarNumerosAleatorios(int max, int numerosNecesitados) {
         Random rng = new Random();

@@ -39,8 +39,8 @@ public class Sucursal2 extends Sucursal {
      */
     @Override
     public void agregarInventario(ArrayList<Dulces> nuevoLote) {
-        for (int i = 0; i < nuevoLote.size(); i++)
-            this.inventario.put(i + this.inventario.size(), nuevoLote.get(i));
+        //for (int i = 0; i < nuevoLote.size(); i++)
+        //    this.inventario.put(i + this.inventario.size(), nuevoLote.get(i));
     }
 
     /**
