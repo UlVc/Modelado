@@ -1,6 +1,6 @@
 package src.baguette;
 
-public interface Baguette {
+public interface Comida {
 
     /**
      * Devuelve el precio.

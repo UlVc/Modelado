@@ -5,7 +5,7 @@ import src.baguette.*;
 /**
  * Clase usando el patrón de diseño Adaptador.
  */
-public class AdaptadorPizza implements Baguette {
+public class AdaptadorPizza implements Comida {
 
     public Pizza pizza;
 

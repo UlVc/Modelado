@@ -12,7 +12,7 @@ public class ConJamon extends DecoradorBaguette {
      * @param  baguette Baguette a agregar jamón.
      * @return          Baguette con jamón.
      */
-    public ConJamon(Baguette baguette) {
+    public ConJamon(Comida baguette) {
         super(baguette);
     }
 

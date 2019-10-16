@@ -13,11 +13,11 @@ public class Simulacion {
 
     /**
      * Método para imprimir el ticket del baguette.
-     * @param baguette baguette a imprimir su ticket.
+     * @param comida baguette a imprimir su ticket.
      */
-    private static void imprimirTicket(Baguette baguette) {
-        System.out.println("Precio total: " + baguette.getPrecio()
-                           + "; Ingredientes: " + baguette.getIngredientes() + ".");
+    private static void imprimirTicket(Comida comida) {
+        System.out.println("Precio total: " + comida.getPrecio()
+                           + "; Ingredientes: " + comida.getIngredientes() + ".");
     }
 
     /**
@@ -25,7 +25,7 @@ public class Simulacion {
      * @param  baguette Baguette a poner ingredientes.
      * @return          Baguette con ingredientes.
      */
-    private static Baguette ponerIngredientes(Baguette baguette) {
+    private static Comida ponerIngredientes(Comida baguette) {
         Scanner scanner = new Scanner(System.in);
 
         while(true) {
@@ -128,12 +128,12 @@ public class Simulacion {
             int opcion = scanner.nextInt();
 
             if (opcion == 1) {
-                Baguette baguette = new BaguetteSimple();
+                Comida baguette = new BaguetteSimple();
                 baguette = ponerIngredientes(baguette);
                 imprimirTicket(baguette);
             } else if (opcion == 2) {
                 Pizza pizza = listaDePizzas();
-                Baguette pizzaAdaptada = new AdaptadorPizza(pizza);
+                Comida pizzaAdaptada = new AdaptadorPizza(pizza);
                 imprimirTicket(pizzaAdaptada);
             } else {
                 System.out.println("Seleccione una opción válida.");

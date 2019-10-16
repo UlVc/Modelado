@@ -12,7 +12,7 @@ public class ConCatsup extends DecoradorBaguette {
      * @param  baguette Baguette a agregar catsup.
      * @return          Baguette con catsup.
      */
-    public ConCatsup(Baguette baguette) {
+    public ConCatsup(Comida baguette) {
         super(baguette);
     }
 

@@ -12,7 +12,7 @@ public class ConCebolla extends DecoradorBaguette {
      * @param  baguette Baguette a agregar cebolla.
      * @return          Baguette con cebolla.
      */
-    public ConCebolla(Baguette baguette) {
+    public ConCebolla(Comida baguette) {
         super(baguette);
     }
 

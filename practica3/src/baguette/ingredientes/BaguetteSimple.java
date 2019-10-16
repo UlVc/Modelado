@@ -2,7 +2,7 @@ package src.baguette.ingredientes;
 
 import src.baguette.*;
 
-public class BaguetteSimple implements Baguette {
+public class BaguetteSimple implements Comida {
 
     @Override
     public double getPrecio() {

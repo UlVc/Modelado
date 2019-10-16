@@ -12,7 +12,7 @@ public class ConMayonesa extends DecoradorBaguette {
      * @param  baguette Baguette a agregar mayonesa.
      * @return          Baguette con mayonesa.
      */
-    public ConMayonesa(Baguette baguette) {
+    public ConMayonesa(Comida baguette) {
         super(baguette);
     }
 

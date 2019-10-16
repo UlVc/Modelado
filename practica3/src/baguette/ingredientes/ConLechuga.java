@@ -12,7 +12,7 @@ public class ConLechuga extends DecoradorBaguette {
      * @param  baguette Baguette a agregar lechuga.
      * @return          Baguette con lechuga.
      */
-    public ConLechuga(Baguette baguette) {
+    public ConLechuga(Comida baguette) {
         super(baguette);
     }
 

@@ -3,15 +3,15 @@ package src.baguette;
 /**
  * Clase que usa el patrón de diseño Decorator, y será aplicado para los baguettes.
  */
-public abstract class DecoradorBaguette implements Baguette {
+public abstract class DecoradorBaguette implements Comida {
 
-    private final Baguette baguetteDecorado;
+    private final Comida baguetteDecorado;
 
     /**
      * Constructor de la clase.
      * @param  baguette Baguette a poner ingredientes.
      */
-    public DecoradorBaguette(Baguette baguette) {
+    public DecoradorBaguette(Comida baguette) {
         this.baguetteDecorado = baguette;
     }
 
