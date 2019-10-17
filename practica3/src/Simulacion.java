@@ -73,6 +73,46 @@ public class Simulacion {
         return baguette;
     }
 
+    private static Comida elegirPan() {
+        Scanner scanner = new Scanner(System.in);
+        Comida baguette;
+
+        while(true) {
+            System.out.println("Seleccione el número correspondiente al tipo de pan deseado:");
+            System.out.println("1.- Pan de trigo.");
+            System.out.println("2.- Pan germinado.");
+            System.out.println("3.- Pan integral.");
+            System.out.println("4.- Pan con ajo.");
+            System.out.println("5.- Pan de centeno.");
+
+            try {
+                switch(scanner.nextInt()) {
+                    case 1:
+                        baguette = new PanDeTrigo();
+                        return baguette;
+                    case 2:
+                        baguette = new PanGerminado();
+                        return baguette;
+                    case 3:
+                        baguette = new PanIntegral();
+                        return baguette;
+                    case 4:
+                        baguette = new PanConAjo();
+                        return baguette;
+                    case 5:
+                        baguette = new PanDeCenteno();
+                        return baguette;
+                    default:
+                        System.out.println("Seleccione un número válido.");
+                }
+            } catch(Exception e) {
+                System.out.println("Introduce solamente números.");
+
+                return elegirPan();
+            }
+        }
+    }
+
     private static Pizza listaDePizzas() {
         Scanner scanner = new Scanner(System.in);
         Pizza pizza;
@@ -128,7 +168,7 @@ public class Simulacion {
             int opcion = scanner.nextInt();
 
             if (opcion == 1) {
-                Comida baguette = new BaguetteSimple();
+                Comida baguette = elegirPan();
                 baguette = ponerIngredientes(baguette);
                 imprimirTicket(baguette);
             } else if (opcion == 2) {

@@ -2,15 +2,15 @@ package src.baguette.ingredientes;
 
 import src.baguette.*;
 
-public class BaguetteSimple implements Comida {
+public class PanDeCenteno implements Comida {
 
     @Override
     public double getPrecio() {
-        return 1;
+        return 21.2;
     }
 
     @Override
     public String getIngredientes() {
-        return "Pan";
+        return "Pan de centeno";
     }
 }
