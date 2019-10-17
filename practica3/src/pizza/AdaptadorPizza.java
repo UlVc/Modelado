@@ -7,7 +7,7 @@ import src.baguette.*;
  */
 public class AdaptadorPizza implements Comida {
 
-    public Pizza pizza;
+    private Pizza pizza;
 
     /**
      * Constructor de la clase AdaptadorPizza.
