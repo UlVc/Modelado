@@ -27,9 +27,13 @@ public class Simulacion {
      */
     private static Comida ponerIngredientes(Comida baguette) {
         Scanner scanner = new Scanner(System.in);
+        int contadorPollo = 0, contadorPepperoni = 0, contadorJamon = 0, contadorLechuga = 0, 
+            contadorJitomate = 0, contadorCebolla = 0, contadorMostaza = 0, contadorCatsup = 0, 
+            contadorMayonesa = 0;
 
         while(true) {
-            System.out.println("Seleccione el número correspondiente al ingrediente deseado:");
+            System.out.println("Seleccione el número correspondiente al " +
+                               "ingrediente deseado:");
             System.out.println("1.- Pollo");
             System.out.println("2.- Pepperoni");
             System.out.println("3.- Jamón");
@@ -39,30 +43,79 @@ public class Simulacion {
             System.out.println("7.- Mostaza");
             System.out.println("8.- Catsup");
             System.out.println("9.- Mayonesa");
-            System.out.println("En caso de ya haber escogido sus ingredientes, presione el número 0.");
+            System.out.println("En caso de ya haber escogido sus ingredientes," + 
+                               " presione el número 0.");
 
             try {
                 int opcion = scanner.nextInt();
-                if (opcion == 1)
-                    baguette = new ConPollo(baguette);
-                if (opcion == 2)
-                    baguette = new ConPepperoni(baguette);
-                if (opcion == 3)
-                    baguette = new ConJamon(baguette);
-                if (opcion == 4)
-                    baguette = new ConLechuga(baguette);
-                if (opcion == 5)
-                    baguette = new ConJitomate(baguette);
-                if (opcion == 6)
-                    baguette = new ConCebolla(baguette);
-                if (opcion == 7)
-                    baguette = new ConMostaza(baguette);
-                if (opcion == 8)
-                    baguette = new ConCatsup(baguette);
-                if (opcion == 8)
-                    baguette = new ConMayonesa(baguette);
+                if (opcion == 1) {
+                    if (contadorPollo < 3) {
+                        baguette = new ConPollo(baguette);
+                        contadorPollo += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de pollo.");
+                }
+                if (opcion == 2){
+                    if (contadorPepperoni < 3) {
+                        baguette = new ConPepperoni(baguette);
+                        contadorPepperoni += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de pepperoni.");
+                }
+                if (opcion == 3){
+                    if (contadorJamon < 3) {
+                        baguette = new ConJamon(baguette);
+                        contadorJamon += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de jamón.");
+                }
+                if (opcion == 4){
+                    if (contadorLechuga < 3) {
+                        baguette = new ConLechuga(baguette);
+                        contadorLechuga += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de lechuga.");                    
+                }
+                if (opcion == 5){
+                    if (contadorJitomate < 3) {
+                        baguette = new ConJitomate(baguette);
+                        contadorJitomate += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de jitomate.");
+                }
+                if (opcion == 6){
+                    if (contadorCebolla < 3) {
+                        baguette = new ConCebolla(baguette);
+                        contadorCebolla += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de cebolla.");
+                }
+                if (opcion == 7){
+                    if (contadorMostaza < 3) {
+                        baguette = new ConMostaza(baguette);
+                        contadorMostaza += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de mostaza.");
+                }
+                if (opcion == 8){
+                    if (contadorCatsup < 3) {
+                        baguette = new ConCatsup(baguette);
+                        contadorCatsup += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de catsup.");
+                }
+                if (opcion == 9){
+                    if (contadorMayonesa < 3) {
+                        baguette = new ConMayonesa(baguette);
+                        contadorMayonesa += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de mayonesa.");
+                }
                 if (opcion == 0)
                     break;
+                if (opcion != 0 && opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4 && 
+                    opcion != 5 && opcion != 6 && opcion != 7 && opcion != 8 && opcion != 9)
+                    System.out.println("Introduzca un número válido.");
             } catch(Exception e) {
                 System.out.println("¡Introduce solamente números!");
 
@@ -73,6 +126,10 @@ public class Simulacion {
         return baguette;
     }
 
+    /**
+     * Método para escoger el pan para el baguette.
+     * @return Tipo del pan del baguette.
+     */
     private static Comida elegirPan() {
         Scanner scanner = new Scanner(System.in);
         Comida baguette;
@@ -113,7 +170,11 @@ public class Simulacion {
         }
     }
 
-    private static Pizza listaDePizzas() {
+    /**
+     * Método para que se pueda escoger una pizza.
+     * @return Pizza escogida de la lista.
+     */
+    private static Pizza obtenerPizza() {
         Scanner scanner = new Scanner(System.in);
         Pizza pizza;
 
@@ -148,7 +209,7 @@ public class Simulacion {
             } catch(Exception e) {
                 System.out.println("Introduce solamente números.");
 
-                return listaDePizzas();
+                return obtenerPizza();
             }
         }
     }
@@ -172,7 +233,7 @@ public class Simulacion {
                 baguette = ponerIngredientes(baguette);
                 imprimirTicket(baguette);
             } else if (opcion == 2) {
-                Pizza pizza = listaDePizzas();
+                Pizza pizza = obtenerPizza();
                 Comida pizzaAdaptada = new AdaptadorPizza(pizza);
                 imprimirTicket(pizzaAdaptada);
             } else {
