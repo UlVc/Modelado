@@ -1,4 +1,4 @@
-package src.pociones;
+package src.producto.pociones;
 
 /**
  * Clase para ponerle pata de conejo a la pocion.
@@ -22,4 +22,5 @@ public class PataConejo extends DecoradorPocion {
     public String getIngredientes() {
         return super.getIngredientes() + ", Pata de Conejo";
     }
+
 }

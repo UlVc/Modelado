@@ -1,4 +1,4 @@
-package src.pociones;
+package src.producto.pociones;
 
 /**
  * Clase para ponerle lagrima de Ghast a la pocion.
@@ -22,4 +22,5 @@ public class LagrimaGhast extends DecoradorPocion {
     public String getIngredientes() {
         return super.getIngredientes() + ", Lagrima de Ghast";
     }
+
 }

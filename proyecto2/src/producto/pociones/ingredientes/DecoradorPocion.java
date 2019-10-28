@@ -1,4 +1,4 @@
-package src.pociones;
+package src.producto.pociones;
 
 
 public class DecoradorPocion {
@@ -21,4 +21,5 @@ public class DecoradorPocion {
     public String getIngredientes() {
         return pocionDecorada.getIngredientes();
     }
+
 }

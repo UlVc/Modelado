@@ -1,4 +1,4 @@
-package src.pociones;
+package src.producto.pociones;
 
 /**
  * Clase para ponerle polvo de blaze a la pocion.
@@ -22,4 +22,5 @@ public class PolvoDeBlaze extends DecoradorPocion {
     public String getIngredientes() {
         return super.getIngredientes() + ", Polvo de Blaze";
     }
+
 }

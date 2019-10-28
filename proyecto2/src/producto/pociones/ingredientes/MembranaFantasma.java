@@ -1,4 +1,4 @@
-package src.pociones;
+package src.producto.pociones;
 
 /**
  * Clase para ponerle membrana de fantasma a la pocion.
@@ -22,4 +22,5 @@ public class MembranaFantasma extends DecoradorPocion {
     public String getIngredientes() {
         return super.getIngredientes() + ", Membrana de Fantasma";
     }
+
 }

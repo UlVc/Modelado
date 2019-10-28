@@ -1,4 +1,4 @@
-package src.pociones;
+package src.producto;
 
 public interface Producto {
 
@@ -7,3 +7,5 @@ public interface Producto {
      * @return Ingredientes del producto.
      */
     public String getIngredientes();
+
+}

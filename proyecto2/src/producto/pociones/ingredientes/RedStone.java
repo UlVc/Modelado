@@ -1,4 +1,4 @@
-package src.pociones;
+package src.producto.pociones;
 
 /**
  * Clase para ponerle red stone a la pocion.
@@ -22,4 +22,5 @@ public class RedStone extends DecoradorPocion {
     public String getIngredientes() {
         return super.getIngredientes() + ", Red Stone";
     }
+
 }

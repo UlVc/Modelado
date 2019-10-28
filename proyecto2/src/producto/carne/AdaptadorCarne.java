@@ -1,9 +1,9 @@
-package src.carne;
+package src.producto.carne;
 
 /**
  * Clase usando el patrón de diseño Adaptador.
  */
-public class AdaptadorCarne implements Producto {
+public class AdaptadorCarne {
 
     private Carne carne;
 

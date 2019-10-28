@@ -1,4 +1,4 @@
-package src.carne;
+package src.producto.carne;
 
 /**
  * Interfaza para los tipos de carne.
@@ -11,4 +11,4 @@ public interface Carne {
      */
     public String getTipoCarne();
 
-    
+}    

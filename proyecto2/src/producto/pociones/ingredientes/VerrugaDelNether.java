@@ -1,4 +1,4 @@
-package src.pociones;
+package src.producto.pociones;
 
 /**
  * Clase para ponerle verruga del nether a la pocion.
@@ -22,4 +22,5 @@ public class VerrugaDelNether extends DecoradorPocion {
     public String getIngredientes() {
         return super.getIngredientes() + ", Verruga del Nether";
     }
+
 }

@@ -1,4 +1,4 @@
-package src.carne;
+package src.producto.carne;
 
 /**
  * Clase para la carne de cerdo.
