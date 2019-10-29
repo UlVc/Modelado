@@ -34,7 +34,7 @@ public class Apagada implements Estados {
      */
     @Override
     public void apagarse() {
-        System.out.println("Apagada");
+        System.out.println("Ya estoy apagada.");
     }
 
     /**
@@ -42,7 +42,7 @@ public class Apagada implements Estados {
      */
     @Override
     public void prepararProducto() {
-    	System.out.println("Maquina Apagada, sin poder realizar ninguna acción");
+    	System.out.println("Máquina Apagada, si deseas que prepare un producto primero actívame.");
     }
 
 }

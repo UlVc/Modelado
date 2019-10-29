@@ -24,7 +24,7 @@ public class Preparando implements Estados {
      */
     @Override
     public void encenderse() {
-    	System.out.println("Ya encendida");
+    	System.out.println("Ya estoy encendida.");
     	
     }
 
@@ -33,7 +33,7 @@ public class Preparando implements Estados {
      */
     @Override
     public void apagarse() {
-    	System.out.println("No es posible apagarse");
+    	System.out.println("No es posible apagarse, estoy preparando productos.");
     }
 
     /**
@@ -41,6 +41,6 @@ public class Preparando implements Estados {
      */
     @Override
     public void prepararProducto() {
-        System.out.println("Ya se esta creando una pocion");
+        System.out.println("Ya se esta creando el producto, sea paciente.");
     }
 }
