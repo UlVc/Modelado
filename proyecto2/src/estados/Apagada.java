@@ -1,8 +1,6 @@
 package src.estados;
 
 import src.BS2;
-import java.util.Scanner;
-import java.util.NoSuchElementException;
 
 /**
  * Clase para el estado Apagada.
@@ -24,9 +22,9 @@ public class Apagada implements Estados {
      */
     @Override
     public void encenderse() {
-    	System.out.println("Encendiendo...");
-    	this.mqn.asignarEstado(mqn.getEstadoEncender());
-    	this.mqn.imprimeEstado();
+        System.out.println("Encendiendo...");
+        this.mqn.asignarEstado(mqn.getEstadoEncender());
+        this.mqn.imprimeEstado();
     }
 
     /**
@@ -34,7 +32,7 @@ public class Apagada implements Estados {
      */
     @Override
     public void apagarse() {
-        System.out.println("Apagada");
+        System.out.println("Ya estoy apagada.");
     }
 
     /**
@@ -42,6 +40,10 @@ public class Apagada implements Estados {
      */
     @Override
     public void prepararProducto() {
+<<<<<<< HEAD
         System.out.println("Maquina Apagada, sin poder realizar ninguna acción");
+=======
+        System.out.println("Máquina Apagada, si deseas que prepare un producto primero actívame.");
+>>>>>>> 6f01fa6be2a5956a83d80468d859d7c25c81714c
     }
 }

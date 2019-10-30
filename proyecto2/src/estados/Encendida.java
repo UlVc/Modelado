@@ -24,7 +24,7 @@ public class Encendida implements Estados {
      */
     @Override
     public void encenderse() {
-    	System.out.println("Encendida, lista para producir");
+    	System.out.println("Ya estoy encendida, ¿qué deseas hacer?");
     	
     }
 
@@ -33,9 +33,9 @@ public class Encendida implements Estados {
      */
     @Override
     public void apagarse() {
-    	System.out.println("Apagando");
-    	this.mqn.asignarEstado(mqn.getEstadoApagar());
-    	this.mqn.imprimeEstado();
+        System.out.println("Apagando...");
+        this.mqn.asignarEstado(mqn.getEstadoApagar());
+        this.mqn.imprimeEstado();
     }
 
     /**
@@ -43,6 +43,7 @@ public class Encendida implements Estados {
      */
     @Override
     public void prepararProducto() {
-        System.out.println("Pocion que desea hacer.");
+        System.out.println("¿Qué producto deseas hacer?");
+        //Lista de productos, se añadiran pronto.
     }
 }
