@@ -45,5 +45,4 @@ public class Encendida implements Estados {
     public void prepararProducto() {
         System.out.println("Pocion que desea hacer.");
     }
-
 }

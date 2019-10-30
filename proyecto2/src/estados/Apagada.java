@@ -42,7 +42,6 @@ public class Apagada implements Estados {
      */
     @Override
     public void prepararProducto() {
-    	System.out.println("Maquina Apagada, sin poder realizar ninguna acción");
+        System.out.println("Maquina Apagada, sin poder realizar ninguna acción");
     }
-
 }

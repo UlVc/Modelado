@@ -1,8 +1,6 @@
 package src.estados;
 
 import src.BS2;
-import java.util.Scanner;
-import java.util.NoSuchElementException;
 
 /**
  * Clase para el estado Preparando.
@@ -33,7 +31,7 @@ public class Preparando implements Estados {
      */
     @Override
     public void apagarse() {
-    	System.out.println("No es posible apagarse");
+        System.out.println("No es posible apagarse");
     }
 
     /**
