@@ -1,45 +1,41 @@
 package src.estados;
 
-import src.BS2;
-import java.util.Scanner;
-import java.util.NoSuchElementException;
-
 /**
  * Clase para el estado Encendida.
  */
 public class Encendida implements Estados {
-    private Maquina mqn;
+    
+    private Maquina maquina;
     
     /**
      * Constructor de la clase Apagada.
-     * @param  mqn Maquina
+     * @param  maquina Maquina
      */
-    public Encendida(Maquina mqn) {
-        this.mqn = mqn;
+    public Encendida(Maquina maquina) {
+        this.maquina = maquina;
     }
 
 
     /**
-     * Enciende la maquina
+     * Enciende la máquina.
      */
     @Override
     public void encenderse() {
     	System.out.println("Ya estoy encendida, ¿qué deseas hacer?");
-    	
     }
 
     /**
-     * Apaga la maquina
+     * Apaga la máquina.
      */
     @Override
     public void apagarse() {
         System.out.println("Apagando...");
-        this.mqn.asignarEstado(mqn.getEstadoApagar());
-        this.mqn.imprimeEstado();
+        this.maquina.asignarEstado(maquina.getEstadoApagar());
+        this.maquina.imprimeEstado();
     }
 
     /**
-     * Apaga la maquina
+     * Pone a preparar un producto a la máquina.
      */
     @Override
     public void prepararProducto() {

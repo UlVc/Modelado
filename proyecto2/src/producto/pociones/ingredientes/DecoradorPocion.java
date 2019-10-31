@@ -7,10 +7,10 @@ public class DecoradorPocion {
 
     /**
      * Constructor de la clase DecoradorPocion.
-     * @param pocion
+     * @param pocionDecorada Pocion a decorar.
      */
-    public DecoradorPocion(Producto pocion) {
-        this.pocionDecorada = pocion;
+    public DecoradorPocion(Producto pocionDecorada) {
+        this.pocionDecorada = pocionDecorada;
     }
 
     /**

@@ -8,7 +8,7 @@ public class Glowstone extends DecoradorPocion {
     /**
      * Constructor de la clase GlowStone.
      * @param  pocion Pocion a la que se le aplicara Glow Stone.
-     * @return          Pocion con Glow Stone.
+     * @return        Pocion con Glow Stone.
      */
     public GlowStone(Producto pocion) {
         super(pocion);

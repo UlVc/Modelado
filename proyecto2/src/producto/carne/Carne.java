@@ -11,4 +11,4 @@ public interface Carne {
      */
     public String getTipoCarne();
 
-}    
+}

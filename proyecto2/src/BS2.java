@@ -18,21 +18,21 @@ public class BS2 {
      * Método para encender la máquina
      */
     public void encender() {
-   	    estadoActual.encenderse();
+        estadoActual.encenderse();
     }
 
     /**
      * Método para apagar la máquina
      */
     public void apagar() {
-    	estadoActual.apagarse();
+        estadoActual.apagarse();
     }
 
     /**
      * Método para preparar la pocion. 
      */
     public void preparar() {  //aun entendiendo el funcionamiento
-    	estadoActual.preparar();
+        estadoActual.preparar();
     }
 
     /**

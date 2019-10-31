@@ -8,7 +8,7 @@ public class LagrimaGhast extends DecoradorPocion {
     /**
      * Constructor de la clase LagrimaGhast.
      * @param  pocion Pocion a la que se le aplicara LagrimaGhast.
-     * @return          Pocion con LagrimaGhast.
+     * @return        Pocion con LagrimaGhast.
      */
     public LagrimaGhast(Producto pocion) {
         super(pocion);

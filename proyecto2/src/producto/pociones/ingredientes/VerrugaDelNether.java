@@ -8,7 +8,7 @@ public class VerrugaDelNether extends DecoradorPocion {
     /**
      * Constructor de la clase VerrugaDelNether.
      * @param  pocion Pocion a la que se le aplicara Verruga Del Nether.
-     * @return          Pocion con Verruga Del Nether.
+     * @return        Pocion con Verruga Del Nether.
      */
     public VerrugaDelNether(Producto pocion) {
         super(pocion);

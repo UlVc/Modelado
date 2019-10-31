@@ -8,7 +8,7 @@ public class PolvoDeBlaze extends DecoradorPocion {
     /**
      * Constructor de la clase PolvoDeBlaze.
      * @param  pocion Pocion a la que se le aplicara Polvo De Blaze.
-     * @return          Pocion con Polvo de Blaze.
+     * @return        Pocion con Polvo de Blaze.
      */
     public PolvoDeBlaze(Producto pocion) {
         super(pocion);

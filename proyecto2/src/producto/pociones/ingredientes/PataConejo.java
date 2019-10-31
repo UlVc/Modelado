@@ -8,7 +8,7 @@ public class PataConejo extends DecoradorPocion {
     /**
      * Constructor de la clase PataConejo.
      * @param  pocion Pocion a la que se le agregara Pata Conejo.
-     * @return          Pocion con PataConejo.
+     * @return        Pocion con PataConejo.
      */
     public PataConejo(Producto pocion) {
         super(pocion);

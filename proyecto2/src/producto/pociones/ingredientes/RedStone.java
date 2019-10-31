@@ -8,7 +8,7 @@ public class RedStone extends DecoradorPocion {
     /**
      * Constructor de la clase RedStone.
      * @param  pocion Pocion a la que se le aplicara Red Stone.
-     * @return          Pocion con Red Stone.
+     * @return        Pocion con Red Stone.
      */
     public RedStone(Producto pocion) {
         super(pocion);

@@ -6,17 +6,17 @@ package src.estados;
 public interface Estados {
     
     /**    
-     * Apaga la maquina    
+     * Apaga la máquina.
      */    
     public void apagarse();
     
     /**    
-     * Enciende la maquina    
+     * Enciende la máquina.
      */    
     public void encenderse();
     
-    /**    
-     * Pone a preparar pociones    
-     */    
+    /**
+     * Pone a preparar un producto a la máquina.
+     */
     public void preparar();
 }
