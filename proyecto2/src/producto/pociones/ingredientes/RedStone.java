@@ -1,9 +1,11 @@
-package src.producto.pociones;
+package src.producto.pociones.ingredientes;
+
+import src.producto.pociones.Producto;
 
 /**
  * Clase para ponerle red stone a la pocion.
  */
-public class RedStone extends DecoradorPocion {
+public class RedStone implements Producto {
 
     /**
      * Constructor de la clase RedStone.
@@ -21,6 +23,15 @@ public class RedStone extends DecoradorPocion {
     @Override
     public String getIngredientes() {
         return super.getIngredientes() + ", Red Stone";
+    }
+
+    /**
+     * Devuelve el tiempo de duración del producto.
+     * @return Tiempo de duración del producto.
+     */
+    @Override
+    public double getTiempoDuracion() {
+        return super.getTiempoDuracion() + 1.5;
     }
 
 }

@@ -1,9 +1,11 @@
-package src.producto.pociones;
+package src.producto.pociones.ingredientes;
+
+import src.producto.pociones.Producto;
 
 /**
  * Clase para ponerle lagrima de Ghast a la pocion.
  */
-public class LagrimaGhast extends DecoradorPocion {
+public class LagrimaGhast implements Producto {
 
     /**
      * Constructor de la clase LagrimaGhast.
@@ -21,6 +23,15 @@ public class LagrimaGhast extends DecoradorPocion {
     @Override
     public String getIngredientes() {
         return super.getIngredientes() + ", Lagrima de Ghast";
+    }
+
+    /**
+     * Devuelve el tiempo de duración del producto.
+     * @return Tiempo de duración del producto.
+     */
+    @Override
+    public double getTiempoDuracion() {
+        return 0.45;
     }
 
 }

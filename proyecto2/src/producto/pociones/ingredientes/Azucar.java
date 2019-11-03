@@ -1,9 +1,11 @@
-package src.producto.pociones;
+package src.producto.pociones.ingredientes;
+
+import src.producto.pociones.Producto;
 
 /**
  * Clase para ponerle azúcar a la pocion.
  */
-public class Azucar extends DecoradorPocion {
+public class Azucar implements Producto {
 
     /**
      * Constructor de la clase Azucar.
@@ -21,6 +23,15 @@ public class Azucar extends DecoradorPocion {
     @Override
     public String getIngredientes() {
         return super.getIngredientes() + ", Azucar";
+    }
+
+    /**
+     * Devuelve el tiempo de duración del producto.
+     * @return Tiempo de duración del producto.
+     */
+    @Override
+    public double getTiempoDuracion() {
+        return 3;
     }
 
 }

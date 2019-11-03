@@ -1,9 +1,11 @@
-package src.producto.pociones;
+package src.producto.pociones.ingredientes;
+
+import src.producto.pociones.Producto;
 
 /**
  * Clase para ponerle verruga del nether a la pocion.
  */
-public class VerrugaDelNether extends DecoradorPocion {
+public class VerrugaDelNether implements Producto {
 
     /**
      * Constructor de la clase VerrugaDelNether.
@@ -21,6 +23,15 @@ public class VerrugaDelNether extends DecoradorPocion {
     @Override
     public String getIngredientes() {
         return super.getIngredientes() + ", Verruga del Nether";
+    }
+
+    /**
+     * Devuelve el tiempo de duración del producto.
+     * @return Tiempo de duración del producto.
+     */
+    @Override
+    public double getTiempoDuracion() {
+        return super.getTiempoDuracion() + 0;
     }
 
 }

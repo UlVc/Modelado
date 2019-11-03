@@ -1,7 +1,6 @@
 package src.producto.pociones;
 
-
-public class DecoradorPocion {
+public class DecoradorPocion implements Producto {
 
     private final Producto pocionDecorada;
 
@@ -20,6 +19,15 @@ public class DecoradorPocion {
     @Override
     public String getIngredientes() {
         return pocionDecorada.getIngredientes();
+    }
+
+    /**
+     * Devuelve el tiempo de duración del producto.
+     * @return Tiempo de duración del producto.
+     */
+    @Override
+    public double getTiempoDuracion() {
+        return pocionDecorada.getTiempoDuracion();
     }
 
 }

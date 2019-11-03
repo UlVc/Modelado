@@ -1,9 +1,11 @@
-package src.producto.pociones;
+package src.producto.pociones.ingredientes;
+
+import src.producto.pociones.Producto;
 
 /**
  * Clase para ponerle membrana de fantasma a la pocion.
  */
-public class MembranaFantasma extends DecoradorPocion {
+public class MembranaFantasma implements Producto {
 
     /**
      * Constructor de la clase MembranaFantasma.
@@ -21,6 +23,15 @@ public class MembranaFantasma extends DecoradorPocion {
     @Override
     public String getIngredientes() {
         return super.getIngredientes() + ", Membrana de Fantasma";
+    }
+
+    /**
+     * Devuelve el tiempo de duración del producto.
+     * @return Tiempo de duración del producto.
+     */
+    @Override
+    public double getTiempoDuracion() {
+        return super.getTiempoDuracion() + 1.3;
     }
 
 }

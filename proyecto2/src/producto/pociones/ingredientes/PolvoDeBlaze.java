@@ -1,9 +1,11 @@
-package src.producto.pociones;
+package src.producto.pociones.ingredientes;
+
+import src.producto.pociones.Producto;
 
 /**
  * Clase para ponerle polvo de blaze a la pocion.
  */
-public class PolvoDeBlaze extends DecoradorPocion {
+public class PolvoDeBlaze implements Producto {
 
     /**
      * Constructor de la clase PolvoDeBlaze.
@@ -21,6 +23,15 @@ public class PolvoDeBlaze extends DecoradorPocion {
     @Override
     public String getIngredientes() {
         return super.getIngredientes() + ", Polvo de Blaze";
+    }
+
+    /**
+     * Devuelve el tiempo de duración del producto.
+     * @return Tiempo de duración del producto.
+     */
+    @Override
+    public double getTiempoDuracion() {
+        return super.getTiempoDuracion() + 0;
     }
 
 }
