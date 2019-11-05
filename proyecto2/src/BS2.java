@@ -42,11 +42,19 @@ public class BS2 {
         estadoActual.apagarse();
     }
 
+    public String getEfectos() {
+        return this.producto.getIngredientes();
+    }
+
+    public double getDuracion() {
+        return this.producto.getTiempoDuracion();
+    }
+
     /**
      * Método para que la máquina le pregunte al usuario qué producto fabricar.
      * @return Producto fabricado.
      */
-    public Producto preparar() {
+    public void preparar() {
         if (estadoActual.prepararProducto()) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("1.- Manzanas con efectos de pocion.");
@@ -57,22 +65,21 @@ public class BS2 {
                 if (opcion == 1) {
                     Manzana manzana = prepararManzana();
                     Producto manzanaAdaptada = new AdaptadorManzanas(manzana);
-                    return manzanaAdaptada;
+                    this.producto = manzanaAdaptada;
                 }
                 if (opcion == 2) {
                     Producto pocion = new VerrugaDelNether();
-                    return prepararPocion(pocion);
+                    this.producto = prepararPocion(pocion);
                 }
                 if (opcion != 1 && opcion != 2)
                     System.out.println("Introduzca un número válido.");
             } catch(Exception e) {
                 System.out.println("¡Introduce solamente números!");
 
-                return preparar();
+                preparar();
             }
         }
 
-        return null;
     }
 
     /**

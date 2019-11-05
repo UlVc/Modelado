@@ -7,13 +7,15 @@ import src.producto.*;
  */
 public class Simulacion {
 
-	private static BS2 maquina = new BS2();
-	private static Producto pr;
-
     public static void main(String []args) {
+        
+        BS2 maquina = new BS2();
+        BS2Vista maquinaVista = new BS2Vista();
+        BS2Controlador maquinaControlador = new BS2Controlador(maquina, maquinaVista);
+
         maquina.encender();
-        pr = maquina.preparar();
-        System.out.println(pr.getIngredientes());
+        maquina.preparar();
+        maquinaControlador.updateView();
     }
 
 }
