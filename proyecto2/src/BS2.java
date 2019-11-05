@@ -1,17 +1,25 @@
 package src;
 
 import src.estados.*;
+
 import src.producto.*;
+import src.producto.pociones.*;
+import src.producto.pociones.ingredientes.*;
+import src.producto.manzanas.*;
+
 import java.util.Iterator;
+import java.util.Scanner;
 
 /**
  * Clase para el usuario.
  */
 public class BS2 {
+
     private Estados estadoActual;
     private Estados apagar;
     private Estados encender;
     private Estados preparar;
+
     private Producto producto;
 
     /**
@@ -29,10 +37,134 @@ public class BS2 {
     }
 
     /**
-     * Método para preparar la pocion. 
+     * Método para que la máquina le pregunte al usuario qué producto fabricar. 
      */
-    public void preparar() {  //aun entendiendo el funcionamiento
-        estadoActual.preparar();
+    public Producto preparar() {
+        if (estadoActual.preparar()) {
+            System.out.println("1.- Manzanas con efectos de pocion.");
+            System.out.println("2.- Pocion.");
+            try {
+                int opcion = scanner.nextInt();
+
+                if (opcion == 1) 
+                    return prepararManzana();
+                if (opcion == 2) {
+                    Producto pocion = new VerrugaDelNether():
+                    return prepararPocion(pocion);
+                }
+                if (opcion != 1 && opcion != 2)
+                    System.out.println("Introduzca un número válido.");
+            } catch(Exception e) {
+                System.out.println("¡Introduce solamente números!");
+
+                return preparar();
+            }
+        }
+    }
+
+    private Producto prepararPocion(Producto pocion) {
+        Scanner scanner = new Scanner(System.in);
+        int contadorAzucar = 0, contadorPepperoni = 0, contadorJamon = 0, contadorLechuga = 0, 
+            contadorJitomate = 0, contadorCebolla = 0, contadorMostaza = 0, contadorCatsup = 0, 
+            contadorMayonesa = 0;
+
+        while(true) {
+            System.out.println("Seleccione el número correspondiente al " +
+                               "ingrediente deseado:");
+            System.out.println("1.- Azucar");
+            System.out.println("2.- Lagrima de ghast");
+            System.out.println("3.- Pata de conejo");
+            System.out.println("4.- Polvo de blaze");
+            System.out.println("5.- Acelerador");
+            System.out.println("6.- Membrana de fantasma");
+            System.out.println("En caso de ya haber escogido sus ingredientes," + 
+                               " presione el número 0.");
+
+            try {
+                int opcion = scanner.nextInt();
+                if (opcion == 1) {
+                    if (contadorAzucar < 1) {
+                        pocion = new Azucar(pocion);
+                        contadorAzucar += 1;
+                    } else
+                        System.out.println("Sólo se puede aplicar una vez la azúcar.");
+                }
+                if (opcion == 2) {
+                    if (contadorPepperoni < 3) {
+                        pocion = new LagrimaGhast(pocion);
+                        contadorPepperoni += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de pepperoni.");
+                }
+                if (opcion == 3) {
+                    if (contadorJamon < 3) {
+                        pocion = new PataConejo(pocion);
+                        contadorJamon += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de jamón.");
+                }
+                if (opcion == 4) {
+                    if (contadorLechuga < 3) {
+                        pocion = new PolvoDeBlaze(pocion);
+                        contadorLechuga += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de lechuga.");                    
+                }
+                if (opcion == 5) {
+                    if (contadorJitomate < 3) {
+                        pocion = new RedStone(pocion);
+                        contadorJitomate += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de jitomate.");
+                }
+                if (opcion == 6) {
+                    if (contadorCebolla < 3) {
+                        pocion = new MembranaFantasma(pocion);
+                        contadorCebolla += 1;
+                    } else
+                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de cebolla.");
+                }
+                if (opcion == 0)
+                    break;
+                if (opcion != 0 && opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4 && 
+                    opcion != 5 && opcion != 6)
+                    System.out.println("Introduzca un número válido.");
+            } catch(Exception e) {
+                System.out.println("¡Introduce solamente números!");
+
+                return prepararPocion(pocion);
+            }
+        }
+
+        return pocion;
+    }
+
+    private Manzana prepararManzana() {
+        Scanner scanner = new Scanner(System.in);
+
+        while(true) {
+            System.out.println("Seleccione el número correspondiente a la manzana deseada:");
+            System.out.println("1.- Manzana Dorada");
+            System.out.println("2.- Manzana de Notch.");
+            System.out.println("3.- Ensenji");
+
+            try {
+                switch(scanner.nextInt()) {
+                    case 1:
+                        return manzana;
+                    case 2:
+                        return manzana;
+                    case 3:
+                        return new Ensenji();
+                    default:
+                        System.out.println("Seleccione un número válido.");
+                }
+            } catch(Exception e) {
+                System.out.println("Introduce solamente números.");
+
+                return prepararManzana();
+            }
+        }
     }
 
     /**

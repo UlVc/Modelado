@@ -18,5 +18,5 @@ public interface Estados {
     /**
      * Pone a preparar un producto a la máquina.
      */
-    public void preparar();
+    public boolean preparar();
 }

@@ -37,7 +37,9 @@ public class Preparando implements Estados {
      * Pone a preparar un producto a la máquina.
      */
     @Override
-    public void prepararProducto() {
+    public boolean prepararProducto() {
         System.out.println("Ya se esta creando el producto, sea paciente.");
+
+        return false;
     }
 }

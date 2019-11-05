@@ -38,8 +38,9 @@ public class Encendida implements Estados {
      * Pone a preparar un producto a la máquina.
      */
     @Override
-    public void prepararProducto() {
-        System.out.println("¿Qué producto deseas hacer?");
-        //Lista de productos, se añadiran pronto.
+    public boolean prepararProducto() {
+        System.out.println("¿Qué producto deseas preparar?");
+
+        return true;
     }
 }

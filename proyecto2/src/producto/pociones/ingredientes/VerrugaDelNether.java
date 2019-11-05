@@ -8,21 +8,12 @@ import src.producto.pociones.Producto;
 public class VerrugaDelNether implements Producto {
 
     /**
-     * Constructor de la clase VerrugaDelNether.
-     * @param  pocion Pocion a la que se le aplicara Verruga Del Nether.
-     * @return        Pocion con Verruga Del Nether.
-     */
-    public VerrugaDelNether(Producto pocion) {
-        super(pocion);
-    }
-
-    /**
      * Devuelve los ingredientes que contiene la pocion.
      * @return Ingredientes de la pocion.
      */
     @Override
     public String getIngredientes() {
-        return super.getIngredientes() + ", Verruga del Nether";
+        return "Verruga del Nether";
     }
 
     /**
@@ -31,7 +22,7 @@ public class VerrugaDelNether implements Producto {
      */
     @Override
     public double getTiempoDuracion() {
-        return super.getTiempoDuracion() + 0;
+        return 0;
     }
 
 }

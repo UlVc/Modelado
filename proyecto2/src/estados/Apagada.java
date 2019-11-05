@@ -38,7 +38,9 @@ public class Apagada implements Estados {
      * Apaga la maquina
      */
     @Override
-    public void prepararProducto() {
+    public boolean prepararProducto() {
         System.out.println("Máquina Apagada, si deseas que prepare un producto primero actívame.");
+
+        return false;
     }
 }
