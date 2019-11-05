@@ -1,17 +1,17 @@
 package src.producto;
 
-public interface Producto {
+public abstract class Producto {
 
     /**
      * Devuelve los ingredientes del producto.
      * @return Ingredientes del producto.
      */
-    public String getIngredientes();
+    public abstract String getIngredientes();
 
     /**
      * Devuelve el tiempo de duración del producto.
      * @return Tiempo de duración del producto.
      */
-    public double getTiempoDuracion();
+    public abstract double getTiempoDuracion();
 
 }

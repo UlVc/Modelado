@@ -7,7 +7,6 @@ import src.producto.pociones.*;
 import src.producto.pociones.ingredientes.*;
 import src.producto.manzanas.*;
 
-import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -21,6 +20,13 @@ public class BS2 {
     private Estados preparar;
 
     private Producto producto;
+
+    public BS2() {
+        this.encender = new Encendida(this);
+        this.preparar = new Preparando(this);
+        this.apagar = new Apagada(this);
+        this.estadoActual = this.apagar;
+    }
 
     /**
      * Método para encender la máquina
@@ -37,19 +43,24 @@ public class BS2 {
     }
 
     /**
-     * Método para que la máquina le pregunte al usuario qué producto fabricar. 
+     * Método para que la máquina le pregunte al usuario qué producto fabricar.
+     * @return Producto fabricado.
      */
     public Producto preparar() {
         if (estadoActual.preparar()) {
+            Scanner scanner = new Scanner(System.in);
             System.out.println("1.- Manzanas con efectos de pocion.");
             System.out.println("2.- Pocion.");
             try {
                 int opcion = scanner.nextInt();
 
-                if (opcion == 1) 
-                    return prepararManzana();
+                if (opcion == 1) {
+                    Manzana manzana = prepararManzana();
+                    Producto manzanaAdaptada = new AdaptadorManzanas(manzana);
+                    return manzanaAdaptada;
+                }
                 if (opcion == 2) {
-                    Producto pocion = new VerrugaDelNether():
+                    Producto pocion = new VerrugaDelNether();
                     return prepararPocion(pocion);
                 }
                 if (opcion != 1 && opcion != 2)
@@ -60,6 +71,8 @@ public class BS2 {
                 return preparar();
             }
         }
+
+        return null;
     }
 
     /**
@@ -68,14 +81,13 @@ public class BS2 {
      */   
     private Producto prepararPocion(Producto pocion) {
         Scanner scanner = new Scanner(System.in);
-        int contadorAzucar = 0, contadorPepperoni = 0, contadorJamon = 0, contadorLechuga = 0, 
-            contadorJitomate = 0, contadorCebolla = 0, contadorMostaza = 0, contadorCatsup = 0, 
-            contadorMayonesa = 0;
+        int contadorAzucar = 0, contadorLagrimaGhast = 0, contadorPataConejo = 0, 
+            contadorPolvoDeBlaze = 0, contadorRedStone = 0, contadorMembranaFantasma = 0;
 
         while(true) {
             System.out.println("Seleccione el número correspondiente al " +
                                "ingrediente deseado:");
-            System.out.println("1.- Azucar");
+            System.out.println("1.- Azúcar");
             System.out.println("2.- Lagrima de ghast");
             System.out.println("3.- Pata de conejo");
             System.out.println("4.- Polvo de blaze");
@@ -159,14 +171,11 @@ public class BS2 {
             try {
                 switch(scanner.nextInt()) {
                     case 1:
-                        manzana = new ManzanaDorada();
-                        return manzana;
+                        return new ManzanaDorada();
                     case 2:
-                        manzana = new ManzanaNotch();
-                        return manzana;
+                        return new ManzanaNotch();
                     case 3:
-                        manzana = new Ensenji();
-                        return manzana;
+                        return new Ensenji();
                     default:
                         System.out.println("Seleccione un número válido.");
                 }
@@ -191,6 +200,7 @@ public class BS2 {
     public void imprimeEstado() {
         System.out.println("El estado en el que se encuentra la maquina es: " + 
                            estadoActual.getClass().getSimpleName());
+    }
 
     /**
      * Asigna un nuevo estado.

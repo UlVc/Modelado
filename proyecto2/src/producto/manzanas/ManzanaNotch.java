@@ -11,7 +11,7 @@ public class ManzanaNotch implements Manzana {
      */
     @Override
     public String getEfectoPociones() {
-        return "Regeneración, fuerza, absorción y resistencia contra el fuego."
+        return "Regeneración, fuerza, absorción y resistencia contra el fuego.";
     }
 
     /**

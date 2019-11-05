@@ -11,7 +11,7 @@ public class ManzanaDorada implements Manzana {
      */
     @Override
     public String getEfectoPociones() {
-        return "Regeneración y Fuerza."
+        return "Regeneración y Fuerza.";
     }
 
     /**

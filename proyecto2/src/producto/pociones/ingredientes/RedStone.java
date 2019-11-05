@@ -1,11 +1,13 @@
 package src.producto.pociones.ingredientes;
 
-import src.producto.pociones.Producto;
-
+import src.producto.pociones.*;
+import src.producto.*;
 /**
  * Clase para ponerle red stone a la pocion.
  */
-public class RedStone implements Producto {
+public class RedStone extends DecoradorPocion {
+
+    private Producto pocion;
 
     /**
      * Constructor de la clase RedStone.
@@ -13,7 +15,7 @@ public class RedStone implements Producto {
      * @return        Pocion con Red Stone.
      */
     public RedStone(Producto pocion) {
-        super(pocion);
+        this.pocion = pocion;
     }
 
     /**
@@ -22,7 +24,7 @@ public class RedStone implements Producto {
      */
     @Override
     public String getIngredientes() {
-        return super.getIngredientes() + ", Red Stone";
+        return pocion.getIngredientes() + ", Red Stone";
     }
 
     /**
@@ -31,7 +33,7 @@ public class RedStone implements Producto {
      */
     @Override
     public double getTiempoDuracion() {
-        return super.getTiempoDuracion() + 1.5;
+        return pocion.getTiempoDuracion() + 1.5;
     }
 
 }

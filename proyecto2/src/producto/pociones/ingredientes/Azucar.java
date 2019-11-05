@@ -1,11 +1,14 @@
 package src.producto.pociones.ingredientes;
 
-import src.producto.pociones.Producto;
+import src.producto.pociones.*;
+import src.producto.*;
 
 /**
  * Clase para ponerle azúcar a la pocion.
  */
-public class Azucar implements Producto {
+public class Azucar extends DecoradorPocion {
+
+    private Producto pocion;
 
     /**
      * Constructor de la clase Azucar.
@@ -13,7 +16,7 @@ public class Azucar implements Producto {
      * @return        Pocion con Azúcar.
      */
     public Azucar(Producto pocion) {
-        super(pocion);
+        this.pocion = pocion;
     }
 
     /**
@@ -22,7 +25,7 @@ public class Azucar implements Producto {
      */
     @Override
     public String getIngredientes() {
-        return super.getIngredientes() + ", Azucar";
+        return pocion.getIngredientes() + ", Azucar";
     }
 
     /**

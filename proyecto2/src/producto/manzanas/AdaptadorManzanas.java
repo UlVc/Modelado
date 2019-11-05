@@ -1,9 +1,11 @@
 package src.producto.manzanas;
 
+import src.producto.Producto;
+
 /**
  * Clase usando el patrón de diseño Adaptador.
  */
-public class AdaptadorManzanas {
+public class AdaptadorManzanas extends Producto {
 
     private Manzana manzana;
 
@@ -12,7 +14,7 @@ public class AdaptadorManzanas {
      * @param  manzana Manzana a adaptar.
      * @return       Manzana ya adaptada.
      */
-    public AdaptadorCarne(Manzana manzana) {
+    public AdaptadorManzanas(Manzana manzana) {
         this.manzana = manzana;
     }
 
@@ -21,7 +23,7 @@ public class AdaptadorManzanas {
      * @return Efectos que brinda la manzana.
      */
     @Override
-    public String getEfectoPociones() {
+    public String getIngredientes() {
         return manzana.getEfectoPociones();
     }
 
@@ -30,7 +32,7 @@ public class AdaptadorManzanas {
      * @return Duración de los efectos de las manzanas.
      */
     @Override
-    public double getDuracionManzana() {
+    public double getTiempoDuracion() {
         return manzana.getDuracionManzana();
     }
 

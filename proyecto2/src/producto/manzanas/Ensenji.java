@@ -11,7 +11,7 @@ public class Ensenji implements Manzana {
      */
     @Override
     public String getEfectoPociones() {
-        return "Fuerza, regeneración y velocidad."
+        return "Fuerza, regeneración y velocidad.";
     }
 
     /**

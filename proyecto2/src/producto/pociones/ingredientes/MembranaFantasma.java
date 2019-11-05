@@ -1,11 +1,14 @@
 package src.producto.pociones.ingredientes;
 
-import src.producto.pociones.Producto;
+import src.producto.pociones.*;
+import src.producto.*;
 
 /**
  * Clase para ponerle membrana de fantasma a la pocion.
  */
-public class MembranaFantasma implements Producto {
+public class MembranaFantasma extends DecoradorPocion {
+
+    private Producto pocion;
 
     /**
      * Constructor de la clase MembranaFantasma.
@@ -13,7 +16,7 @@ public class MembranaFantasma implements Producto {
      * @return        Pocion con Membrana Fantasma.
      */
     public MembranaFantasma(Producto pocion) {
-        super(pocion);
+        this.pocion = pocion;
     }
 
     /**
@@ -22,7 +25,7 @@ public class MembranaFantasma implements Producto {
      */
     @Override
     public String getIngredientes() {
-        return super.getIngredientes() + ", Membrana de Fantasma";
+        return pocion.getIngredientes() + ", Membrana de Fantasma";
     }
 
     /**
@@ -31,7 +34,7 @@ public class MembranaFantasma implements Producto {
      */
     @Override
     public double getTiempoDuracion() {
-        return super.getTiempoDuracion() + 1.3;
+        return pocion.getTiempoDuracion() + 1.3;
     }
 
 }

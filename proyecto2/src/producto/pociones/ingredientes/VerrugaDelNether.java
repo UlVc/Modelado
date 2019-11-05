@@ -1,11 +1,12 @@
 package src.producto.pociones.ingredientes;
 
-import src.producto.pociones.Producto;
+import src.producto.pociones.*;
+import src.producto.*;
 
 /**
  * Clase para ponerle verruga del nether a la pocion.
  */
-public class VerrugaDelNether implements Producto {
+public class VerrugaDelNether extends DecoradorPocion {
 
     /**
      * Devuelve los ingredientes que contiene la pocion.

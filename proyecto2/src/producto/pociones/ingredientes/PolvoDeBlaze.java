@@ -1,11 +1,14 @@
 package src.producto.pociones.ingredientes;
 
-import src.producto.pociones.Producto;
+import src.producto.pociones.*;
+import src.producto.*;
 
 /**
  * Clase para ponerle polvo de blaze a la pocion.
  */
-public class PolvoDeBlaze implements Producto {
+public class PolvoDeBlaze extends DecoradorPocion {
+
+    private Producto pocion;
 
     /**
      * Constructor de la clase PolvoDeBlaze.
@@ -13,7 +16,7 @@ public class PolvoDeBlaze implements Producto {
      * @return        Pocion con Polvo de Blaze.
      */
     public PolvoDeBlaze(Producto pocion) {
-        super(pocion);
+        this.pocion = pocion;
     }
 
     /**
@@ -22,7 +25,7 @@ public class PolvoDeBlaze implements Producto {
      */
     @Override
     public String getIngredientes() {
-        return super.getIngredientes() + ", Polvo de Blaze";
+        return pocion.getIngredientes() + ", Polvo de Blaze";
     }
 
     /**
@@ -31,7 +34,7 @@ public class PolvoDeBlaze implements Producto {
      */
     @Override
     public double getTiempoDuracion() {
-        return super.getTiempoDuracion() + 0;
+        return pocion.getTiempoDuracion() + 0;
     }
 
 }
