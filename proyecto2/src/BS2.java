@@ -62,6 +62,10 @@ public class BS2 {
         }
     }
 
+    /**
+     * Método para escoger el ingrediente que se le pondrá a la pocion.
+     * @return Tipo de ingrediente para la pocion.
+     */   
     private Producto prepararPocion(Producto pocion) {
         Scanner scanner = new Scanner(System.in);
         int contadorAzucar = 0, contadorPepperoni = 0, contadorJamon = 0, contadorLechuga = 0, 
@@ -90,39 +94,39 @@ public class BS2 {
                         System.out.println("Sólo se puede aplicar una vez la azúcar.");
                 }
                 if (opcion == 2) {
-                    if (contadorPepperoni < 3) {
+                    if (contadorLagrimaGhast < 1) {
                         pocion = new LagrimaGhast(pocion);
-                        contadorPepperoni += 1;
+                        contadorLagrimaGhast += 1;
                     } else
-                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de pepperoni.");
+                        System.out.println("Sólo puede aplicar una vez la Lagrima de Ghast.");
                 }
                 if (opcion == 3) {
-                    if (contadorJamon < 3) {
+                    if (contadorPataConejo < 1) {
                         pocion = new PataConejo(pocion);
-                        contadorJamon += 1;
+                        contadorPataConejo += 1;
                     } else
-                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de jamón.");
+                        System.out.println("Sólo puedes aplicar una vez la Pata de Conejo.");
                 }
                 if (opcion == 4) {
-                    if (contadorLechuga < 3) {
+                    if (contadorPolvoDeBlaze < 1) {
                         pocion = new PolvoDeBlaze(pocion);
-                        contadorLechuga += 1;
+                        contadorPolvoDeBlaze += 1;
                     } else
-                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de lechuga.");                    
+                        System.out.println("Sólo puedes aplicar una vez el Polvo de Blaze.");                    
                 }
                 if (opcion == 5) {
-                    if (contadorJitomate < 3) {
+                    if (contadorRedStone < 1) {
                         pocion = new RedStone(pocion);
-                        contadorJitomate += 1;
+                        contadorRedStone += 1;
                     } else
-                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de jitomate.");
+                        System.out.println("Sólo puedes aplicar una vez la RedStone.");
                 }
                 if (opcion == 6) {
-                    if (contadorCebolla < 3) {
+                    if (contadorMembranaFantasma < 1) {
                         pocion = new MembranaFantasma(pocion);
-                        contadorCebolla += 1;
+                        contadorMembranaFantasma += 1;
                     } else
-                        System.out.println("Sólo puedes pedir un máximo de 3 piezas de cebolla.");
+                        System.out.println("Sólo puedes aplicar una vez la Membrana de Fantasma.");
                 }
                 if (opcion == 0)
                     break;
@@ -139,6 +143,10 @@ public class BS2 {
         return pocion;
     }
 
+    /**
+     * Método para escoger el tipo de manzana.
+     * @return Tipo de manzana.
+     */   
     private Manzana prepararManzana() {
         Scanner scanner = new Scanner(System.in);
 
@@ -151,11 +159,14 @@ public class BS2 {
             try {
                 switch(scanner.nextInt()) {
                     case 1:
+                        manzana = new ManzanaDorada();
                         return manzana;
                     case 2:
+                        manzana = new ManzanaNotch();
                         return manzana;
                     case 3:
-                        return new Ensenji();
+                        manzana = new Ensenji();
+                        return manzana;
                     default:
                         System.out.println("Seleccione un número válido.");
                 }
