@@ -13,7 +13,7 @@ public class Simulacion {
     public static void main(String []args) {
         maquina.encender();
         pr = maquina.preparar();
-        System.out.println(pr);
+        System.out.println(pr.getIngredientes());
     }
 
 }

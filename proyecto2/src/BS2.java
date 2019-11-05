@@ -47,7 +47,7 @@ public class BS2 {
      * @return Producto fabricado.
      */
     public Producto preparar() {
-        if (estadoActual.preparar()) {
+        if (estadoActual.prepararProducto()) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("1.- Manzanas con efectos de pocion.");
             System.out.println("2.- Pocion.");

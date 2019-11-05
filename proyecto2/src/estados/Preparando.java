@@ -1,17 +1,19 @@
 package src.estados;
 
+import src.*;
+
 /**
  * Clase para el estado Preparando.
  */
 public class Preparando implements Estados {
     
-    private Maquina maquina;
+    private BS2 maquina;
     
     /**
      * Constructor de la clase Apagada.
      * @param  maquina Maquina
      */
-    public Encendida(Maquina maquina) {
+    public Preparando(BS2 maquina) {
         this.maquina = maquina;
     }
 
