@@ -54,7 +54,7 @@ public class BS2 {
      * Método para que la máquina le pregunte al usuario qué producto fabricar.
      * @return Producto fabricado.
      */
-    public void preparar() {
+    public Producto preparar() {
         if (estadoActual.prepararProducto()) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("1.- Manzanas con efectos de pocion.");
@@ -78,8 +78,11 @@ public class BS2 {
 
                 preparar();
             }
+
+            return this.producto;
         }
 
+        return null;
     }
 
     /**

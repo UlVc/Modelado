@@ -6,12 +6,30 @@ package src.producto.manzanas;
 public class Ensenji implements Manzana {
 
     /**
-     * Devuelve los efectos que birnda la manzana.
-     * @return Efectos que brinda la manzana.
+     * Devuelve el primer efecto que birnda la manzana.
+     * @return Primero efecto que brinda la manzana.
      */
     @Override
-    public String getEfectoPociones() {
-        return "Fuerza, regeneración y velocidad.";
+    public String getPrimerEfecto() {
+        return "Fuerza";
+    }
+
+    /**
+     * Devuelve el segundo efecto que birnda la manzana.
+     * @return Segundo efecto que brinda la manzana.
+     */
+    @Override
+    public String getSegundoEfecto() {
+        return "Regeneración";
+    }
+
+    /**
+     * Devuelve el tercer efecto que birnda la manzana.
+     * @return Tercero efecto que brinda la manzana.
+     */
+    @Override
+    public String getTerceroEfecto() {
+        return "Velocidad";
     }
 
     /**

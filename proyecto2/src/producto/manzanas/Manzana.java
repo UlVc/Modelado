@@ -6,10 +6,22 @@ package src.producto.manzanas;
 public interface Manzana {
 
     /**
-     * Devuelve los efectos que birnda la manzana.
-     * @return Efectos que brinda la manzana.
+     * Devuelve el primer efecto que birnda la manzana.
+     * @return Primero efecto que brinda la manzana.
      */
-    public String getEfectoPociones();
+    public String getPrimerEfecto();
+
+    /**
+     * Devuelve el segundo efecto que birnda la manzana.
+     * @return Segundo efecto que brinda la manzana.
+     */
+    public String getSegundoEfecto();
+
+    /**
+     * Devuelve el tercer efecto que birnda la manzana.
+     * @return Tercero efecto que brinda la manzana.
+     */
+    public String getTerceroEfecto();
 
     /**
      * Devuelve la duración de los efectos de las manzanas.

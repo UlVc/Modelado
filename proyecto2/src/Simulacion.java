@@ -10,12 +10,11 @@ public class Simulacion {
     public static void main(String []args) {
         
         BS2 maquina = new BS2();
-        BS2Vista maquinaVista = new BS2Vista();
-        BS2Controlador maquinaControlador = new BS2Controlador(maquina, maquinaVista);
+        BS2Controlador maquinaControlador = new BS2Controlador(maquina, new BS2Vista());
 
         maquina.encender();
-        maquina.preparar();
-        maquinaControlador.updateView();
+        Producto pr = maquina.preparar();
+        maquinaControlador.updateView(pr);
     }
 
 }

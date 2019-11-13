@@ -24,7 +24,9 @@ public class AdaptadorManzanas extends Producto {
      */
     @Override
     public String getIngredientes() {
-        return manzana.getEfectoPociones();
+        return manzana.getPrimerEfecto() + ", " + 
+               manzana.getSegundoEfecto() + " y " + 
+               manzana.getTerceroEfecto();
     }
 
     /**
