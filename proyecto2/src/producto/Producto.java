@@ -14,4 +14,12 @@ public abstract class Producto {
      */
     public abstract double getTiempoDuracion();
 
+    /**
+     * Método en el cual se muestra todos los detalles del producto.
+     */
+    public void reporteFinal() {
+        System.out.println("Efectos: " + getIngredientes() + 
+                           ", duración: " + getTiempoDuracion() + "minutos");
+    }
+
 }

@@ -15,7 +15,7 @@ public class Ulrich extends Jugador {
      * Constructor de la clase Ulrich.
      */
     public Ulrich() {
-        this.id = "p1";
+        this.id = "Ulrich";
         this.inventario = new ArrayList<Producto>();
     }
 
@@ -44,6 +44,6 @@ public class Ulrich extends Jugador {
     @Override
     public void imprimirInventario() {
         for (Producto p: this.inventario)
-            System.out.println(p.getIngredientes());
+            p.reporteFinal();
     }
 }

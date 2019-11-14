@@ -18,17 +18,36 @@ public class Simulacion {
         Jugador ulrich = new Ulrich();
         Jugador yael = new Yael();
 
+        Scanner scanner = new Scanner(System.in);
+
         maquina.encender();
 
-        int opcion = getJugador();
-        Producto producto = maquina.preparar();
+        while(true) {
+            int jugador = getJugador();
+            Producto producto = maquina.preparar();
 
-        if (opcion == 1)
-            ulrich.agregarInventario(producto);
-        else
-            yael.agregarInventario(producto);
+            if (jugador == 1)
+                ulrich.agregarInventario(producto);
+            else
+                yael.agregarInventario(producto);
 
-        maquinaControlador.updateView(producto);
+            System.out.println("¿Deseas enviarle producto a otro jugador?");
+            System.out.println("1.- Sí.");
+            System.out.println("2.- No.");
+
+            try {
+                int opcion = scanner.nextInt();
+                if (opcion == 2)
+                    break;
+                if (opcion != 1 && opcion != 2)
+                    System.out.println("Introduzca un número válido.");
+            } catch(Exception e) {
+                System.out.println("¡Introduce solamente números!");
+            }
+
+        }
+
+        maquinaControlador.updateView(ulrich, yael);
     }
 
     /**

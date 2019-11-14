@@ -1,6 +1,6 @@
 package src;
 
-import src.producto.Producto;
+import src.jugadores.*;
 
 /**
  * Clase para el controlador de BS2.
@@ -19,8 +19,8 @@ public class BS2Controlador {
     * Método para actualizar la vista.
     * @param producto 
     */
-   public void updateView(Producto producto) {
-       vista.imprimirDetallesProducto(producto);
+   public void updateView(Jugador p1, Jugador p2) {
+       vista.imprimirDetallesProducto(p1, p2);
    }
 
 }

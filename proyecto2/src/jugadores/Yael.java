@@ -3,6 +3,8 @@ package src.jugadores;
 
 import java.util.Iterator;
 import java.util.Hashtable;
+import java.util.Enumeration;
+
 import src.producto.Producto;
 
 /**
@@ -16,7 +18,7 @@ public class Yael extends Jugador {
      * Constructor de la clase Ulrich.
      */
     public Yael() {
-        this.id = "p2";
+        this.id = "Yael";
         this.inventario = new Hashtable<Integer, Producto>();
     }
 
@@ -44,6 +46,12 @@ public class Yael extends Jugador {
      */
     @Override
     public void imprimirInventario() {
-        System.out.println(this.inventario.toString());
+        Enumeration e = this.inventario.elements();
+        Producto pr = null;
+
+        while (e.hasMoreElements()) {
+            pr = (Producto) e.nextElement();
+            pr.reporteFinal();
+        }
     }
 }
