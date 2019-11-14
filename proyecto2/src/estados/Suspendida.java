@@ -3,17 +3,17 @@ package src.estados;
 import src.*;
 
 /**
- * Clase para el estado Encendida.
+ * Clase para el estado Suspendida.
  */
-public class Encendida implements Estados {
+public class Suspendida implements Estados {
     
     private BS2 maquina;
     
     /**
-     * Constructor de la clase Apagada.
+     * Constructor de la clase Suspendida.
      * @param  maquina Maquina
      */
-    public Encendida(BS2 maquina) {
+    public Suspendida(BS2 maquina) {
         this.maquina = maquina;
     }
 
@@ -23,7 +23,9 @@ public class Encendida implements Estados {
      */
     @Override
     public void encenderse() {
-    	System.out.println("Ya estoy encendida, ¿qué deseas hacer?");
+        System.out.println("Encendiendo...");
+        this.maquina.asignarEstado(maquina.getEstadoEncender());
+        this.maquina.imprimeEstado();
     }
 
     /**
@@ -36,7 +38,7 @@ public class Encendida implements Estados {
     }
 
     /**
-     * Pone a preparar un producto a la máquina.
+     * Pone a preparar productos a la máquina.
      */
     @Override
     public boolean prepararProducto() {
@@ -50,7 +52,7 @@ public class Encendida implements Estados {
      */
     @Override
     public void suspenderse() {
-        System.out.println("Suspendiendo...");
-        this.maquina.asignarEstado(maquina.getEstadoSuspender());
+        System.out.println("Ya estoy suspendida.");
     }
+
 }

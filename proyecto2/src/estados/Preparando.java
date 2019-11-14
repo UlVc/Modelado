@@ -44,4 +44,14 @@ public class Preparando implements Estados {
 
         return false;
     }
+
+    /**
+     * Suspende la máquina.
+     */
+    @Override
+    public void suspenderse() {
+        System.out.println("Suspendiendo...");
+        this.maquina.asignarEstado(maquina.getEstadoSuspender());
+    }
+
 }

@@ -48,11 +48,13 @@ public class Simulacion {
         }
 
         maquinaControlador.updateView(ulrich, yael);
+
+        maquina.apagar();
     }
 
     /**
      * Método para seleccionar un jugador a entregar el producto.
-     * @return Entero que simboliza qué jugador es al que se le enviará el producto.
+     * @return Entero que simboliza a qué jugador es al que se le enviará el producto.
      */
     private static int getJugador() {
         Scanner scanner = new Scanner(System.in);

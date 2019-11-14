@@ -19,4 +19,9 @@ public interface Estados {
      * Pone a preparar un producto a la máquina.
      */
     public boolean prepararProducto();
+
+    /**
+     * Suspende la máquina.
+     */
+    public void suspenderse();
 }

@@ -19,7 +19,7 @@ public abstract class Producto {
      */
     public void reporteFinal() {
         System.out.println("Efectos: " + getIngredientes() + 
-                           ", duración: " + getTiempoDuracion() + "minutos");
+                           ", duración: " + getTiempoDuracion() + " minutos");
     }
 
 }

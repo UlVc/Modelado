@@ -45,4 +45,13 @@ public class Apagada implements Estados {
 
         return false;
     }
+
+    /**
+     * Suspende la máquina.
+     */
+    @Override
+    public void suspenderse() {
+        System.out.println("Estoy apagada, no me puedes suspender.");
+    }
+
 }

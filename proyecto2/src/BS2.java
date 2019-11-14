@@ -18,6 +18,7 @@ public class BS2 {
     private Estados apagar;
     private Estados encender;
     private Estados preparar;
+    private Estados suspender;
 
     private Producto producto;
 
@@ -25,6 +26,7 @@ public class BS2 {
         this.encender = new Encendida(this);
         this.preparar = new Preparando(this);
         this.apagar = new Apagada(this);
+        this.suspender = new Suspendida(this);
         this.estadoActual = this.apagar;
     }
 
@@ -40,14 +42,6 @@ public class BS2 {
      */
     public void apagar() {
         estadoActual.apagarse();
-    }
-
-    public String getEfectos() {
-        return this.producto.getIngredientes();
-    }
-
-    public double getDuracion() {
-        return this.producto.getTiempoDuracion();
     }
 
     /**
@@ -79,10 +73,19 @@ public class BS2 {
                 preparar();
             }
 
+            suspender();
             return this.producto;
         }
 
+        suspender();
         return null;
+    }
+
+    /**
+     * Método para suspender la máquina
+     */
+    public void suspender() {
+        estadoActual.suspenderse();
     }
 
     /**
@@ -242,6 +245,14 @@ public class BS2 {
      */
     public Estados getEstadoPreparar() {
         return preparar;
+    }
+
+    /**
+     * Devuelve el estado de preparando
+     * @return estado de preparando
+     */
+    public Estados getEstadoSuspender() {
+        return suspender;
     }
 
 }
