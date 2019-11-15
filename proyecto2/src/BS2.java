@@ -4,7 +4,7 @@ import src.estados.*;
 
 import src.producto.*;
 import src.producto.pociones.*;
-import src.producto.pociones.ingredientes.*;
+import src.producto.pociones.efectos.*;
 import src.producto.manzanas.*;
 
 import java.util.Scanner;
@@ -94,50 +94,50 @@ public class BS2 {
      */   
     private Producto prepararPocion(Producto pocion) {
         Scanner scanner = new Scanner(System.in);
-        int contadorAzucar = 0, contadorLagrimaGhast = 0, contadorPataConejo = 0, 
-            contadorPolvoDeBlaze = 0, contadorRedStone = 0, contadorMembranaFantasma = 0;
+        int contadorVelocidad = 0, contadorRegeneracion = 0, contadorSalto = 0, 
+            contadorFuerza = 0, contadorRedStone = 0, contadorVuelo = 0;
 
         while(true) {
             System.out.println("Seleccione el número correspondiente al " +
                                "ingrediente deseado:");
-            System.out.println("1.- Azúcar");
-            System.out.println("2.- Lagrima de ghast");
-            System.out.println("3.- Pata de conejo");
-            System.out.println("4.- Polvo de blaze");
+            System.out.println("1.- Velocidad");
+            System.out.println("2.- Regeneracion");
+            System.out.println("3.- Salto");
+            System.out.println("4.- Fuerza");
             System.out.println("5.- Acelerador");
-            System.out.println("6.- Membrana de fantasma");
+            System.out.println("6.- Vuelo");
             System.out.println("En caso de ya haber escogido sus ingredientes," + 
                                " presione el número 0.");
 
             try {
                 int opcion = scanner.nextInt();
                 if (opcion == 1) {
-                    if (contadorAzucar < 1) {
-                        pocion = new Azucar(pocion);
-                        contadorAzucar += 1;
+                    if (contadorVelocidad < 1) {
+                        pocion = new Velocidad(pocion);
+                        contadorVelocidad += 1;
                     } else
-                        System.out.println("Sólo se puede aplicar una vez la azúcar.");
+                        System.out.println("Sólo se puede aplicar una vez la Velocidad.");
                 }
                 if (opcion == 2) {
-                    if (contadorLagrimaGhast < 1) {
-                        pocion = new LagrimaGhast(pocion);
-                        contadorLagrimaGhast += 1;
+                    if (contadorRegeneracion < 1) {
+                        pocion = new Regeneracion(pocion);
+                        contadorRegeneracion += 1;
                     } else
-                        System.out.println("Sólo puede aplicar una vez la Lagrima de Ghast.");
+                        System.out.println("Sólo puede aplicar una vez la Regeneracion.");
                 }
                 if (opcion == 3) {
-                    if (contadorPataConejo < 1) {
-                        pocion = new PataConejo(pocion);
-                        contadorPataConejo += 1;
+                    if (contadorSalto < 1) {
+                        pocion = new Salto(pocion);
+                        contadorSalto += 1;
                     } else
                         System.out.println("Sólo puedes aplicar una vez la Pata de Conejo.");
                 }
                 if (opcion == 4) {
-                    if (contadorPolvoDeBlaze < 1) {
-                        pocion = new PolvoDeBlaze(pocion);
-                        contadorPolvoDeBlaze += 1;
+                    if (contadorFuerza < 1) {
+                        pocion = new Fuerza(pocion);
+                        contadorFuerza += 1;
                     } else
-                        System.out.println("Sólo puedes aplicar una vez el Polvo de Blaze.");                    
+                        System.out.println("Sólo puedes aplicar una vez el Fuerza.");                    
                 }
                 if (opcion == 5) {
                     if (contadorRedStone < 1) {
@@ -147,9 +147,9 @@ public class BS2 {
                         System.out.println("Sólo puedes aplicar una vez la RedStone.");
                 }
                 if (opcion == 6) {
-                    if (contadorMembranaFantasma < 1) {
-                        pocion = new MembranaFantasma(pocion);
-                        contadorMembranaFantasma += 1;
+                    if (contadorVuelo < 1) {
+                        pocion = new Vuelo(pocion);
+                        contadorVuelo += 1;
                     } else
                         System.out.println("Sólo puedes aplicar una vez la Membrana de Fantasma.");
                 }

@@ -1,4 +1,4 @@
-package src.producto.pociones.ingredientes;
+package src.producto.pociones.efectos;
 
 import src.producto.pociones.*;
 import src.producto.*;
@@ -6,16 +6,16 @@ import src.producto.*;
 /**
  * Clase para ponerle membrana de fantasma a la pocion.
  */
-public class MembranaFantasma extends DecoradorPocion {
+public class Vuelo extends DecoradorPocion {
 
     private Producto pocion;
 
     /**
-     * Constructor de la clase MembranaFantasma.
+     * Constructor de la clase Vuelo.
      * @param  pocion Pocion a la que se le aplicará la Membrana de Fntasma.
      * @return        Pocion con Membrana Fantasma.
      */
-    public MembranaFantasma(Producto pocion) {
+    public Vuelo(Producto pocion) {
         this.pocion = pocion;
     }
 
@@ -24,8 +24,8 @@ public class MembranaFantasma extends DecoradorPocion {
      * @return Ingredientes de la pocion.
      */
     @Override
-    public String getIngredientes() {
-        return pocion.getIngredientes() + ", Membrana de Fantasma";
+    public String getEfectos() {
+        return pocion.getEfectos() + ", Regeneracion";
     }
 
     /**

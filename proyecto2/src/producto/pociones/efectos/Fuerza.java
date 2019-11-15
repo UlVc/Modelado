@@ -1,21 +1,21 @@
-package src.producto.pociones.ingredientes;
+package src.producto.pociones.efectos;
 
 import src.producto.pociones.*;
 import src.producto.*;
 
 /**
- * Clase para ponerle azúcar a la pocion.
+ * Clase para ponerle polvo de blaze a la pocion.
  */
-public class Azucar extends DecoradorPocion {
+public class Fuerza extends DecoradorPocion {
 
     private Producto pocion;
 
     /**
-     * Constructor de la clase Azucar.
-     * @param  pocion Poción a la que se le aplicará Azúcar.
-     * @return        Pocion con Azúcar.
+     * Constructor de la clase Fuerza.
+     * @param  pocion Pocion a la que se le aplicara Polvo De Blaze.
+     * @return        Pocion con Polvo de Blaze.
      */
-    public Azucar(Producto pocion) {
+    public Fuerza(Producto pocion) {
         this.pocion = pocion;
     }
 
@@ -24,8 +24,8 @@ public class Azucar extends DecoradorPocion {
      * @return Ingredientes de la pocion.
      */
     @Override
-    public String getIngredientes() {
-        return pocion.getIngredientes() + ", Azucar";
+    public String getEfectos() {
+        return pocion.getEfectos() + ", Polvo de Blaze";
     }
 
     /**
@@ -34,7 +34,7 @@ public class Azucar extends DecoradorPocion {
      */
     @Override
     public double getTiempoDuracion() {
-        return 3;
+        return pocion.getTiempoDuracion() + 0;
     }
 
 }

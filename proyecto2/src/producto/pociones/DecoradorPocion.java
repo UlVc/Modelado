@@ -8,7 +8,7 @@ public abstract class DecoradorPocion extends Producto {
      * Devuelve los ingredientes que contiene la pocion.
      * @return Ingredientes de la pocion.
      */
-    public abstract String getIngredientes();
+    public abstract String getEfectos();
 
     /**
      * Devuelve el tiempo de duración del producto.

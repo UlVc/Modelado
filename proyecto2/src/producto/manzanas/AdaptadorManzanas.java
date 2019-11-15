@@ -23,7 +23,7 @@ public class AdaptadorManzanas extends Producto {
      * @return Efectos que brinda la manzana.
      */
     @Override
-    public String getIngredientes() {
+    public String getEfectos() {
         return manzana.getPrimerEfecto() + ", " + 
                manzana.getSegundoEfecto() + " y " + 
                manzana.getTerceroEfecto();

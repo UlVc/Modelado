@@ -1,4 +1,4 @@
-package src.producto.pociones.ingredientes;
+package src.producto.pociones.efectos;
 
 import src.producto.pociones.*;
 import src.producto.*;
@@ -6,16 +6,16 @@ import src.producto.*;
 /**
  * Clase para ponerle pata de conejo a la pocion.
  */
-public class PataConejo extends DecoradorPocion {
+public class Salto extends DecoradorPocion {
 
     private Producto pocion;
 
     /**
-     * Constructor de la clase PataConejo.
+     * Constructor de la clase Salto.
      * @param  pocion Pocion a la que se le agregara Pata Conejo.
-     * @return        Pocion con PataConejo.
+     * @return        Pocion con Salto.
      */
-    public PataConejo(Producto pocion) {
+    public Salto(Producto pocion) {
         this.pocion = pocion;
     }
 
@@ -24,8 +24,8 @@ public class PataConejo extends DecoradorPocion {
      * @return Ingredientes de la pocion.
      */
     @Override
-    public String getIngredientes() {
-        return pocion.getIngredientes() + ", Pata de Conejo";
+    public String getEfectos() {
+        return pocion.getEfectos() + ", Salto";
     }
 
     /**

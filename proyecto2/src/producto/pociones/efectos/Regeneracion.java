@@ -1,4 +1,4 @@
-package src.producto.pociones.ingredientes;
+package src.producto.pociones.efectos;
 
 import src.producto.pociones.*;
 import src.producto.*;
@@ -6,16 +6,16 @@ import src.producto.*;
 /**
  * Clase para ponerle lagrima de Ghast a la pocion.
  */
-public class LagrimaGhast extends DecoradorPocion {
+public class Regeneracion extends DecoradorPocion {
 
     private Producto pocion;
 
     /**
-     * Constructor de la clase LagrimaGhast.
-     * @param  pocion Pocion a la que se le aplicara LagrimaGhast.
-     * @return        Pocion con LagrimaGhast.
+     * Constructor de la clase Regeneración .
+     * @param  pocion Pocion a la que se le aplicara Regeneración .
+     * @return        Pocion con Regeneración .
      */
-    public LagrimaGhast(Producto pocion) {
+    public Regeneracion(Producto pocion) {
         this.pocion = pocion;
     }
 
@@ -24,8 +24,8 @@ public class LagrimaGhast extends DecoradorPocion {
      * @return Ingredientes de la pocion.
      */
     @Override
-    public String getIngredientes() {
-        return pocion.getIngredientes() + ", Lagrima de Ghast";
+    public String getEfectos() {
+        return pocion.getEfectos() + ", Regeneración";
     }
 
     /**

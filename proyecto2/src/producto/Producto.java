@@ -6,7 +6,7 @@ public abstract class Producto {
      * Devuelve los ingredientes del producto.
      * @return Ingredientes del producto.
      */
-    public abstract String getIngredientes();
+    public abstract String getEfectos();
 
     /**
      * Devuelve el tiempo de duración del producto.
@@ -18,7 +18,7 @@ public abstract class Producto {
      * Método en el cual se muestra todos los detalles del producto.
      */
     public void reporteFinal() {
-        System.out.println("Efectos: " + getIngredientes() + 
+        System.out.println("Efectos: " + getEfectos() + 
                            ", duración: " + getTiempoDuracion() + " minutos");
     }
 

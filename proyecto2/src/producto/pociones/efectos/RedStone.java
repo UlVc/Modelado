@@ -1,4 +1,4 @@
-package src.producto.pociones.ingredientes;
+package src.producto.pociones.efectos;
 
 import src.producto.pociones.*;
 import src.producto.*;
@@ -23,8 +23,8 @@ public class RedStone extends DecoradorPocion {
      * @return Ingredientes del pocion.
      */
     @Override
-    public String getIngredientes() {
-        return pocion.getIngredientes() + ", Red Stone";
+    public String getEfectos() {
+        return pocion.getEfectos() + ", Red Stone";
     }
 
     /**

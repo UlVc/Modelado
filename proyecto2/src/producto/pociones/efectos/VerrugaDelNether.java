@@ -1,4 +1,4 @@
-package src.producto.pociones.ingredientes;
+package src.producto.pociones.efectos;
 
 import src.producto.pociones.*;
 import src.producto.*;
@@ -13,7 +13,7 @@ public class VerrugaDelNether extends DecoradorPocion {
      * @return Ingredientes de la pocion.
      */
     @Override
-    public String getIngredientes() {
+    public String getEfectos() {
         return "Verruga del Nether";
     }
 
