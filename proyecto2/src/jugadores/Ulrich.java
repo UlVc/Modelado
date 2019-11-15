@@ -43,7 +43,11 @@ public class Ulrich extends Jugador {
      */
     @Override
     public void imprimirInventario() {
-        for (Producto p: this.inventario)
+        int contador = 1;
+        for (Producto p: this.inventario) {
+            System.out.println("Producto número " + contador + ":");
             p.reporteFinal();
+            contador += 1;
+        }
     }
 }

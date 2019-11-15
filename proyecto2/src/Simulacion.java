@@ -47,7 +47,7 @@ public class Simulacion {
 
         }
 
-        maquinaControlador.updateView(ulrich, yael);
+        maquinaControlador.actualizarVista(ulrich, yael);
 
         maquina.apagar();
     }

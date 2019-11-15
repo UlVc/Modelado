@@ -14,7 +14,7 @@ public class VerrugaDelNether extends DecoradorPocion {
      */
     @Override
     public String getEfectos() {
-        return "Verruga del Nether";
+        return "Absorcion";
     }
 
     /**

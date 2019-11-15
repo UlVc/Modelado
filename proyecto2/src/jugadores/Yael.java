@@ -48,10 +48,13 @@ public class Yael extends Jugador {
     public void imprimirInventario() {
         Enumeration e = this.inventario.elements();
         Producto pr = null;
+        int contador = 1;
 
         while (e.hasMoreElements()) {
+            System.out.println("Producto número " + contador + ":");
             pr = (Producto) e.nextElement();
             pr.reporteFinal();
+            contador += 1;
         }
     }
 }

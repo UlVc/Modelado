@@ -19,8 +19,8 @@ public class BS2Controlador {
     * Método para actualizar la vista.
     * @param producto 
     */
-   public void updateView(Jugador p1, Jugador p2) {
-       vista.imprimirDetallesProducto(p1, p2);
+   public void actualizarVista(Jugador p1, Jugador p2) {
+       vista.imprimirInformacionJugadores(p1, p2);
    }
 
 }
