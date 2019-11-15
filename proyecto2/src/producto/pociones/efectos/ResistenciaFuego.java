@@ -5,16 +5,16 @@ import src.producto.*;
 /**
  * Clase para ponerle red stone a la pocion.
  */
-public class RedStone extends DecoradorPocion {
+public class ResistenciaFuego extends DecoradorPocion {
 
     private Producto pocion;
 
     /**
-     * Constructor de la clase RedStone.
+     * Constructor de la clase ResistenciaFuego.
      * @param  pocion Pocion a la que se le aplicara Red Stone.
      * @return        Pocion con Red Stone.
      */
-    public RedStone(Producto pocion) {
+    public ResistenciaFuego(Producto pocion) {
         this.pocion = pocion;
     }
 
@@ -24,7 +24,7 @@ public class RedStone extends DecoradorPocion {
      */
     @Override
     public String getEfectos() {
-        return pocion.getEfectos() + ", Red Stone";
+        return pocion.getEfectos() + ", Resistencia el fuego";
     }
 
     /**

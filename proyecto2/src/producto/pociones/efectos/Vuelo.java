@@ -25,7 +25,7 @@ public class Vuelo extends DecoradorPocion {
      */
     @Override
     public String getEfectos() {
-        return pocion.getEfectos() + ", Regeneracion";
+        return pocion.getEfectos() + ", Vuelo";
     }
 
     /**

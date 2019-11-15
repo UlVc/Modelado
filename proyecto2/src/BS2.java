@@ -99,12 +99,12 @@ public class BS2 {
 
         while(true) {
             System.out.println("Seleccione el número correspondiente al " +
-                               "ingrediente deseado:");
+                               "efecto deseado:");
             System.out.println("1.- Velocidad");
             System.out.println("2.- Regeneracion");
             System.out.println("3.- Salto");
             System.out.println("4.- Fuerza");
-            System.out.println("5.- Acelerador");
+            System.out.println("5.- Resistencia al fuego");
             System.out.println("6.- Vuelo");
             System.out.println("En caso de ya haber escogido sus ingredientes," + 
                                " presione el número 0.");
@@ -116,42 +116,42 @@ public class BS2 {
                         pocion = new Velocidad(pocion);
                         contadorVelocidad += 1;
                     } else
-                        System.out.println("Sólo se puede aplicar una vez la Velocidad.");
+                        System.out.println("Sólo se puede aplicar una vez el efecto de velocidad.");
                 }
                 if (opcion == 2) {
                     if (contadorRegeneracion < 1) {
                         pocion = new Regeneracion(pocion);
                         contadorRegeneracion += 1;
                     } else
-                        System.out.println("Sólo puede aplicar una vez la Regeneracion.");
+                        System.out.println("Sólo puede aplicar una vez el efecto de regenreación.");
                 }
                 if (opcion == 3) {
                     if (contadorSalto < 1) {
                         pocion = new Salto(pocion);
                         contadorSalto += 1;
                     } else
-                        System.out.println("Sólo puedes aplicar una vez la Pata de Conejo.");
+                        System.out.println("Sólo puedes aplicar una vez el efecto de salto.");
                 }
                 if (opcion == 4) {
                     if (contadorFuerza < 1) {
                         pocion = new Fuerza(pocion);
                         contadorFuerza += 1;
                     } else
-                        System.out.println("Sólo puedes aplicar una vez el Fuerza.");                    
+                        System.out.println("Sólo puedes aplicar una vez el efecto de fuerza.");                    
                 }
                 if (opcion == 5) {
                     if (contadorRedStone < 1) {
-                        pocion = new RedStone(pocion);
+                        pocion = new ResistenciaFuego(pocion);
                         contadorRedStone += 1;
                     } else
-                        System.out.println("Sólo puedes aplicar una vez la RedStone.");
+                        System.out.println("Sólo puedes aplicar una vez el efecto de resistencia al fuego.");
                 }
                 if (opcion == 6) {
                     if (contadorVuelo < 1) {
                         pocion = new Vuelo(pocion);
                         contadorVuelo += 1;
                     } else
-                        System.out.println("Sólo puedes aplicar una vez la Membrana de Fantasma.");
+                        System.out.println("Sólo puedes aplicar una vez el efecto de vuelo.");
                 }
                 if (opcion == 0)
                     break;
