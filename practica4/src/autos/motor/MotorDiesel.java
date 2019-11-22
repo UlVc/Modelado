@@ -1,9 +1,11 @@
 package src.autos.motor;
 
+import src.autos.Pieza;
+
 /**
  * Clase para el motor diesel.
  */
-public class MotorDiesel extends Motor {
+public class MotorDiesel implements Pieza {
 
     /**
      * Devuelve el ataque de la pieza.
@@ -29,7 +31,7 @@ public class MotorDiesel extends Motor {
      */
     @Override
     public double velocidad() {
-        return 15;
+        return 40;
      }
 
     /**
@@ -38,7 +40,7 @@ public class MotorDiesel extends Motor {
      */
     @Override
     public double costo() {
-        return 40;
+        return 70;
     }
 
 }

@@ -10,7 +10,7 @@ public class Simulacion {
     public static void main(String []args) {
         AutoBuilder autoBuilder = new AutoBuilder();
 
-        AutoMadMax auto = autoBuilder.prepararCoche();
+        AutoMadMax auto = autoBuilder.crearCoche();
 
       	System.out.println("Coche Mad Max");
       	auto.estadisticas();

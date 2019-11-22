@@ -1,9 +1,11 @@
 package src.autos.motor;
 
+import src.autos.Pieza;
+
 /**
  * Clase para el motor simple.
  */
-public class MotorSimple extends Motor {
+public class MotorSimple implements Pieza {
 
     /**
      * Devuelve el ataque de la pieza.
