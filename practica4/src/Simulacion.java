@@ -1,6 +1,6 @@
 package src;
 
-import src.autos.*;
+import src.usuario.*;
 
 /**
  * Clase para hacer la simulación del programa.
@@ -8,12 +8,10 @@ import src.autos.*;
 public class Simulacion {
 
     public static void main(String []args) {
-        AutoBuilder autoBuilder = new AutoBuilder();
+        Usuario usuario = new Usuario("Jugador 1", 500.40);
 
-        AutoMadMax auto = autoBuilder.crearCoche();
-
-      	System.out.println("Coche Mad Max");
-      	auto.estadisticas();
+        usuario.comprarCoche();
+        usuario.verCoche();
 
     }
 

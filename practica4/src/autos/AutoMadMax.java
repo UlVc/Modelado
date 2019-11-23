@@ -76,11 +76,11 @@ public class AutoMadMax {
     * Método que muestra las estadísticas del auto.
     */
    public void estadisticas() {
-       System.out.print("Estadísticas del auto:");
-       System.out.print(" Ataque : " + obtenerAtaque());
-       System.out.print(", Defensa : " + obtenerDefensa());
-       System.out.print(", Velocidad : " + obtenerVelocidad());
-       System.out.println(", Costo : " + obtenerCosto());
+       System.out.print("Estadísticas del auto: ");
+       System.out.print("Ataque: " + obtenerAtaque());
+       System.out.print(", Defensa: " + obtenerDefensa());
+       System.out.print(", Velocidad: " + obtenerVelocidad());
+       System.out.println(", Costo: " + obtenerCosto());
    }
 
 }
