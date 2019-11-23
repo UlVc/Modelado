@@ -50,7 +50,6 @@ public class Preparando implements Estados {
      */
     @Override
     public void suspenderse() {
-        //System.out.println("Suspendiendo...");
         this.maquina.asignarEstado(maquina.getEstadoSuspender());
     }
 
